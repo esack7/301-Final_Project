@@ -1,9 +1,9 @@
 'use strict';
 var app = app || {};
 
-(function(module) {
+// (function(module) {
   // const homeController = {};
 
 
-  module.articleController = articleController;
-})(app);
+//   // module.articleController = articleController;
+// })(app);
