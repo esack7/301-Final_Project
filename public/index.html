@@ -1,54 +1,4 @@
 <!DOCTYPE html>
-<!-- <link rel="stylesheet" href="vendor/styles/railscasts.css"> -->
-
-<!-- **********Example handlbars template from lab 14********** -->
-
-<!-- <script id="article-template" type="text/x-handlebars-template">
-    <article class="clearfix" data-author="{{author}}" data-category="{{category}}">
-      <header>
-        <h1>{{title}}</h1>
-        <div class="byline">
-          By <address><a href="{{authorUrl}}">{{author}}</a></address> {{publishStatus}}
-        </div>
-      </header>
-      <section class="article-body">{{{body}}}</section>
-      <a href="/article/{{article_id}}" class="read-on">Read on &rarr;</a>
-    </article>
-  </script>
-
-  <script id="repo-template" type="text/x-handlebars-template">
-    <li>
-      <a href="{{html_url}}" target="_blank"><h3>{{name}}</h3></a>
-      <p>Description: {{description}}</p>
-      <p>Language: {{language}}</p>
-      <p>Created: {{created_at}}</p>
-      <p>Last updated: {{updated_at}}</p>
-      {{#if watchers_count}}
-      <p>{{watchers_count}} watching this repo</p>
-      {{/if}}
-    </li>
-  </script> -->
-
-<!-- <section>
-    <form id="login">
-      <fieldset>
-        <label for="username"></label>
-        <!-- put the input inside the label -->
-<!-- <input name="username" type="text" placeholder="Username" />
-        <label id="password" for="password"></label>
-        <input name="password" type="password" placeholder="Password" />
-        <select id="dropdown">
-              <option value="blank">Select an activity</option>
-              <option value="exercise">Exercise</option>
-              <option value="social">Social</option>
-              <option value"gaming">Gaming</option>
-            </select>
-        <div class="row">
-          <button id="submitButton" type="submit">Login</button>
-        </div>
-      </fieldset>
-    </form>
-    <section> -->
 <html>
 
 <head>
@@ -59,7 +9,6 @@
 
   <!-- CSS
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link href="vendor/normalize.css" rel="stylesheet" type="text/css">
 
   <link href="style/global.css" rel="stylesheet" type="text/css">
 
@@ -208,7 +157,7 @@
   <section class="hpsection" id="about" class="tab-content">
     <div class="welcome-text">
       <div class="bio">
-        <img class="shaun" src="assets/members/Shaun.jpg" alt="Shaun Wahle">
+        <img class="shaun" src="style/images/Shaun.jpg" alt="Shaun Wahle">
         <div class="bioInfoBoxShaun">
           <h2>Shaun Wahle</h2>
           <ul>
@@ -219,7 +168,7 @@
       </div>
 
       <div class="bio">
-        <img class="gavin" src="assets/members/gavin.jpg" alt="gavin">
+        <img class="gavin" src="style/images/Gavin.jpg" alt="gavin">
         <div class="bioInfoBoxGavin">
           <h2 class="nameHeader">gavin</h2>
           <ul>
@@ -231,8 +180,7 @@
       </div>
 
       <div class="bio">
-        <img class="Kimmer" src="assets/members/kimmer.PNG" alt="Kimmer">
-        <div class="bioInfoBoxKimmer">
+        <img class="Kimmer" src="style/images/Kimmer.jpg" alt="Kimmer">
           <h2>Kimmer</h2>
           <ul>
             <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
@@ -243,8 +191,7 @@
       </div>
 
       <div class="bio">
-        <img class="Issac" src="assets/members/Isaac.jpg" alt="Isaac">
-        <div class="bioInfoBoxIsaac">
+        <img class="Issac" src="style/images/Isaac.jpg" alt="Isaac">
           <h2>Isaac</h2>
           <ul>
             <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
@@ -282,8 +229,7 @@
 <script src="scripts/controllers/login.js"></script>
 <script src="scripts/models/picks.js"></script>
 <script src="scripts/models/results.js"></script>
-<script src="scripts/models/routes.js"></script>
-<script src="scripts/views/picksview.js"></script>
+<script src="scripts/views/pickview.js"></script>
 <script src="scripts/views/resultsview.js"></script>
 
 <!-- <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
