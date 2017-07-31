@@ -7,3 +7,6 @@ var app = app || {};
 
   module.aboutController = aboutController;
 })(app);
+
+
+console.log("Hey there")
