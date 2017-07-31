@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Lab 14</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="vendor/styles/normalize.css">
+
+  <!-- <link rel="stylesheet" href="vendor/styles/railscasts.css"> -->
+
+  <!-- **********Example handlbars template from lab 14********** -->
+
+  <!-- <script id="article-template" type="text/x-handlebars-template">
+    <article class="clearfix" data-author="{{author}}" data-category="{{category}}">
+      <header>
+        <h1>{{title}}</h1>
+        <div class="byline">
+          By <address><a href="{{authorUrl}}">{{author}}</a></address> {{publishStatus}}
+        </div>
+      </header>
+      <section class="article-body">{{{body}}}</section>
+      <a href="/article/{{article_id}}" class="read-on">Read on &rarr;</a>
+    </article>
+  </script>
+
+  <script id="repo-template" type="text/x-handlebars-template">
+    <li>
+      <a href="{{html_url}}" target="_blank"><h3>{{name}}</h3></a>
+      <p>Description: {{description}}</p>
+      <p>Language: {{language}}</p>
+      <p>Created: {{created_at}}</p>
+      <p>Last updated: {{updated_at}}</p>
+      {{#if watchers_count}}
+      <p>{{watchers_count}} watching this repo</p>
+      {{/if}}
+    </li>
+  </script> -->
+
+  <section>
+    <form id="login">
+      <fieldset>
+        <label for="username"></label>
+        <!-- put the input inside the label -->
+        <input name="username" type="text" placeholder="Username" />
+        <label id="password" for="password"></label>
+        <input name="password" type="password" placeholder="Password" />
+        <select id="dropdown">
+              <option value="blank">Select an activity</option>
+              <option value="exercise">Exercise</option>
+              <option value="social">Social</option>
+              <option value"gaming">Gaming</option>
+            </select>
+        <div class="row">
+          <button id="submitButton" type="submit">Login</button>
+        </div>
+      </fieldset>
+    </form>
+    <section>
+
+</head>
+
+<body>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="/vendor/scripts/handlebars.js"></script>
+  <script src="/vendor/scripts/marked.js"></script>
+
+  <script src="/vendor/scripts/page.js"></script>
+
+</body>
+
+</html>
