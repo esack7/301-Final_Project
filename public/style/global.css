@@ -7,11 +7,6 @@ a:hover { text-decoration: none; color:blue; }
 a:focus { text-decoration: none; color:yellow; }
 a:hover, a:active { text-decoration: none; color: white; }
 
-body {
-  background-image: url('../../Images/huluBackgroundB&W.jpg');
-}
-
-
 html, body {
   font-size: 16px;
   font-family: 'Fira Sans', sans-serif;
@@ -255,6 +250,12 @@ margin-top: 2rem;
     padding: 2rem 5rem;
   }
 }
+
+html {
+  /*background-color: red;*/
+  background-image: url('images/mainBackground.jpg');
+}
+
 ol {
   text-align: center;
   width:200px;
