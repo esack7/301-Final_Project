@@ -164,11 +164,7 @@ legend {
 fieldset {
   border: none;
 }
-.wrapper {
-	min-height: 100%;
-	height: 100%;
-	margin-bottom: -1.1875rem; /* the bottom margin is the negative value of the footer's height */
-}
+
 footer, .push {
   height: 1.1875rem;
 }
