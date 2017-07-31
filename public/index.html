@@ -45,18 +45,117 @@
         <input name="username" type="text" placeholder="Username" />
         <label id="password" for="password"></label>
         <input name="password" type="password" placeholder="Password" />
-        <select id="dropdown">
-              <option value="blank">Select an activity</option>
-              <option value="exercise">Exercise</option>
-              <option value="social">Social</option>
-              <option value"gaming">Gaming</option>
-            </select>
         <div class="row">
           <button id="submitButton" type="submit">Login</button>
         </div>
       </fieldset>
     </form>
-    <section>
+  </section>
+  <section>
+    <form id="pickAFlick">
+      <fieldset>
+        <br><label class="pickDropdown" for="genre">Select a genre:</label>
+        <select id="genreDropDown">
+          <option value="action">Action</option>
+          <option value="adventure">Adventure</option>
+          <option value="animation">Animation</option>
+          <option value="comedy">Comedy</option>
+          <option value="crime">Crime</option>
+          <option value="documentary">Documentary</option>
+          <option value="drama">Drama</option>
+          <option value="family">Family</option>
+          <option value="fantasy">Fantasy</option>
+          <option value="history">History</option>
+          <option value="horror">Horror</option>
+          <option value="music">Music</option>
+          <option value="mystery">Mystery</option>
+          <option value="romance">Romance</option>
+          <option value="scienceFiction">Sciene Fiction</option>
+          <option value="tvMovie">TV Movie</option>
+          <option value="thriller">Thriller</option>
+          <option value="war">War</option>
+          <option value="western">Western</option>
+        </select>
+
+
+        <br><label class="pickDropdown" id="durationDropDown" for="duration">Duration</label>
+        <input name="duration" type="number" />
+
+        <br><label class="pickDropdown" for="voteAverage">Average Vote</label>
+        <select id="voteAverageDropDown">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="9.5">9.5</option>
+  </select>
+      </fieldset>
+    </form>
+  </section>
+
+
+  <!-- <form id="buyProduct">
+        <fieldset>
+          <legend>BUSMALL ORDERS</legend>
+
+          <label for="whichProduct">Select an Iteem:</label>
+          <select id="itemDropDown">
+      <option value="bag">Bag</option>
+      <option value="banana">Banana</option>
+      <option value="bathroom">Bathroom</option>
+      <option value="boots">Boots</option>
+      <option value="breakfast">Breakfast</option>
+      <option value="bubblegum">Bubblegum</option>
+      <option value="chair">Chair</option>
+      <option value="cthulhu">Cthulhu</option>
+      <option value="dog-duck">Dog-duck</option>
+      <option value="dragon">Dragon</option>
+      <option value="pen">Pen</option>
+      <option value="petsweep">Petsweep</option>
+      <option value="scissors">Scissors</option>
+      <option value="shark">Shark</option>
+      <option value="sweep">Sweep</option>
+      <option value="tauntaun">Tauntaun</option>
+      <option value="unicorn">Unicorn</option>
+      <option value="usb">Usb</option>
+      <option value="water-can">Water-can</option>
+      <option value="wine-glass">Wine-glass</option>
+      </select>
+
+          <br><label for="quantity">Item Quantity</label>
+          <input name="quantity" type="number" />
+
+          <br><label for="fullName">Full Name</label>
+          <input name="fullName" type="text" />
+
+          <br><label for="streetAddress">Street Address</label>
+          <input name="streetAddress" type="text" />
+
+          <br><label for="city">City</label>
+          <input name="city" type="text" />
+
+          <br><label for="fullState">State</label>
+          <input name="fullState" type="text" />
+
+          <br><label for="zip">ZIP Code</label>
+          <input name="zip" type="number" />
+
+          <br><label for="phoneNumber">Phone Number</label>
+          <input name="phoneNumber" type="text" placeholder="(555) 555-5555" />
+
+          <br><label for="creditCard">Credit Card #</label>
+          <input name="creditCard" type="number" placeholder="xxxx-xxxx-xxxx-xxxx" />
+
+
+          <br><button type="submit">Confirm Order</button>
+
+        </fieldset>
+      </form> -->
 
 </head>
 
