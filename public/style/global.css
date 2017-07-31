@@ -1,0 +1,287 @@
+a { color:gray } /* Globally */
+
+/* Each state */
+
+a:visited { text-decoration: none; color: gray; }
+a:hover { text-decoration: none; color:blue; }
+a:focus { text-decoration: none; color:yellow; }
+a:hover, a:active { text-decoration: none; color: white; }
+
+
+
+
+html, body {
+  font-size: 16px;
+  font-family: 'Fira Sans', sans-serif;
+  height: 100%;
+}
+header {
+  display: block;
+  width: 100%;
+}
+.subpage {
+  width: 100%;
+  min-height: 43.75rem;
+  height: 100%;
+  background-image: url(../assets/Inspiration/inspiration5.jpg);
+  max-width: 1980px;
+  background-attachment: fixed;
+  display: relative;
+  background-position: center;
+  background-size: cover;
+  margin: 0 auto;
+}
+
+header {
+  width: 100%;
+  background-color: black;
+}
+
+nav {
+padding: 0.1rem 0;
+margin-bottom: 50px;
+}
+
+.homepage nav{
+  margin-bottom: 100px;
+}
+nav ul {
+padding: 0;
+margin-left: 1.5rem;
+align: right;
+}
+nav li {
+  font-size: 1.2rem;
+  list-style-type: none;
+  display: inline;
+  padding-right: 1rem;
+}
+nav ul ul {
+	display: none;
+}
+
+nav ul li:hover > ul {
+		display: block;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    padding-top: 15px;
+    padding-left: 10px;
+    z-index: 1;
+    background-color: black;
+	}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+.hpsection{
+  margin-bottom: 120px;
+}
+.main {
+  max-width:60rem;
+  margin: 0 auto;
+  background-color: black;
+  opacity: 0.90;
+  color: white;
+  padding: 1rem;
+}
+
+.main h1{
+  margin-top: 0;
+}
+.homepage {
+background-image: url(../images/header_img1.jpg);
+height: 100%
+max-width: 1980px;
+background-attachment: fixed;
+/*display: relative;*/
+background-position: center;
+background-size: cover;
+margin: 0 auto;
+}
+.positioning-header {
+  padding-top: 5rem;
+}
+.welcome-text {
+  width: 24rem;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  text-align: center;
+  background-color: #000;
+  color: #fff;
+  opacity: 0.90;
+}
+.welcome-text h1 {
+  font-size: 3rem;
+  line-height: 3rem;
+}
+
+.get-started {
+  padding: 0.5rem 0.7rem;
+  background-color: rgba(255, 255, 255, 1);
+  color: #000;
+  font-size: 1.2rem;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.get-started:hover {
+  text-decoration: underline;
+  color: #000
+
+}
+
+.places-link {
+  color: #fff;
+  text-decoration: none;
+}
+.places-link:hover {
+  text-decoration: underline;
+}
+.question {
+  margin-left: 30px;
+  padding-bottom: 15px;
+  font-size: 1.1rem;
+  max-width: 60rem;
+  text-align: center;
+}
+
+.answer {
+  margin-left: 30px;
+}
+
+.submit {
+margin-left: 60px;
+}
+
+legend {
+  font-size: 1.7rem;
+  text-align: center;
+}
+fieldset {
+  border: none;
+}
+.wrapper {
+	min-height: 100%;
+	height: 100%;
+	margin-bottom: -1.1875rem; /* the bottom margin is the negative value of the footer's height */
+}
+footer, .push {
+  height: 1.1875rem;
+}
+footer {
+  width: 100%;
+  background-color: #000;
+  color: white;
+  text-align: center;
+  margin-top: 15.625rem;
+  font-size: 0.75rem;
+  opacity: 0.90;
+}
+
+.bio{
+  display: flex;
+  flex-direction: row;
+  font-size: 18px;
+}
+
+.bio img {
+  border: 4px solid white;
+  margin-bottom: 35px;
+}
+.exercise-page img {
+  border: 4px solid white;
+  margin: 1rem 0 0 0;
+}
+
+.bioInfoBox{
+  margin-top: 30px;
+}
+.bioInfoBox h2{
+  text-align: center;
+}
+
+.sweatitout {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.sweatitout h1{
+  margin-bottom: -15px;
+}
+
+.exercise-list {
+  color: rgb(155,161,162);
+}
+
+li a, footer a {
+  color: white;
+  text-decoration: none;
+}
+
+li a:hover, footer a:hover {
+    color: rgb(105,190,40);
+}
+
+.main li a {
+  font-size: 1.5rem;
+}
+.comments {
+  margin-left: 2rem;
+}
+.comments p {
+  margin: 0;
+}
+.comments p:nth-of-type(even){
+  margin-bottom: 0.75rem;
+  margin-left: 1rem;
+}
+.comments p:nth-of-type(odd) {
+  font-style: italic;
+}
+.exercise-form {
+text-align: center;
+margin-top: 2rem;
+}
+.questionCSS{
+  display: block;
+}
+.answerCSS {
+  display: inline-block;
+  margin: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .welcome-text {
+    width: 30rem;
+    padding: 2rem 5rem;
+  }
+}
+ol {
+  text-align: center;
+  width:200px;
+  margin:0 auto;
+}
+button, html [type="button"], [type="reset"], [type="submit"] {
+    -webkit-appearance: button;
+    border-radius: 4px;
+    padding: 0.5rem 0.7rem;
+    background-color: rgba(255, 255, 255, 1);
+    color: #000;
+    font-size: 1.2rem;
+    text-decoration: none;
+    margin-right:10px;
+    margin-left: 0px;
+    text-align: center;
+}
+.form-results h2 {
+  text-align: center;
+}
+
+.bar {
+  background-color: none;
+}
+.video {
+  display: block;
+  margin: 0 auto;
+}
