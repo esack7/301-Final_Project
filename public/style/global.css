@@ -7,7 +7,9 @@ a:hover { text-decoration: none; color:blue; }
 a:focus { text-decoration: none; color:yellow; }
 a:hover, a:active { text-decoration: none; color: white; }
 
-
+body {
+  background-image: url('../../Images/huluBackgroundB&W.jpg');
+}
 
 
 html, body {
