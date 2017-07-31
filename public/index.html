@@ -1,12 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <title>Lab 14</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="vendor/styles/normalize.css">
-
   <!-- <link rel="stylesheet" href="vendor/styles/railscasts.css"> -->
 
   <!-- **********Example handlbars template from lab 14********** -->
@@ -37,12 +29,12 @@
     </li>
   </script> -->
 
-  <section>
+  <!-- <section>
     <form id="login">
       <fieldset>
         <label for="username"></label>
         <!-- put the input inside the label -->
-        <input name="username" type="text" placeholder="Username" />
+        <!-- <input name="username" type="text" placeholder="Username" />
         <label id="password" for="password"></label>
         <input name="password" type="password" placeholder="Password" />
         <select id="dropdown">
@@ -56,19 +48,86 @@
         </div>
       </fieldset>
     </form>
-    <section>
-
+    <section> -->
+<html>
+  <head>
+        <meta charset="UTF-8">
+        <title>Pick-A-Flick</title>
+        <link href="css/normalize.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet" type="text/css">
+        <link href="style/global.css" rel="stylesheet" type="text/css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<body>
+<body class="subpage">
+    <header>
+      <nav>
+           <ul>
+               <li><a href="index.html">Home</a></li>
+               <li>
+                   <li>
+                       <a href="exercise.html">Past Choices</a>
+                       <ul>
+                       </ul>
+                   </li>
+                   <li><a href="about.html">About Us</a></li>
+               </li>
+           </ul>
+       </nav>
+    </header>
+
+    <div class="Bar">
+        <div class="wrapper">
+
+            <section class="form-selection" id="form-selection">
+                <form class="help-me-choose-form" id="help-me-choose-form">
+                </form>
+            </section>
+            <section class="form-results" id="form-results">
+            </section>
 
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="/vendor/scripts/handlebars.js"></script>
-  <script src="/vendor/scripts/marked.js"></script>
+            <div class="push"></div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <section class="hpsection">
+            <div class="welcome-text">
+                <h1>Can't figure out what to watch?</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non necessitatibus sunt vitae optio commodi! Rerum possimus omnis earum reiciendis laborum nemo suscipit voluptates quisquam, exercitationem velit doloremque, aliquam labore alias.</p>
+                <a class="get-started" href="/results">Get Started</a>
+                <a class="random" href="/results">Random</a>
+            </div>
+        </section>
+        <div class="push"></div>
+    </div>
 
-  <script src="/vendor/scripts/page.js"></script>
+    <footer>Copyright &copy; 2017 <a href="about.html">Pick-A-Flick</a></footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="/vendor/scripts/handlebars.js"></script>
+    <script src="/vendor/scripts/marked.js"></script>
+    <script src="/vendor/scripts/page.js"></script>
+    <script src="/scripts/controllers/pickscontroller.js"></script>
+    <script src="/scripts/controllers/resultscontroller.js"></script>
+    <script src="/scripts/controllers/routes.js"></script>
+    <script src="/scripts/models/picks.js"></script>
+    <script src="/scripts/models/results.js"></script>
+    <script src="/scripts/models/routes.js"></script>
+    <script src="/scripts/views/picksview.js"></script>
+    <script src="/scripts/views/resultsview.js"></script>
 
+
+    <script src="/scripts/marked.js"></script>
+    <script src="/scripts/page.js"></script>
+    <!-- <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script type="text/javascript" src="slick/slick.min.js"></script> -->
+
+    <!-- $(document).ready(function(){
+  $('.your-class').slick({
+    setting-name: setting-value
+  });
+}); -->
 </body>
 
 </html>
