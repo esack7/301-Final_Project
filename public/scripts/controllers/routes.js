@@ -1,6 +1,5 @@
 'use strict';
-var app = app || {};
-
+// var app = app || {};
 // page('/', app.articleController.loadAll, app.articleController.index);
 // page('/about', app.aboutController.index);
 // page('/article/:article_id', app.articleController.loadById, app.articleController.index);
@@ -11,12 +10,11 @@ var app = app || {};
 $(document).ready(function() {
 
 
-  handleMainNav = function() {
-    $('.main-nav .tab').on('click', function() {
-      $('.tab-content').hide();
-      $('#' + $(this).data('content')).fadeIn('slow');
-    });
-    $('.main-nav .tab:first').click();
-  };
-  handleMainNav();
+  $('.tab').on('click', function() {
+    $('.hpsection').hide();
+    $('#' + $(this).data('content')).fadeIn('slow');
+  });
+  $('.tab:first').click();
+
+
 });
