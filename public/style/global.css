@@ -183,10 +183,6 @@ footer {
   border: 4px solid white;
   margin-bottom: 35px;
 }
-.exercise-page img {
-  border: 4px solid white;
-  margin: 1rem 0 0 0;
-}
 
 .bioInfoBox{
   margin-top: 30px;
@@ -203,10 +199,6 @@ footer {
   margin-bottom: -15px;
 }
 
-.exercise-list {
-  color: rgb(155,161,162);
-}
-
 li a, footer a {
   color: white;
   text-decoration: none;
@@ -220,30 +212,7 @@ li a:hover, footer a:hover {
 .main li a {
   font-size: 1.5rem;
 }
-.comments {
-  margin-left: 2rem;
-}
-.comments p {
-  margin: 0;
-}
-.comments p:nth-of-type(even){
-  margin-bottom: 0.75rem;
-  margin-left: 1rem;
-}
-.comments p:nth-of-type(odd) {
-  font-style: italic;
-}
-.exercise-form {
-text-align: center;
-margin-top: 2rem;
-}
-.questionCSS{
-  display: block;
-}
-.answerCSS {
-  display: inline-block;
-  margin: 10px;
-}
+
 /****************For Desktop****************/
 @media screen and (min-width: 768px) {
   .welcome-text {
@@ -295,12 +264,4 @@ ol {
 
 .form-results h2 {
   text-align: center;
-}
-
-.bar {
-  background-color: none;
-}
-.video {
-  display: block;
-  margin: 0 auto;
 }
