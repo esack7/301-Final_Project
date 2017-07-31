@@ -51,14 +51,29 @@
     <section> -->
 <html>
   <head>
+    <!-- Basic Page Needs
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
         <meta charset="UTF-8">
         <title>Pick-A-Flick</title>
+
+    <!-- CSS
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
         <link href="css/normalize.css" rel="stylesheet" type="text/css">
+        <link href="style/global.css" rel="stylesheet" type="text/css">
+
+
+    <!-- FONT
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
         <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet" type="text/css">
         <link href="style/global.css" rel="stylesheet" type="text/css">
+
+    <!-- Mobile Specific Metas
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
+<!-- Navigation Bar
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
 <body class="subpage">
     <header>
       <nav>
@@ -76,20 +91,10 @@
        </nav>
     </header>
 
-    <div class="Bar">
-        <div class="wrapper">
-
-            <section class="form-selection" id="form-selection">
-                <form class="help-me-choose-form" id="help-me-choose-form">
-                </form>
-            </section>
-            <section class="form-results" id="form-results">
-            </section>
-
-
             <div class="push"></div>
-        </div>
-    </div>
+
+            <!-- Main Page
+            –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <div class="wrapper">
         <section class="hpsection">
             <div class="welcome-text">
@@ -102,6 +107,97 @@
         <div class="push"></div>
     </div>
 
+    <div class="Bar">
+        <div class="wrapper">
+
+            <section class="form-selection" id="form-selection">
+                <form class="help-me-choose-form" id="help-me-choose-form">
+                </form>
+            </section>
+            <section class="form-results" id="form-results">
+            </section>
+
+            <!-- Login
+            –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+            <section>
+          <form id="login">
+            <fieldset>
+              <label for="username"></label>
+              <!-- put the input inside the label -->
+              <input name="username" type="text" placeholder="Username" />
+              <label id="password" for="password"></label>
+              <input name="password" type="password" placeholder="Password" />
+              <div class="row">
+                <button id="submitButton" type="submit">Login</button>
+              </div>
+            </fieldset>
+          </form>
+        </section>
+
+            <!-- About us page
+            –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+            <div class="bio">
+    <img class="shaun" src="assets/members/Shaun.jpg" alt="Shaun Wahle">
+    <div class="bioInfoBoxShaun">
+        <h2>Shaun Wahle</h2>
+        <ul>
+            <li>Certified Chef and a Culinary Scientist</li>
+            <li>Loves to travel, visited 25 different countries.</li>
+            <li>Currently plunging into Codefellows in order to get into Software Development career.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="bio">
+    <img class="gavin" src="assets/members/gavin.jpg" alt="gavin">
+    <div class="bioInfoBoxGavin">
+        <h2 class="nameHeader">gavin</h2>
+        <ul>
+            <li>C-17 Loadmaster, five year Air Force Veteran.</li>
+            <li>Loves to exercises. Practices 4-5 days a week. Favorite sport is basketball.</li>
+            <li>Enjoys traveling. Been to over 30+ countries.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="bio">
+    <img class="Kimmer" src="assets/members/kimmer.PNG" alt="Kimmer">
+    <div class="bioInfoBoxKimmer">
+        <h2>Kimmer</h2>
+        <ul>
+            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="bio">
+    <img class="Issac" src="assets/members/Isaac.jpg" alt="Isaac">
+    <div class="bioInfoBoxIsaac">
+        <h2>Isaac</h2>
+        <ul>
+            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="concept">
+    <h3>About the App</h3>
+    <p><strong>Project Concept</strong>: A site that helps everyday users choose an exercise that meets their needs!
+    </p>
+</div>
+
+<div class="domain-model">
+    <p><strong>Project Domain Model</strong>: This app allows the user to create objects for each exercise and ask user to indicate which criteria are important to them. Behind the scenes, we score each exercise. At the end, sort on score and display exercise results. Allow user to navigate to a page about the exercise that they choose or a exercise based on our function. On each exercise page show youtube video and data about the exercise.
+    </p>
+</div>
+
+</section>
+
+
+            <!-- End Document
+              –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <footer>Copyright &copy; 2017 <a href="about.html">Pick-A-Flick</a></footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="/vendor/scripts/handlebars.js"></script>
