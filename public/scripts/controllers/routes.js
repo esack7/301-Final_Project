@@ -10,17 +10,13 @@ var app = app || {};
 
 $(document).ready(function() {
 
-  $('#quote').hide();
-  $('#heroText').fadeOut();
-  $('#heroText').fadeIn(8000);
 
-  $(window).mousemove(function() {
-    $('#quote').fadeIn(5000);
-  })
-  $('.icon-menu').on('click', function() {
-    $(this).hide();
-    $('header nav ul').fadeIn('slow');
-    $(this).fadeIn(3000);
-
-  });
+  handleMainNav = function() {
+    $('.main-nav .tab').on('click', function() {
+      $('.tab-content').hide();
+      $('#' + $(this).data('content')).fadeIn('slow');
+    });
+    $('.main-nav .tab:first').click();
+  };
+  handleMainNav();
 });

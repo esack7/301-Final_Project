@@ -59,7 +59,7 @@
 
   <!-- CSS
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link href="css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="vendor/styles/normalize.css" rel="stylesheet" type="text/css">
   <link href="style/global.css" rel="stylesheet" type="text/css">
 
 
@@ -79,16 +79,16 @@
 
 <body class="subpage">
   <header>
-    <nav>
+    <nav class="main-nav">
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li class="tab" data-content="main"><a href="index.html">Home</a></li>
         <li>
-          <li>
+          <li class="tab" data-content="pastChoices">
             <a href="exercise.html">Past Choices</a>
             <ul>
             </ul>
           </li>
-          <li><a href="about.html">About Us</a></li>
+          <li class="tab" data-content="about"><a href="about.html">About Us</a></li>
         </li>
       </ul>
       <form id="login">
@@ -101,37 +101,18 @@
           <button id="submitButton" type="submit">Login</button>
         </fieldset>
       </form>
-
-
-
     </nav>
   </header>
 
-  <div class="push"></div>
 
 
-  <div class="Bar">
-    <div class="wrapper">
 
-      <section class="form-selection" id="form-selection">
-        <form class="help-me-choose-form" id="help-me-choose-form">
-        </form>
-      </section>
-      <section class="form-results" id="form-results">
-      </section>
-
-
-      <div class="push"></div>
-    </div>
-  </div>
-  <!-- *********************Forms For Login********************* -->
-
-  <section class="hpsection">
+  <!-- *********************Forms For PickaFlick********************* -->
+  <section class="hpsection" id="main" class="tab-content">
     <div class="welcome-text">
       <h1>Can't figure out what to watch?</h1>
 
 
-      <!-- *********************Forms For PickaFlick********************* -->
       <section>
         <form id="pickAFlick">
           <fieldset>
@@ -193,7 +174,7 @@
 
   <!-- Display Page
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <section class="hpsection">
+  <section class="hpsection" id="displayMovie" class="tab-content">
     <div class="welcome-text">
       <section id="movieContainer">
         <div id="movieIMG">
@@ -210,7 +191,7 @@
 
   <!-- About us page
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <section class="hpsection">
+  <section class="hpsection" id="about" class="tab-content">
     <div class="welcome-text">
       <div class="bio">
         <img class="shaun" src="assets/members/Shaun.jpg" alt="Shaun Wahle">
@@ -281,12 +262,15 @@
   <script src="/vendor/scripts/handlebars.js"></script>
   <script src="/vendor/scripts/marked.js"></script>
   <script src="/vendor/scripts/page.js"></script>
+
   <script src="/scripts/controllers/pickscontroller.js"></script>
   <script src="/scripts/controllers/resultscontroller.js"></script>
-  <script src="/scripts/controllers/routes.js"></script>
+
+  <script src="scripts/controllers/routes.js"></script>
+
   <script src="/scripts/models/picks.js"></script>
   <script src="/scripts/models/results.js"></script>
-  <script src="/scripts/models/routes.js"></script>
+
   <script src="/scripts/views/picksview.js"></script>
   <script src="/scripts/views/resultsview.js"></script>
 
