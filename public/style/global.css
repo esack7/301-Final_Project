@@ -20,7 +20,7 @@ header {
   width: 100%;
   min-height: 43.75rem;
   height: 100%;
-  background-image: url(../assets/Inspiration/inspiration5.jpg);
+  /*background-image: url(../assets/Inspiration/inspiration5.jpg);*/
   max-width: 1980px;
   background-attachment: fixed;
   display: relative;
