@@ -4,14 +4,19 @@ var app = app || {};
 // page('/', app.articleController.loadAll, app.articleController.index);
 // page('/about', app.aboutController.index);
 // page('/article/:article_id', app.articleController.loadById, app.articleController.index);
-//
-// // Redirect home if the default filter option is selected:
-// page('/category', '/');
-// page('/author', '/');
-//
-// page('/author/:authorName', app.articleController.loadByAuthor, app.articleController.index);
-// page('/category/:categoryName', app.articleController.loadByCategory, app.articleController.index);
-//
-// // COMMENT: What is this function doing?
-// //Activating page.js/ calling all the page methods above.
-page();
+
+// page();
+
+
+$(document).ready(function() {
+
+
+  handleMainNav = function() {
+    $('.main-nav .tab').on('click', function() {
+      $('.tab-content').hide();
+      $('#' + $(this).data('content')).fadeIn('slow');
+    });
+    $('.main-nav .tab:first').click();
+  };
+  handleMainNav();
+});

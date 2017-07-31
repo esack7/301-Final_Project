@@ -60,6 +60,7 @@
   <!-- CSS
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link href="vendor/normalize.css" rel="stylesheet" type="text/css">
+
   <link href="style/global.css" rel="stylesheet" type="text/css">
 
 
@@ -79,41 +80,18 @@
 
 <body class="subpage">
   <header>
-    <nav>
+    <nav class="main-nav">
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li class="tab" data-content="main"><a href="index.html">Home</a></li>
         <li>
-          <li>
+          <li class="tab" data-content="pastChoices">
             <a href="exercise.html">Past Choices</a>
             <ul>
             </ul>
           </li>
-          <li><a href="about.html">About Us</a></li>
+          <li class="tab" data-content="about"><a href="about.html">About Us</a></li>
         </li>
       </ul>
-    </nav>
-  </header>
-
-  <div class="push"></div>
-
-
-  <div class="Bar">
-    <div class="wrapper">
-
-      <section class="form-selection" id="form-selection">
-        <form class="help-me-choose-form" id="help-me-choose-form">
-        </form>
-      </section>
-      <section class="form-results" id="form-results">
-      </section>
-
-
-      <div class="push"></div>
-    </div>
-  </div>
-  <!-- *********************Forms For Login********************* -->
-  <section class="hpsection">
-    <div class="welcome-text">
       <form id="login">
         <fieldset>
           <label for="username"></label>
@@ -121,25 +99,26 @@
           <input name="username" type="text" placeholder="Username" />
           <label id="password" for="password"></label>
           <input name="password" type="password" placeholder="Password" />
-          <div class="row">
-            <button id="submitButton" type="submit">Login</button>
-          </div>
+          <button id="submitButton" type="submit">Login</button>
         </fieldset>
       </form>
-    </div>
-  </section>
-  </section>
-  <section class="hpsection">
+    </nav>
+  </header>
+
+
+
+
+  <!-- *********************Forms For PickaFlick********************* -->
+  <section class="hpsection" id="main" class="tab-content">
     <div class="welcome-text">
       <h1>Can't figure out what to watch?</h1>
 
 
-      <!-- *********************Forms For PickaFlick********************* -->
       <section>
         <form id="pickAFlick">
           <fieldset>
-            <br><label class="pickDropdown" for="genre">Select a genre:</label>
-            <select id="genreDropDown">
+            <select class="pickDropDown" id="genreDropDown">
+              <option>Genre</option>
           <option value="28">Action</option>
           <option value="12">Adventure</option>
           <option value="16">Animation</option>
@@ -162,11 +141,18 @@
         </select>
 
 
-            <br><label class="pickDropdown" id="durationDropDown" for="duration">Duration</label>
-            <input name="duration" type="number" placeholder="In minutes" />
 
-            <br><label class="pickDropdown" for="voteAverage">Average Votes</label>
-            <select id="voteAverageDropDown">
+            <select class="pickDropDown" id="durationDropDown">
+              <option>Runtime</option>
+            <option value="30">30 Minutes</option>
+            <option value="60">60 Minutes</option>
+            <option value="90">90 Minutes</option>
+            <option value="120">120 Minutes</option>
+          </select>
+
+
+            <select class="pickDropDown" id="voteAverageDropDown">
+              <option>Average Rating</option>
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -187,13 +173,26 @@
   <div class="push"></div>
   </div>
 
-  <!-- Login
+  <!-- Display Page
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <section class="hpsection" id="displayMovie" class="tab-content">
+    <div class="welcome-text">
+      <section id="movieContainer">
+        <div id="movieIMG">
+          <h4>THIS WILL BE THE MOVIE IMG (CSS NEED APPLY)</h4>
+          <div id="movieDescription">
+            <h4>THIS WILL BE THE MOVE DISPLAY PAGE</h4>
+          </div>
+        </div>
+      </section>
 
+    </div>
+    </div>
+  </section>
 
   <!-- About us page
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <section class="hpsection">
+  <section class="hpsection" id="about" class="tab-content">
     <div class="welcome-text">
       <div class="bio">
         <img class="shaun" src="assets/members/Shaun.jpg" alt="Shaun Wahle">
@@ -259,6 +258,7 @@
 
   <footer>Copyright &copy; 2017 <a href="about.html">Pick-A-Flick</a></footer>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
   <script src="vendor/scripts/handlebars.js"></script>
   <script src="vendor/scripts/marked.js"></script>
   <script src="vendor/scripts/page.js"></script>
@@ -270,6 +270,7 @@
   <script src="scripts/models/routes.js"></script>
   <script src="scripts/views/picksview.js"></script>
   <script src="scripts/views/resultsview.js"></script>
+
 
 
   <script src="/scripts/marked.js"></script>

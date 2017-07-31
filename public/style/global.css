@@ -7,11 +7,6 @@ a:hover { text-decoration: none; color:blue; }
 a:focus { text-decoration: none; color:yellow; }
 a:hover, a:active { text-decoration: none; color: white; }
 
-body {
-  background-image: url('../../Images/huluBackgroundB&W.jpg');
-}
-
-
 html, body {
   font-size: 16px;
   font-family: 'Fira Sans', sans-serif;
@@ -211,6 +206,7 @@ li a, footer a {
 
 li a:hover, footer a:hover {
     color: rgb(105,190,40);
+
 }
 
 .main li a {
@@ -224,6 +220,12 @@ li a:hover, footer a:hover {
     padding: 2rem 5rem;
   }
 }
+
+html {
+  /*background-color: red;*/
+  background-image: url('images/mainBackground.jpg');
+}
+
 ol {
   text-align: center;
   width:200px;
@@ -251,12 +253,12 @@ ol {
 }
 
 .button:hover {
-  background: #fc0000;
-  background-image: -webkit-linear-gradient(top, #fc0000, #fc0000);
-  background-image: -moz-linear-gradient(top, #fc0000, #fc0000);
-  background-image: -ms-linear-gradient(top, #fc0000, #fc0000);
-  background-image: -o-linear-gradient(top, #fc0000, #fc0000);
-  background-image: linear-gradient(to bottom, #fc0000, #fc0000);
+  background: rgb(105,190,40);
+  background-image: -webkit-linear-gradient(top, rgb(105,190,40), rgb(105,190,40));
+  background-image: -moz-linear-gradient(top, rgb(105,190,40), rgb(105,190,40));
+  background-image: -ms-linear-gradient(top, rgb(105,190,40), rgb(105,190,40));
+  background-image: -o-linear-gradient(top, rgb(105,190,40), rgb(105,190,40));
+  background-image: linear-gradient(to bottom, rgb(105,190,40), rgb(105,190,40));
   text-decoration: none;
 }
 
