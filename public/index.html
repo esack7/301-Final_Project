@@ -1,4 +1,54 @@
 <!DOCTYPE html>
+<!-- <link rel="stylesheet" href="vendor/styles/railscasts.css"> -->
+
+<!-- **********Example handlbars template from lab 14********** -->
+
+<!-- <script id="article-template" type="text/x-handlebars-template">
+    <article class="clearfix" data-author="{{author}}" data-category="{{category}}">
+      <header>
+        <h1>{{title}}</h1>
+        <div class="byline">
+          By <address><a href="{{authorUrl}}">{{author}}</a></address> {{publishStatus}}
+        </div>
+      </header>
+      <section class="article-body">{{{body}}}</section>
+      <a href="/article/{{article_id}}" class="read-on">Read on &rarr;</a>
+    </article>
+  </script>
+
+  <script id="repo-template" type="text/x-handlebars-template">
+    <li>
+      <a href="{{html_url}}" target="_blank"><h3>{{name}}</h3></a>
+      <p>Description: {{description}}</p>
+      <p>Language: {{language}}</p>
+      <p>Created: {{created_at}}</p>
+      <p>Last updated: {{updated_at}}</p>
+      {{#if watchers_count}}
+      <p>{{watchers_count}} watching this repo</p>
+      {{/if}}
+    </li>
+  </script> -->
+
+<!-- <section>
+    <form id="login">
+      <fieldset>
+        <label for="username"></label>
+        <!-- put the input inside the label -->
+<!-- <input name="username" type="text" placeholder="Username" />
+        <label id="password" for="password"></label>
+        <input name="password" type="password" placeholder="Password" />
+        <select id="dropdown">
+              <option value="blank">Select an activity</option>
+              <option value="exercise">Exercise</option>
+              <option value="social">Social</option>
+              <option value"gaming">Gaming</option>
+            </select>
+        <div class="row">
+          <button id="submitButton" type="submit">Login</button>
+        </div>
+      </fieldset>
+    </form>
+    <section> -->
 <html>
 
 <head>
@@ -9,7 +59,7 @@
 
   <!-- CSS
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <!-- <link href="vendor/styles/normalize.css" rel="stylesheet" type="text/css"> -->
+  <link href="vendor/normalize.css" rel="stylesheet" type="text/css">
 
   <link href="style/global.css" rel="stylesheet" type="text/css">
 
@@ -119,21 +169,10 @@
 
   <!-- Display Page
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<!-- <section id="movieContainer">
-  <script id="article-template" type="text/x-handlebars-template">
   <section class="hpsection" id="displayMovie" class="tab-content">
     <div class="welcome-text">
+      <section id="movieContainer">
         <div id="movieIMG">
-          <div class="output">
-            <div id="sentback" style="display: block;">
-              <img src="{{images}}" onerror="this.onerror=null;this.src='http://codeusa.net/apps/netflix/posters/404.jpg';" alt="Venus" class="movie-poster"></div>
-              <h1>"{{title}}"</h1>
-              <p><strong>Netflix Rating:</strong> "{{rating}}" </p>
-              <p>"{{body}}"</p>
-              <p><strong>Director:</strong> {{director}}<br></p>
-              <p><strong>Cast:</strong>{{cast}}</p>
-              <a href="https://www.netflix.com/WiPlayer?movieid=70056418"><button type="button" class="btn btn-default btn-netflix">Watch on Netflix</button></a></div></div>
-    </div>
           <h4>THIS WILL BE THE MOVIE IMG (CSS NEED APPLY)</h4>
           <div id="movieDescription">
             <h4>THIS WILL BE THE MOVE DISPLAY PAGE</h4>
@@ -143,7 +182,7 @@
 
     </div>
     </div>
-  </section> -->
+  </section>
 
 
   <!-- Past Movies Page
@@ -169,7 +208,7 @@
   <section class="hpsection" id="about" class="tab-content">
     <div class="welcome-text">
       <div class="bio">
-        <img class="shaun" src="style/images/Shaun.jpg" alt="Shaun Wahle">
+        <img class="shaun" src="assets/members/Shaun.jpg" alt="Shaun Wahle">
         <div class="bioInfoBoxShaun">
           <h2>Shaun Wahle</h2>
           <ul>
@@ -180,7 +219,7 @@
       </div>
 
       <div class="bio">
-        <img class="gavin" src="style/images/Gavin.jpg" alt="gavin">
+        <img class="gavin" src="assets/members/gavin.jpg" alt="gavin">
         <div class="bioInfoBoxGavin">
           <h2 class="nameHeader">gavin</h2>
           <ul>
@@ -192,7 +231,7 @@
       </div>
 
       <div class="bio">
-        <img class="Kimmer" src="style/images/Kimmer.jpg" alt="Kimmer">
+        <img class="Kimmer" src="assets/members/kimmer.PNG" alt="Kimmer">
         <div class="bioInfoBoxKimmer">
           <h2>Kimmer</h2>
           <ul>
@@ -204,7 +243,7 @@
       </div>
 
       <div class="bio">
-        <img class="Issac" src="style/images/Isaac.jpg" alt="Isaac">
+        <img class="Issac" src="assets/members/Isaac.jpg" alt="Isaac">
         <div class="bioInfoBoxIsaac">
           <h2>Isaac</h2>
           <ul>
@@ -235,24 +274,27 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
   <script src="vendor/scripts/handlebars.js"></script>
-  <script src="vendor/scripts/marked.js"></script>
-  <script src="vendor/scripts/page.js"></script>
-  <script src="scripts/controllers/pickscontroller.js"></script>
-  <script src="scripts/controllers/resultscontroller.js"></script>
-  <script src="scripts/controllers/routes.js"></script>
-  <script src="scripts/controllers/login.js"></script>
-  <script src="scripts/models/picks.js"></script>
-  <script src="scripts/models/results.js"></script>
+<script src="vendor/scripts/marked.js"></script>
+<script src="vendor/scripts/page.js"></script>
+<script src="scripts/controllers/pickscontroller.js"></script>
+<script src="scripts/controllers/resultscontroller.js"></script>
+<script src="scripts/controllers/routes.js"></script>
+<script src="scripts/controllers/login.js"></script>
+<script src="scripts/models/picks.js"></script>
+<script src="scripts/models/results.js"></script>
+<script src="scripts/models/routes.js"></script>
+<script src="scripts/views/picksview.js"></script>
+<script src="scripts/views/resultsview.js"></script>
 
-  <!-- <script src="scripts/models/routes.js"></script> -->
-  <script src="scripts/views/picksview.js"></script>
-  <script src="scripts/views/resultsview.js"></script>
+<!-- <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="slick/slick.min.js"></script> -->
 
-
-  <script src="scripts/marked.js"></script>
-  <script src="scripts/page.js"></script>
-
-
+<!-- $(document).ready(function(){
+$('.your-class').slick({
+  setting-name: setting-value
+});
+}); -->
 </body>
 
 </html>

@@ -2,11 +2,17 @@
 
 var app = app || {};
 
-var inception = new Audio('audio/inceptionTheme.mp3');
-$(document).ready(function (){
-  inception.play();
-});
-
+var inception = new Audio('/Users/Kimmer/codefellows/301/finalproject/301-Final_Project/public/scripts/controllers/audio/inceptionTheme.mp3');
+// $(document).ready(function (){
+// inception.play();
+// })
+// inception.play();
+//
+// var hello = new Audio('audio/Hello.wav');
+inception.play();
+// $(document).ready(function (){
+//   hello.play();
+// });
 
 // function emptyStorage () {
 //   if (localStorage.length === 0) {
