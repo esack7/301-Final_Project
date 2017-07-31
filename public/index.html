@@ -91,6 +91,19 @@
           <li><a href="about.html">About Us</a></li>
         </li>
       </ul>
+      <form id="login">
+        <fieldset>
+          <label for="username"></label>
+          <!-- put the input inside the label -->
+          <input name="username" type="text" placeholder="Username" />
+          <label id="password" for="password"></label>
+          <input name="password" type="password" placeholder="Password" />
+          <button id="submitButton" type="submit">Login</button>
+        </fieldset>
+      </form>
+
+
+
     </nav>
   </header>
 
@@ -112,23 +125,7 @@
     </div>
   </div>
   <!-- *********************Forms For Login********************* -->
-  <section class="hpsection">
-    <div class="welcome-text">
-      <form id="login">
-        <fieldset>
-          <label for="username"></label>
-          <!-- put the input inside the label -->
-          <input name="username" type="text" placeholder="Username" />
-          <label id="password" for="password"></label>
-          <input name="password" type="password" placeholder="Password" />
-          <div class="row">
-            <button id="submitButton" type="submit">Login</button>
-          </div>
-        </fieldset>
-      </form>
-    </div>
-  </section>
-  </section>
+
   <section class="hpsection">
     <div class="welcome-text">
       <h1>Can't figure out what to watch?</h1>
@@ -198,7 +195,16 @@
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <section class="hpsection">
     <div class="welcome-text">
-      <h4>THIS WILL BE THE MOVE DISPLAY PAGE</h4>
+      <section id="movieContainer">
+        <div id="movieIMG">
+          <h4>THIS WILL BE THE MOVIE IMG (CSS NEED APPLY)</h4>
+          <div id="movieDescription">
+            <h4>THIS WILL BE THE MOVE DISPLAY PAGE</h4>
+          </div>
+        </div>
+      </section>
+
+    </div>
     </div>
   </section>
 
