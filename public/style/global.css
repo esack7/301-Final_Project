@@ -136,21 +136,7 @@ margin: 0 auto;
 .places-link:hover {
   text-decoration: underline;
 }
-.question {
-  margin-left: 30px;
-  padding-bottom: 15px;
-  font-size: 1.1rem;
-  max-width: 60rem;
-  text-align: center;
-}
 
-.answer {
-  margin-left: 30px;
-}
-
-.submit {
-margin-left: 60px;
-}
 
 legend {
   font-size: 1.7rem;
@@ -189,14 +175,6 @@ footer {
 }
 .bioInfoBox h2{
   text-align: center;
-}
-
-.sweatitout {
-  text-align: center;
-  margin-bottom: 10px;
-}
-.sweatitout h1{
-  margin-bottom: -15px;
 }
 
 li a, footer a {
