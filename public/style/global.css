@@ -214,6 +214,7 @@ li a, footer a {
 
 li a:hover, footer a:hover {
     color: rgb(105,190,40);
+
 }
 
 .main li a {
@@ -283,12 +284,12 @@ ol {
 }
 
 .button:hover {
-  background: #fc0000;
-  background-image: -webkit-linear-gradient(top, #fc0000, #fc0000);
-  background-image: -moz-linear-gradient(top, #fc0000, #fc0000);
-  background-image: -ms-linear-gradient(top, #fc0000, #fc0000);
-  background-image: -o-linear-gradient(top, #fc0000, #fc0000);
-  background-image: linear-gradient(to bottom, #fc0000, #fc0000);
+  background: rgb(105,190,40);
+  background-image: -webkit-linear-gradient(top, rgb(105,190,40), rgb(105,190,40));
+  background-image: -moz-linear-gradient(top, rgb(105,190,40), rgb(105,190,40));
+  background-image: -ms-linear-gradient(top, rgb(105,190,40), rgb(105,190,40));
+  background-image: -o-linear-gradient(top, rgb(105,190,40), rgb(105,190,40));
+  background-image: linear-gradient(to bottom, rgb(105,190,40), rgb(105,190,40));
   text-decoration: none;
 }
 
