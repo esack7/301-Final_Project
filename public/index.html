@@ -138,8 +138,8 @@
       <section>
         <form id="pickAFlick">
           <fieldset>
-            <br><label class="pickDropdown" for="genre">Select a genre:</label>
-            <select id="genreDropDown">
+            <select class="pickDropDown" id="genreDropDown">
+              <option>Genre</option>
           <option value="28">Action</option>
           <option value="12">Adventure</option>
           <option value="16">Animation</option>
@@ -162,11 +162,18 @@
         </select>
 
 
-            <br><label class="pickDropdown" id="durationDropDown" for="duration">Duration</label>
-            <input name="duration" type="number" placeholder="In minutes" />
 
-            <br><label class="pickDropdown" for="voteAverage">Average Votes</label>
-            <select id="voteAverageDropDown">
+            <select class="pickDropDown" id="durationDropDown">
+              <option>Runtime</option>
+            <option value="30">30 Minutes</option>
+            <option value="60">60 Minutes</option>
+            <option value="90">90 Minutes</option>
+            <option value="120">120 Minutes</option>
+          </select>
+
+
+            <select class="pickDropDown" id="voteAverageDropDown">
+              <option>Average Rating</option>
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -187,9 +194,13 @@
   <div class="push"></div>
   </div>
 
-  <!-- Login
+  <!-- Display Page
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-
+  <section class="hpsection">
+    <div class="welcome-text">
+      <h4>THIS WILL BE THE MOVE DISPLAY PAGE</h4>
+    </div>
+  </section>
 
   <!-- About us page
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
