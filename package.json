@@ -1,0 +1,25 @@
+{
+  "name": "301-final_project",
+  "version": "1.0.0",
+  "description": "Code Fellows 301 final project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/esack7/301-Final_Project.git"
+  },
+  "author": "Isaac Heist, Kimmer O'Reilly, Gavin Thomas, Shaun Wahle",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/esack7/301-Final_Project/issues"
+  },
+  "homepage": "https://github.com/esack7/301-Final_Project#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "pg": "^7.0.2"
+  }
+}
