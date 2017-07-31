@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-  <!-- <link rel="stylesheet" href="vendor/styles/railscasts.css"> -->
+<!-- <link rel="stylesheet" href="vendor/styles/railscasts.css"> -->
 
-  <!-- **********Example handlbars template from lab 14********** -->
+<!-- **********Example handlbars template from lab 14********** -->
 
-  <!-- <script id="article-template" type="text/x-handlebars-template">
+<!-- <script id="article-template" type="text/x-handlebars-template">
     <article class="clearfix" data-author="{{author}}" data-category="{{category}}">
       <header>
         <h1>{{title}}</h1>
@@ -29,12 +29,12 @@
     </li>
   </script> -->
 
-  <!-- <section>
+<!-- <section>
     <form id="login">
       <fieldset>
         <label for="username"></label>
         <!-- put the input inside the label -->
-        <!-- <input name="username" type="text" placeholder="Username" />
+<!-- <input name="username" type="text" placeholder="Username" />
         <label id="password" for="password"></label>
         <input name="password" type="password" placeholder="Password" />
         <select id="dropdown">
@@ -50,80 +50,142 @@
     </form>
     <section> -->
 <html>
-  <head>
-        <meta charset="UTF-8">
-        <title>Pick-A-Flick</title>
-        <link href="css/normalize.css" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet" type="text/css">
-        <link href="style/global.css" rel="stylesheet" type="text/css">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Pick-A-Flick</title>
+  <link href="css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet" type="text/css">
+  <link href="style/global.css" rel="stylesheet" type="text/css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body class="subpage">
-    <header>
-      <nav>
-           <ul>
-               <li><a href="index.html">Home</a></li>
-               <li>
-                   <li>
-                       <a href="exercise.html">Past Choices</a>
-                       <ul>
-                       </ul>
-                   </li>
-                   <li><a href="about.html">About Us</a></li>
-               </li>
-           </ul>
-       </nav>
-    </header>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li>
+          <li>
+            <a href="exercise.html">Past Choices</a>
+            <ul>
+            </ul>
+          </li>
+          <li><a href="about.html">About Us</a></li>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
-    <div class="Bar">
-        <div class="wrapper">
-
-            <section class="form-selection" id="form-selection">
-                <form class="help-me-choose-form" id="help-me-choose-form">
-                </form>
-            </section>
-            <section class="form-results" id="form-results">
-            </section>
-
-
-            <div class="push"></div>
-        </div>
-    </div>
+  <div class="Bar">
     <div class="wrapper">
-        <section class="hpsection">
-            <div class="welcome-text">
-                <h1>Can't figure out what to watch?</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non necessitatibus sunt vitae optio commodi! Rerum possimus omnis earum reiciendis laborum nemo suscipit voluptates quisquam, exercitationem velit doloremque, aliquam labore alias.</p>
-                <a class="get-started" href="/results">Get Started</a>
-                <a class="random" href="/results">Random</a>
-            </div>
-        </section>
-        <div class="push"></div>
+
+      <section class="form-selection" id="form-selection">
+        <form class="help-me-choose-form" id="help-me-choose-form">
+        </form>
+      </section>
+      <section class="form-results" id="form-results">
+      </section>
+
+
+      <div class="push"></div>
     </div>
+  </div>
+  <div class="wrapper">
+    <section class="hpsection">
+      <div class="welcome-text">
+        <h1>Can't figure out what to watch?</h1>
+        <!-- *********************Forms For Login********************* -->
+        <!-- <section>
+          <form id="login">
+            <fieldset>
+              <label for="username"></label>
+              <input name="username" type="text" placeholder="Username" />
+              <label id="password" for="password"></label>
+              <input name="password" type="password" placeholder="Password" />
+              <div class="row">
+                <button id="submitButton" type="submit">Login</button>
+              </div>
+            </fieldset>
+          </form>
+        </section> -->
+        <!-- *********************Forms For PickaFlick********************* -->
+        <section>
+          <form id="pickAFlick">
+            <fieldset>
+              <br><label class="pickDropdown" for="genre">Select a genre:</label>
+              <select id="genreDropDown">
+          <option value="28">Action</option>
+          <option value="12">Adventure</option>
+          <option value="16">Animation</option>
+          <option value="35">Comedy</option>
+          <option value="80">Crime</option>
+          <option value="99">Documentary</option>
+          <option value="18">Drama</option>
+          <option value="10751">Family</option>
+          <option value="14">Fantasy</option>
+          <option value="36">History</option>
+          <option value="27">Horror</option>
+          <option value="10402">Music</option>
+          <option value="9648">Mystery</option>
+          <option value="10749">Romance</option>
+          <option value="878">Sciene Fiction</option>
+          <option value="10770">TV Movie</option>
+          <option value="53">Thriller</option>
+          <option value="10752">War</option>
+          <option value="37">Western</option>
+        </select>
 
-    <footer>Copyright &copy; 2017 <a href="about.html">Pick-A-Flick</a></footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="/vendor/scripts/handlebars.js"></script>
-    <script src="/vendor/scripts/marked.js"></script>
-    <script src="/vendor/scripts/page.js"></script>
-    <script src="/scripts/controllers/pickscontroller.js"></script>
-    <script src="/scripts/controllers/resultscontroller.js"></script>
-    <script src="/scripts/controllers/routes.js"></script>
-    <script src="/scripts/models/picks.js"></script>
-    <script src="/scripts/models/results.js"></script>
-    <script src="/scripts/models/routes.js"></script>
-    <script src="/scripts/views/picksview.js"></script>
-    <script src="/scripts/views/resultsview.js"></script>
+
+              <br><label class="pickDropdown" id="durationDropDown" for="duration">Duration</label>
+              <input name="duration" type="number" placeholder="In minutes" />
+
+              <br><label class="pickDropdown" for="voteAverage">Average Votes</label>
+              <select id="voteAverageDropDown">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="9.5">9.5</option>
+  </select>
+            </fieldset>
+          </form>
+        </section>
+
+        <a class="get-started" href="/results">Get Started</a>
+        <a class="random" href="/results">Random</a>
+      </div>
+    </section>
+    <div class="push"></div>
+  </div>
+
+  <footer>Copyright &copy; 2017 <a href="about.html">Pick-A-Flick</a></footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="/vendor/scripts/handlebars.js"></script>
+  <script src="/vendor/scripts/marked.js"></script>
+  <script src="/vendor/scripts/page.js"></script>
+  <script src="/scripts/controllers/pickscontroller.js"></script>
+  <script src="/scripts/controllers/resultscontroller.js"></script>
+  <script src="/scripts/controllers/routes.js"></script>
+  <script src="/scripts/models/picks.js"></script>
+  <script src="/scripts/models/results.js"></script>
+  <script src="/scripts/models/routes.js"></script>
+  <script src="/scripts/views/picksview.js"></script>
+  <script src="/scripts/views/resultsview.js"></script>
 
 
-    <script src="/scripts/marked.js"></script>
-    <script src="/scripts/page.js"></script>
-    <!-- <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="/scripts/marked.js"></script>
+  <script src="/scripts/page.js"></script>
+  <!-- <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
   <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
   <script type="text/javascript" src="slick/slick.min.js"></script> -->
 
-    <!-- $(document).ready(function(){
+  <!-- $(document).ready(function(){
   $('.your-class').slick({
     setting-name: setting-value
   });
