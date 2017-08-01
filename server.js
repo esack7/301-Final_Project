@@ -22,7 +22,7 @@ app.get('/', function(request, response) {response.sendFile('index.html', {root:
 function proxytheMoviedb(request, response) {
   console.log('Routing GitHub request for', request.params[0]);
   (requestProxy({
-    url: `https://api.themoviedb.org/3/discover/`,
+    url: `https://api.themoviedb.org/3/discover/${request.params[0]}`,
     headers: {Authorization: `token ${process.env.theMoviedb_Token}`}
   })
   )(request, response);
