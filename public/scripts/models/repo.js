@@ -1,6 +1,16 @@
 'use strict';
 var app = app || {};
 
+
+let vote_average = 8
+let genre = 20
+let runtime = 90;
+
+
+
+var query  = 'https://api.themoviedb.org/3/discover/movie?api_key=8f303e30bafa7db2b3656c65726f874c&language=en-US&sort_by=vote_average.asc&include_adult=false&include_video=false&page=1&' + 'vote_average.lte=' + vote_average + '&with_genres=' + genre + '&with_runtime.gte=' + runtime;
+
+
 (function(module) {
   const repos = {};
   console.log('isaac is here!');
@@ -14,7 +24,7 @@ var app = app || {};
     var settings = {
       'async': true,
       'crossDomain': true,
-      'url': 'https://api.themoviedb.org/3/discover/movie?api_key=8f303e30bafa7db2b3656c65726f874c&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&vote_average.gte=7&with_genres=18&with_runtime.gte=60',
+      'url': query ,
       'method': 'GET'
     }
 
