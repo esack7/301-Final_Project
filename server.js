@@ -32,15 +32,15 @@ app.post('/articles', bodyParser, function(request, response) {
 
 
 function proxytheMoviedb(request, response) {
-  console.log('Routing GitHub request for', request.params[0]);
+  console.log('Routing MovieDB request for', request.params[0]);
   (requestProxy({
-    url: `https://api.themoviedb.org/3/discover/${request.params[0]}`,
-    headers: {Authorization: `token ${process.env.theMoviedb_Token}`}
+    url: `https://api.themoviedb.org/3/discover/movie?api_key= + ${process.env.theMoviedb_Token} + ${request.params[0]}`,
+    // headers: {Authorization: `token ${process.env.theMoviedb_Token}`}
   })
   )(request, response);
 }
 
-app.get('/api.themoviedb.org/*', proxytheMoviedb);
+app.get('&language*', proxytheMoviedb);
 
 app.listen(PORT, function() {
   console.log(`Listening on port: "${PORT}"`);
