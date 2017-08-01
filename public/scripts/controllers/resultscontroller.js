@@ -11,6 +11,3 @@ var app = app || {};
   module.resultsController = resultsController;
 
 })(app);
-
-
-console.log("Hey there")
