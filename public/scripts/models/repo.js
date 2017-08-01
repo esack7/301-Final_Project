@@ -14,9 +14,9 @@ var app = app || {};
     $.get('&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&vote_average.gte=7&with_genres=18&with_runtime.gte=60')
     .then(
       data => {
-        console.log(data);
+        // console.log(data);
         rawData = data;
-        console.log(rawData);
+        // console.log(rawData);
       },
       err => console.error(err)
     )
