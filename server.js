@@ -10,9 +10,9 @@ const PORT = process.env.PORT || 3000;
 app.use(express.static('.'))
 
 //This will be our future login information sending to PS
-// app.post('/articles', bodyParser, function(request, response) {
-//   response.send('Record posted to server!!');
-// })
+app.post('/articles', bodyParser, function(request, response) {
+  response.send('Record posted to server!!');
+})
 
 app.get('/', function(request, response) {response.sendFile('index.html', {root:'./'});
 });
