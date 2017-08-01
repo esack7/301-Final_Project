@@ -2,31 +2,108 @@
 
 var app = app || {};
 
-var inception = new Audio('/Users/Kimmer/codefellows/301/finalproject/301-Final_Project/public/scripts/controllers/audio/inceptionTheme.mp3');
+var inception = new Audio('scripts/controllers/audio/inceptionTheme.mp3');
+let $userName;
+let $password;
+User.all = [];
+User.current;
+User.currentValues;
 
-inception.play();
+$('#log-out').hide();
 
-$('#login').submit(function (event) {
+function User(userName, userPassword) {
+  this.userName = userName;
+  this.userPassword = userPassword;
+  this.userMovies = [];
+  User.all.push(this);
+  console.log('Created a New User = ' + this.userName);
+}
+
+let appendCurrentUser = () => {
+  $('#current-user').html(User.current);
+}
+
+$('#login-form').submit(function (event) {
   event.preventDefault();
-
-  ifNoStorage();
+  console.log('submit button is clicked!')
+  $userName = $('#username-input').val();
+  $password = $('#password-input').val();
+  initLocalStorage();
+  appendCurrentUser();
+  setCurrentUser()
+  $('#login-form').hide();
+  $('#log-out').show();
 });
 
-function ifNoStorage () {
-  if (localStorage.length === 0) {
+$('#log-out').submit(function () {
+  $userName = ''
+  $password = ''
+  User.current = '';
+  User.currentValues = [];
+  appendCurrentUser();
+  console.log('Logging out current user and his values');
+  $('#log-out').hide();
+  $('#login-form').show();
+});
 
-  } else {
-    //pullstorage function
-    retrieveFromStorage();
+function setCurrentUser() {
+  for (var i = 0; i < User.all.length; i++) {
+    if ( (Object.values(User.all[i])[0] === $userName) ) {
+      console.log('i found the user ' + Object.values(User.all[i])[0]);
+      User.currentValues = Object.values(User.all[i]);
+      User.current = Object.values(User.all[i])[0];
+      console.log('currentUser = ' + Object.values(User.all[i])[0]);
+      console.log('User.currentValues = ' + Object.values(User.all[i]));
+    } else {
+      console.log('setCurrentUser FUNTION ERROR!!!');
+    }
   }
 }
 
-function moveToStorage () {
-  var allStore = JSON.stringify(Product.all);
-  localStorage.setItem('data', allStore);
+function retrieveStorageOnPageLoad() {
+  if (localStorage.length === 0) {
+    console.log('There is no local storage.')
+  } else {
+    retrieveAllStorage();
+    console.log('Initial Local Storage FETCH')
+  }
 }
 
-function retrieveFromStorage () {
-  var allStore = localStorage.getItem('data');
-  Product.all = JSON.parse(allStore);
+function initLocalStorage () {
+  if (localStorage.length === 0) {
+    console.log('There is no local storage.  CREATING NEW USER;')
+    new User ($userName, $password);
+    moveAllToStorage();
+    setCurrentUser()
+  } else if (localStorage.length > 0) {
+    //pullstorage function
+    retrieveAllStorage();
+    setCurrentUser();
+    console.log('You CAN NOW TEST UNDEFINED THEORY IF')
+    if (User.current === undefined) {
+      new User ($userName, $password);
+      console.log('created a new USER with the UNDEFINED METHOD')
+      retrieveAllStorage();
+      setCurrentUser()
+    } else {
+    //pullstorage function
+      console.log('USER EXISTS!!! WECOME BACK!!!')
+      retrieveAllStorage();
+      setCurrentUser()
+    }
+  }
 }
+
+function moveAllToStorage () {
+  let allStorage = JSON.stringify(User.all);
+  localStorage.setItem('allStorage', allStorage);
+  console.log('Moving all USERS to localStorage');
+}
+
+function retrieveAllStorage () {
+  var allStorage = localStorage.getItem('allStorage');
+  User.all = JSON.parse(allStorage);
+}
+
+inception.play();
+retrieveStorageOnPageLoad();
