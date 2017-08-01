@@ -1,9 +1,16 @@
 'use strict';
 var app = app || {};
 
-// (function(module) {
-  // const homeController = {};
+
+(function(module) {
+  const pickscontroller = {};
+  pickscontroller.init = function (){
+
+    $('.tab-content').hide();
+    $('#main').show();
+
+  }
 
 
-//   // module.articleController = articleController;
-// })(app);
+  module.pickscontroller = pickscontroller;
+})(app);
