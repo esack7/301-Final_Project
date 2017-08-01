@@ -35,14 +35,22 @@
         <li class="tab" data-content="pastChoices"><a href="#">Past Choices</a></li>
         <li class="tab" data-content="about"><a href="#">About Us</a></li>
       </ul>
-      <form id="login">
+      <form id="login-form">
         <fieldset>
           <label for="username"></label>
           <!-- put the input inside the label -->
-          <input name="username" type="text" placeholder="Username" />
+          <input id="username-input" name="username" type="text" placeholder="Username" />
           <label id="password" for="password"></label>
-          <input name="password" type="password" placeholder="Password" />
+          <input id="password-input" name="password" type="password" placeholder="Password" />
           <button id="submitButton" type="submit">Login</button>
+        </fieldset>
+      </form>
+      <form id="log-out">
+        <fieldset>
+          <label id="current-user" for="username"></label>
+          <!-- put the input inside the label -->
+          <label id="password" for="password"></label>
+          <button id="submitButton" type="submit">Log Out</button>
         </fieldset>
       </form>
     </nav>

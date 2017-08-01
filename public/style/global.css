@@ -230,6 +230,10 @@ ol {
   text-decoration: none;
 }
 
+#log-out {
+  color: white;
+}
+
 .button:hover {
   background: rgb(105,190,40);
   background-image: -webkit-linear-gradient(top, rgb(105,190,40), rgb(105,190,40));
