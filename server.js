@@ -22,11 +22,13 @@ app.get('/', function(request, response) {response.sendFile('index.html', {root:
 function proxytheMoviedb(request, response) {
   console.log('Routing GitHub request for', request.params[0]);
   (requestProxy({
-    url: 'https://api.themoviedb.org/3/discover/movie?api_key=' + `${process.env.theMoviedb_Token}`,
-  }))(request, response);
+    url: `https://api.themoviedb.org/3/discover/`,
+    headers: {Authorization: `token ${process.env.theMoviedb_Token}`}
+  })
+  )(request, response);
 }
 
-app.get('/github/*', proxytheMoviedb);
+app.get('/api.themoviedb.org/*', proxytheMoviedb);
 
 app.listen(PORT, function() {
   console.log(`Listening on port: "${PORT}"`);
