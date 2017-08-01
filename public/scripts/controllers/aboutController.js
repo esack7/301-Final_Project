@@ -5,7 +5,7 @@ var app = app || {};
   const aboutController = {};
 
   aboutController.init = function (){
-    $('.tab-content').hide();
+    $('#tab-content').hide();
     $('#about').show();
 
 

@@ -243,3 +243,5 @@ ol {
 .form-results h2 {
   text-align: center;
 }
+.hidden {
+  display: none; }
