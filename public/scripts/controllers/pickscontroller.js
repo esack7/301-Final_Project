@@ -1,16 +1,11 @@
 'use strict';
 var app = app || {};
-
-
+//Show hide funtionatlity for about us section
 (function(module) {
-  const pickscontroller = {};
-  pickscontroller.init = function (){
-
+  const picksController = {};
+  picksController.init = function (){
     $('.tab-content').hide();
-    $('#main').show();
-
+    $('#displayMovie').show();
   }
-
-
-  module.pickscontroller = pickscontroller;
+  module.picksController = picksController;
 })(app);

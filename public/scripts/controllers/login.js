@@ -24,21 +24,24 @@ let appendCurrentUser = () => {
 }
 
 $('#login-form').submit(function (event) {
+  (console.log('login FORM click Fired!!!'))
   event.preventDefault();
-  console.log('submit button is clicked!')
+  console.log('LOG-IN button is clicked!');
   $userName = $('#username-input').val();
   $password = $('#password-input').val();
-  initLocalStorage();
+  searchLocalStorage();
   appendCurrentUser();
-  setCurrentUser()
+  // setCurrentUser();
   $('#login-form').hide();
   $('#log-out').show();
 });
 
-$('#log-out').submit(function () {
-  $userName = ''
-  $password = ''
-  User.current = '';
+$('#log-out').submit(function (event) {
+  event.preventDefault();
+  console.log('LOG OUT button clicked');
+  $userName = '';
+  $password = '';
+  User.current = undefined;
   User.currentValues = [];
   appendCurrentUser();
   console.log('Logging out current user and his values');
@@ -47,15 +50,17 @@ $('#log-out').submit(function () {
 });
 
 function setCurrentUser() {
+  console.log('setCurrentUser FUNCTION FIRED!!!')
   for (var i = 0; i < User.all.length; i++) {
     if ( (Object.values(User.all[i])[0] === $userName) ) {
-      console.log('i found the user ' + Object.values(User.all[i])[0]);
+      console.log('i found the user ' + Object.values(User.all[i])[0] + ' in the User.all ARRAY');
       User.currentValues = Object.values(User.all[i]);
       User.current = Object.values(User.all[i])[0];
       console.log('currentUser = ' + Object.values(User.all[i])[0]);
       console.log('User.currentValues = ' + Object.values(User.all[i]));
     } else {
-      console.log('setCurrentUser FUNTION ERROR!!!');
+      console.log('COULD NOT FIND USER IN STORAGE!!!');
+      User.current = undefined;
     }
   }
 }
@@ -69,7 +74,8 @@ function retrieveStorageOnPageLoad() {
   }
 }
 
-function initLocalStorage () {
+function searchLocalStorage () {
+  console.log('searchLocalStorage FUNCTION FIRED!!!')
   if (localStorage.length === 0) {
     console.log('There is no local storage.  CREATING NEW USER;')
     new User ($userName, $password);
@@ -77,19 +83,17 @@ function initLocalStorage () {
     setCurrentUser()
   } else if (localStorage.length > 0) {
     //pullstorage function
-    retrieveAllStorage();
     setCurrentUser();
-    console.log('You CAN NOW TEST UNDEFINED THEORY IF')
+    console.log(User.current + ' === User.current');
     if (User.current === undefined) {
+      console.log('UNDEFINED METHOD FIRED!!!!')
       new User ($userName, $password);
       console.log('created a new USER with the UNDEFINED METHOD')
-      retrieveAllStorage();
+      moveAllToStorage();
       setCurrentUser()
     } else {
     //pullstorage function
       console.log('USER EXISTS!!! WECOME BACK!!!')
-      retrieveAllStorage();
-      setCurrentUser()
     }
   }
 }
