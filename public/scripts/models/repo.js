@@ -5,7 +5,9 @@ var app = app || {};
   const repos = {};
 // vote average needs to take in a number with a decimal
   let vote_average;
-  let overview;
+
+
+
   // genre takes in movie genre...
   let genre;
   let genreInput;
@@ -15,9 +17,19 @@ var app = app || {};
   let runtime;
   let query;
 
-  let topThreeOne;
-  let topThreeTwo;
-  let topThreeThree;
+//first movie pic attributes
+  let topThreeOneTitle;
+  let topThreeOneOverview;
+  let topThreeOneImg;
+//second movie pic attributes
+  let topThreeTwoTitle;
+  let topThreeTwoOverview;
+  let topThreeTwoImg;
+  //third movie pic attributes
+  let topThreeThreeTitle;
+  let topThreeThreeOverview;
+  let topThreeThreeImg;
+
   let topThreeCounter;
   let randomMovie;
 
@@ -28,9 +40,9 @@ var app = app || {};
     $('#top-three-one-title').html('');
     $('#top-three-two-title').html('');
     $('#top-three-three-title').html('');
-    $('#top-three-one-description').html('')
-    $('#top-three-two-description').html('')
-    $('#top-three-three-description').html('')
+    $('#top-three-one-overview').html('')
+    $('#top-three-two-overview').html('')
+    $('#top-three-three-overview').html('')
     $('#displayMovie').show();
     $('#main').hide();
     console.log('topThree BUTTON FIRED!!!');
@@ -40,10 +52,9 @@ var app = app || {};
     genre = '';
     genreInput = '';
     runtime = '';
-    overview = '';
-    topThreeOne = '';
-    topThreeTwo = '';
-    topThreeThree = '';
+    topThreeOneTitle = '';
+    topThreeTwoTitle = '';
+    topThreeThreeTitle = '';
     console.log('app.repos.all is CLEARED!');
     event.preventDefault();
     vote_average = $('#voteAverageDropDown').val();
@@ -53,7 +64,7 @@ var app = app || {};
     //this is way too complicated ..genre = $('genreDropDown').val gives you a number already to the right genre
     genre = Object.values(genreObject)[Object.keys(genreObject).indexOf(genreInput)];
     runtime = $('#durationDropDown').val();
-    console.log('vote_average = ' + vote_average + '  genre = ' + genre + '  runtime = ' + runtime + ' overview = ' + overview);
+    console.log('vote_average = ' + vote_average + '  genre = ' + genre + '  runtime = ' + runtime);
     query = 'https://api.themoviedb.org/3/discover/movie?api_key=8f303e30bafa7db2b3656c65726f874c&language=en-US&region=US&sort_by=vote_average.asc&include_adult=false&include_video=false&page=1&' + 'vote_average.lte=' + vote_average + '&with_genres=' + genreInput + '&with_runtime.gte=' + runtime;
     repos.requestMovie(randomTopThree);
     console.log(' ');
@@ -144,10 +155,23 @@ var app = app || {};
 
   let appendTopThreeMovies = () => {
     console.log('appendTopThreeMovies FIRE FIRE FIRE!!!')
-    $('#top-three-one-title').html(topThreeOne);
-    $('#top-three-two-title').html(topThreeTwo);
-    $('#top-three-two-description').html(topThreeTwo)
-    $('#top-three-three-title').html(topThreeThree);
+
+    //Appending the first movie picks attributes
+    $('#top-three-one-title').html(topThreeOneTitle);
+    console.log('appending description 1');
+    console.log('description = ' + topThreeOneOverview);
+    $('#top-three-one-overview').html(topThreeOneOverview);
+
+    //Appending the second movie picks attributes
+    $('#top-three-two-title').html(topThreeTwoTitle);
+    console.log('appending description 2');
+    console.log('description = ' + topThreeTwoOverview);
+
+    //Appending the second movie picks attributes
+    $('#top-three-three-overview').html(topThreeThreeOverview);
+    console.log('appending description 3');
+    console.log('description = ' + topThreeThreeOverview);
+    $('#top-three-three-title').html(topThreeThreeTitle);
     $('#displayMovie').show();
   }
 
@@ -173,21 +197,27 @@ var app = app || {};
     $('#top-three-three-title').html('');
     $('#top-three-three-description').html('')
     console.log('TOPTHREE movies FIRE!!! below listed!')
-    console.log(topThreeOne, topThreeTwo, topThreeThree);
+    console.log(topThreeOneTitle, topThreeTwoTitle, topThreeThreeTitle);
     if (topThreeCounter < 18) {
-      topThreeOne = Object.values(Object.values(app.repos.all[0])[3][topThreeCounter])[4]
+      //selecting top three one - title - description - image
+      topThreeOneTitle = Object.values(Object.values(app.repos.all[0])[3][topThreeCounter])[4];
+      topThreeOneOverview = Object.values(Object.values(app.repos.all[0])[3][topThreeCounter])[12];
       topThreeCounter++;
-      topThreeTwo = Object.values(Object.values(app.repos.all[0])[3][topThreeCounter])[4]
+      //selecting top three two - title - description - image
+      topThreeTwoTitle = Object.values(Object.values(app.repos.all[0])[3][topThreeCounter])[4]
+      topThreeTwoOverview = Object.values(Object.values(app.repos.all[0])[3][topThreeCounter])[12];
       topThreeCounter++;
-      topThreeThree = Object.values(Object.values(app.repos.all[0])[3][topThreeCounter])[4]
+      //selecting top three three - title - description - image
+      topThreeThreeTitle = Object.values(Object.values(app.repos.all[0])[3][topThreeCounter])[4]
+      topThreeThreeOverview = Object.values(Object.values(app.repos.all[0])[3][topThreeCounter])[4]
       appendTopThreeMovies();
     } else {
       topThreeCounter = 0;
-      topThreeOne = Object.values(Object.values(app.repos.all[0])[3][topThreeCounter])[4]
+      topThreeOneTitle = Object.values(Object.values(app.repos.all[0])[3][topThreeCounter])[4]
       topThreeCounter++;
-      topThreeTwo = Object.values(Object.values(app.repos.all[0])[3][topThreeCounter])[4]
+      topThreeTwoTitle = Object.values(Object.values(app.repos.all[0])[3][topThreeCounter])[4]
       topThreeCounter++;
-      topThreeThree = Object.values(Object.values(app.repos.all[0])[3][topThreeCounter])[4]
+      topThreeThreeTitle = Object.values(Object.values(app.repos.all[0])[3][topThreeCounter])[4]
       appendTopThreeMovies();
     }
     topThreeCounter++;

@@ -1,3 +1,21 @@
+a { color:gray } /* Globally */
+
+/* Each state */
+
+a:visited { text-decoration: none; color: gray; }
+a:hover { text-decoration: none; color:blue; }
+a:focus { text-decoration: none; color:yellow; }
+a:hover, a:active { text-decoration: none; color: white; }
+
+html, body {
+  font-size: 16px;
+  font-family: 'Fira Sans', sans-serif;
+  height: 100%;
+}
+header {
+  display: block;
+  width: 100%;
+}
 .subpage {
   width: 100%;
   min-height: 43.75rem;
@@ -71,8 +89,8 @@ nav a {
 }
 .homepage {
 background-image: url(../images/header_img1.jpg);
-height: 100%;
-max-width: 100%;
+height: 100%
+max-width: 1980px;
 background-attachment: fixed;
 /*display: relative;*/
 background-position: center;
@@ -144,16 +162,16 @@ footer {
 .bio{
   display: flex;
   flex-direction: row;
-  font-size: 18rem;
+  font-size: 18px;
 }
 
 .bio img {
   border: 4px solid white;
-  margin-bottom: 35rem;
+  margin-bottom: 35px;
 }
 
 .bioInfoBox{
-  margin-top: 30rem;
+  margin-top: 30px;
 }
 .bioInfoBox h2{
   text-align: center;
@@ -174,17 +192,21 @@ li a:hover, footer a:hover {
 }
 
 /****************For Desktop****************/
-@media screen and (min-width: 768rem) {
+@media screen and (min-width: 768px) {
   .welcome-text {
     width: 50rem;
     padding: 2rem 5rem;
   }
 }
 
+.bio {
+  margin: 7% 0% 7% 0%;
+}
 .aboutPic {
   max-width: 27%;
   max-height: 20%;
   margin-right: 5%;
+  opacity: 100;
 }
 
 #login-form fieldset {
@@ -202,7 +224,7 @@ html {
 
 ol {
   text-align: center;
-  width:200rem;
+  width:200px;
   margin:0 auto;
 }
 .button {
@@ -230,6 +252,16 @@ ol {
   color: white;
 }
 
+.button:hover {
+  background: rgb(105,190,40);
+  background-image: -webkit-linear-gradient(top, rgb(105,190,40), rgb(105,190,40));
+  background-image: -moz-linear-gradient(top, rgb(105,190,40), rgb(105,190,40));
+  background-image: -ms-linear-gradient(top, rgb(105,190,40), rgb(105,190,40));
+  background-image: -o-linear-gradient(top, rgb(105,190,40), rgb(105,190,40));
+  background-image: linear-gradient(to bottom, rgb(105,190,40), rgb(105,190,40));
+  text-decoration: none;
+}
+
 .form-results h2 {
   text-align: center;
 }
@@ -245,13 +277,4 @@ footer {
   left: 0;
   padding: 1rem;
   text-align: center;
-}
-
-.logo {
-  width: 150px;
-  height: 100px;
-  max-width: 27%;
-  max-height: 20%;
-  margin-right: 5%;
-  position: relative;
 }
