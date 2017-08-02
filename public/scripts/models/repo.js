@@ -28,8 +28,9 @@ var query  = 'https://api.themoviedb.org/3/discover/movie?api_key=8f303e30bafa7d
       'method': 'GET'
     }
 
-    $.get(settings).then(function (response) {
-      repos.all = response;
+    $.get(settings).then(function (data) {
+      console.log('why isnt this working');
+      repos.all = data;
     })
     .then(callback);
     // $.get('&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&vote_average.gte=7&with_genres=18&with_runtime.gte=60')
