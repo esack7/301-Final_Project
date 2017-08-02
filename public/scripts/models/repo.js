@@ -23,6 +23,7 @@ var app = app || {};
   let genreObject = {'28': 'Action', '12': 'Adventure', '16': 'Animation', '35': 'Comedy', '80': 'Crime', '99': 'Documentary', '18': 'Drama', '10751': 'Family', '14': 'Fantasy', '36': 'History', '27': 'Horror', 10402: 'Music', 9648: 'Mystery', 10749: 'Romance', 878: 'Science Fiction', 10770: 'TV Movie', 53: 'Thriller', 10752: 'War', 37: 'Western'};
 
   $('#topThree').click(function (event) {
+
     $('#top-three-one-title').html('');
     $('#top-three-two-title').html('');
     $('#top-three-three-title').html('');
@@ -44,6 +45,7 @@ var app = app || {};
     genreInput = $('#genreDropDown').val();
     console.log(genreObject);
     console.log('genreInput = ' + genreInput);
+    //this is way too complicated ..genre = $('genreDropDown').val gives you a number already to the right genre
     genre = Object.values(genreObject)[Object.keys(genreObject).indexOf(genreInput)];
     runtime = $('#durationDropDown').val();
     console.log('vote_average = ' + vote_average + '  genre = ' + genre + '  runtime = ' + runtime);
@@ -181,8 +183,6 @@ var app = app || {};
     }
     topThreeCounter++;
   }
-
-
 
   console.log('isaac is here!');
   repos.all = [];

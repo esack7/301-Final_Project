@@ -199,6 +199,16 @@ li a:hover, footer a:hover {
   }
 }
 
+.aboutPic {
+  max-width: 20%;
+  max-height: 20%;
+  margin-right: 5%;
+}
+
+
+.concept {
+  margin-top: 5%;
+}
 html {
   /*background-color: red;*/
   background-image: url('images/mainBackground.jpg');
