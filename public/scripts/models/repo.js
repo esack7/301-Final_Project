@@ -187,18 +187,31 @@ var app = app || {};
   console.log('isaac is here!');
   repos.all = [];
   repos.requestMovie = function(callback) {
-    var settings = {
-      'async': true,
-      'crossDomain': true,
-      'url': query ,
-      'method': 'GET'
-    }
 
-    $.get(settings).then(function (response) {
+    let data = {}
+    data.with_genres = $('#genreDropDown').val()
+    data.with_runtime = $('#durationDropDown').val()
+    data.vote_average = $('#voteAverageDropDown').val()
+
+    $.get('/discover', data)
+    .then(function (response) {
       repos.all.push(response);
     })
     .then(callback);
-  };
+  }
+
+  // data.with_genres = $('#genreDropDown').val()
+  // data.with_runtime = $('#durationDropDown').val()
+  // data.vote_average = $('#voteAverageDropDown').val()
+  //
+  // let success = () => {}
+  // let error = () => {}
+  //
+  // console.log(data);
+  //
+  // $.get('/discover', data)
+  // .then(success => console.log('success', success), error => console.log('error', error))
+  // };
 
   module.repos = repos;
 })(app);
