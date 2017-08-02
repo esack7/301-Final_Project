@@ -5,6 +5,7 @@ var app = app || {};
   const repos = {};
 // vote average needs to take in a number with a decimal
   let vote_average;
+  let overview;
   // genre takes in movie genre...
   let genre;
   let genreInput;
@@ -27,6 +28,9 @@ var app = app || {};
     $('#top-three-one-title').html('');
     $('#top-three-two-title').html('');
     $('#top-three-three-title').html('');
+    $('#top-three-one-description').html('')
+    $('#top-three-two-description').html('')
+    $('#top-three-three-description').html('')
     $('#displayMovie').show();
     $('#main').hide();
     console.log('topThree BUTTON FIRED!!!');
@@ -36,6 +40,7 @@ var app = app || {};
     genre = '';
     genreInput = '';
     runtime = '';
+    overview = '';
     topThreeOne = '';
     topThreeTwo = '';
     topThreeThree = '';
@@ -48,7 +53,7 @@ var app = app || {};
     //this is way too complicated ..genre = $('genreDropDown').val gives you a number already to the right genre
     genre = Object.values(genreObject)[Object.keys(genreObject).indexOf(genreInput)];
     runtime = $('#durationDropDown').val();
-    console.log('vote_average = ' + vote_average + '  genre = ' + genre + '  runtime = ' + runtime);
+    console.log('vote_average = ' + vote_average + '  genre = ' + genre + '  runtime = ' + runtime + ' overview = ' + overview);
     query = 'https://api.themoviedb.org/3/discover/movie?api_key=8f303e30bafa7db2b3656c65726f874c&language=en-US&region=US&sort_by=vote_average.asc&include_adult=false&include_video=false&page=1&' + 'vote_average.lte=' + vote_average + '&with_genres=' + genreInput + '&with_runtime.gte=' + runtime;
     repos.requestMovie(randomTopThree);
     console.log(' ');
@@ -141,6 +146,7 @@ var app = app || {};
     console.log('appendTopThreeMovies FIRE FIRE FIRE!!!')
     $('#top-three-one-title').html(topThreeOne);
     $('#top-three-two-title').html(topThreeTwo);
+    $('#top-three-two-description').html(topThreeTwo)
     $('#top-three-three-title').html(topThreeThree);
     $('#displayMovie').show();
   }
@@ -161,8 +167,11 @@ var app = app || {};
 
   function randomTopThree() {
     $('#top-three-one-title').html('');
+    $('#top-three-one-description').html('')
     $('#top-three-two-title').html('');
+    $('#top-three-two-description').html('')
     $('#top-three-three-title').html('');
+    $('#top-three-three-description').html('')
     console.log('TOPTHREE movies FIRE!!! below listed!')
     console.log(topThreeOne, topThreeTwo, topThreeThree);
     if (topThreeCounter < 18) {
