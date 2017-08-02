@@ -2,8 +2,8 @@
 var app = app || {};
 
 
-let vote_average = 8
-let genre = 20
+let vote_average = 8;
+let genre = 12;
 let runtime = 90;
 
 
