@@ -7,6 +7,12 @@
   <meta charset="UTF-8">
   <title>Pick-A-Flick</title>
 
+  <!-- Mobile
+      _____________________________________________________ -->
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="HandheldFriendly" content="true">
+
   <!-- CSS
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
@@ -18,23 +24,9 @@
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet" type="text/css">
   <link href="style/global.css" rel="stylesheet" type="text/css">
+  <!-- <link href="style/skeleton.css" rel="stylesheet" type="text/css"> -->
+  <link href="style/mobile.css" rel="stylesheet" type="text/css">
 
-  <!-- Mobile Specific Metas
-        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Handlebars Script for movie choice
-        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <script id="movie-template" type="text/x-handlebars-template">
-    <li>
-      <a href="{{html_url}}" target="_blank">
-        <h3>{{original_title}}</h3>
-      </a>
-      <p>Description: {{description}}</p>
-      <p>Votes: {{vote_count}}</p>
-      <p>Created: {{release_date}}</p>
-    </li>
-  </script>
-</head>
 
 
 <!-- Navigation Bar
