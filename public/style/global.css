@@ -1,21 +1,3 @@
-a { color:gray } /* Globally */
-
-/* Each state */
-
-a:visited { text-decoration: none; color: gray; }
-a:hover { text-decoration: none; color:blue; }
-a:focus { text-decoration: none; color:yellow; }
-a:hover, a:active { text-decoration: none; color: white; }
-
-html, body {
-  font-size: 16px;
-  font-family: 'Fira Sans', sans-serif;
-  height: 100%;
-}
-header {
-  display: block;
-  width: 100%;
-}
 .subpage {
   width: 100%;
   min-height: 43.75rem;
@@ -89,8 +71,8 @@ nav a {
 }
 .homepage {
 background-image: url(../images/header_img1.jpg);
-height: 100%
-max-width: 1980px;
+height: 100%;
+max-width: 100%;
 background-attachment: fixed;
 /*display: relative;*/
 background-position: center;
@@ -162,16 +144,16 @@ footer {
 .bio{
   display: flex;
   flex-direction: row;
-  font-size: 18px;
+  font-size: 18rem;
 }
 
 .bio img {
   border: 4px solid white;
-  margin-bottom: 35px;
+  margin-bottom: 35rem;
 }
 
 .bioInfoBox{
-  margin-top: 30px;
+  margin-top: 30rem;
 }
 .bioInfoBox h2{
   text-align: center;
@@ -192,7 +174,7 @@ li a:hover, footer a:hover {
 }
 
 /****************For Desktop****************/
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768rem) {
   .welcome-text {
     width: 50rem;
     padding: 2rem 5rem;
@@ -220,7 +202,7 @@ html {
 
 ol {
   text-align: center;
-  width:200px;
+  width:200rem;
   margin:0 auto;
 }
 .button {
@@ -246,16 +228,6 @@ ol {
 
 #log-out {
   color: white;
-}
-
-.button:hover {
-  background: rgb(105,190,40);
-  background-image: -webkit-linear-gradient(top, rgb(105,190,40), rgb(105,190,40));
-  background-image: -moz-linear-gradient(top, rgb(105,190,40), rgb(105,190,40));
-  background-image: -ms-linear-gradient(top, rgb(105,190,40), rgb(105,190,40));
-  background-image: -o-linear-gradient(top, rgb(105,190,40), rgb(105,190,40));
-  background-image: linear-gradient(to bottom, rgb(105,190,40), rgb(105,190,40));
-  text-decoration: none;
 }
 
 .form-results h2 {

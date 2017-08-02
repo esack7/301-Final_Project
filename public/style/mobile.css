@@ -45,3 +45,46 @@ there.
         content: attr(data-src-800px, url);
     }
 }
+
+
+//for screens smaller than 456px
+@media only screen and (max-width: 456px) {
+  h1 {
+    font-size: 2em;
+  }
+  .icon-camera {
+    font-size: 1.8em;
+  }
+  .icon-menu {
+    font-size: 2em;
+  }
+  header p {
+    font-size: 1em;
+    right: 56px;
+    bottom: 32%
+  }
+  #menu.active {
+    li {
+      margin: 0 3vw;
+    }
+  }
+}
+for screens larger than 640px
+@media only screen and (min-width: 640px) {
+  .icon-menu {
+    display: none;
+  }
+  #menu {
+  display: inline-block;
+  position: absolute;
+  right: 85px;
+  bottom: 38%;
+    li {
+      display: inline-block;
+      margin-right: 10px;
+    }
+  }
+  header p {
+    right: 15px;
+  }
+}

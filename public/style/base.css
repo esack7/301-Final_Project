@@ -1,0 +1,18 @@
+a { color:gray } /* Globally */
+
+/* Each state */
+
+a:visited { text-decoration: none; color: gray; }
+a:hover { text-decoration: none; color:blue; }
+a:focus { text-decoration: none; color:yellow; }
+a:hover, a:active { text-decoration: none; color: white; }
+
+html, body {
+  font-size: 16px;
+  font-family: 'Fira Sans', sans-serif;
+  height: 100%;
+}
+header {
+  display: block;
+  width: 100%;
+}   
