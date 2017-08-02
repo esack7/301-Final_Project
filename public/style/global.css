@@ -1,11 +1,12 @@
 a { color:gray } /* Globally */
 
 /* Each state */
-
+/*
 a:visited { text-decoration: none; color: gray; }
 a:hover { text-decoration: none; color:blue; }
 a:focus { text-decoration: none; color:yellow; }
-a:hover, a:active { text-decoration: none; color: white; }
+a:hover, a:active { text-decoration: none; color: white; }*/
+
 
 html, body {
   font-size: 16px;
@@ -74,6 +75,7 @@ nav a {
 }
 .hpsection{
   margin-bottom: 120px;
+  max-width: 100%;
 }
 .main {
   max-width:60rem;
@@ -101,6 +103,7 @@ margin: 0 auto;
   padding-top: 5rem;
 }
 .welcome-text {
+  max-width: 100%;
   width: 70rem;
   margin: 0 auto;
   padding: 1rem 2rem;
@@ -191,6 +194,41 @@ li a:hover, footer a:hover {
   font-size: 1.5rem;
 }
 
+.button {
+  background: white;
+  box-shadow: 0px 1px 3px #666666;
+  font-family: Arial;
+  color: black;
+  font-size: 30px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+#log-out {
+  color: white;
+}
+
+.button:hover {
+  background: rgb(105,190,40);
+  background-image: -webkit-linear-gradient(top, rgb(105,190,40), rgb(105,190,40));
+  background-image: -moz-linear-gradient(top, rgb(105,190,40), rgb(105,190,40));
+  background-image: -ms-linear-gradient(top, rgb(105,190,40), rgb(105,190,40));
+  background-image: -o-linear-gradient(top, rgb(105,190,40), rgb(105,190,40));
+  background-image: linear-gradient(to bottom, rgb(105,190,40), rgb(105,190,40));
+  text-decoration: none;
+}
+
+#login-form fieldset {
+  float: left;
+}
+
+fieldset select {
+  background-color: white;
+}
+
+p button {
+  background-color: white;
+}
 /****************For Desktop****************/
 @media screen and (min-width: 768px) {
   .welcome-text {
