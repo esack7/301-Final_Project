@@ -6,6 +6,7 @@ var app = app || {};
 
   aboutController.init = function (){
     $('#tab-content').hide();
+    $('footer').hide();
     $('#about').show();
 
 
