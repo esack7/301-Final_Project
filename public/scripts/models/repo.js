@@ -131,6 +131,11 @@ var app = app || {};
     console.log('Choosing and APPENDING randome MOVIE');
     randomMovie = Object.values(Object.values(app.repos.all[0])[3][0])[4];
     $('#random-movie-title').html(randomMovie);
+    //THIS NEEDS TO BE FIXED TO BE THE APPROPRIATE MOVIE DESCRIPTION
+    let randomOverview = Object.values(Object.values(app.repos.all[0].results[0].overview));
+    $('#random-movie-overview').html(randomOverview);
+
+    $("<p><a href='https://www.netflix.com/search'><button>Take Me To Netflix</button></a></p>").appendTo('#random-movie-overview');
 
   }
 
@@ -177,6 +182,15 @@ var app = app || {};
     $('#top-three-one-title').html(topThreeOneTitle);
     $('#top-three-one-overview').html(topThreeOneOverview);
     $("<p><a href='https://www.netflix.com/search'><button>Take Me To Netflix</button></a></p>").appendTo('#top-three-one-overview');
+
+    //KIMMER USE THIS TO MESS WITH THE LOCAL STORAGE OBJECT
+    $('p:button').on('click', function(){
+      //AFTER UPDATING THE LOCAL STORAGE OBJECT WITH THE MOVIE CHOICE
+      //THEN RENDER TO "PAST MOVIE CHOICES" THE UPDATED LOCAL STORAGE OBJECT.
+    });
+
+
+
     // console.log('appending description 1');
     // console.log('description = ' + topThreeOneOverview);
     // console.log('image = ' + topThreeOneImg)
@@ -188,6 +202,13 @@ var app = app || {};
     $('#top-three-two-title').html(topThreeTwoTitle);
     $('#top-three-two-overview').html(topThreeTwoOverview);
     $("<p><a href='https://www.netflix.com/search'><button>Take Me To Netflix</button></a></p>").appendTo('#top-three-two-overview');
+
+    //KIMMER USE THIS TO MESS WITH THE LOCAL STORAGE OBJECT
+    $('p:button').on('click', function(){
+      //AFTER UPDATING THE LOCAL STORAGE OBJECT WITH THE MOVIE CHOICE
+      //THEN RENDER TO "PAST MOVIE CHOICES" THE UPDATED LOCAL STORAGE OBJECT.
+    });
+
     // console.log('appending description 2');
     // console.log('description = ' + topThreeTwoOverview);
 
@@ -195,6 +216,12 @@ var app = app || {};
     $('#top-three-three-title').html(topThreeThreeTitle);
     $('#top-three-three-overview').html(topThreeThreeOverview);
     $("<p><a href='https://www.netflix.com/search'><button>Take Me To Netflix</button></a></p>").appendTo('#top-three-three-overview');
+
+    //KIMMER USE THIS TO MESS WITH THE LOCAL STORAGE OBJECT
+    $('p:button').on('click', function(){
+      //AFTER UPDATING THE LOCAL STORAGE OBJECT WITH THE MOVIE CHOICE
+      //THEN RENDER TO "PAST MOVIE CHOICES" THE UPDATED LOCAL STORAGE OBJECT.
+    });
     // console.log('appending description 3');
     // console.log('description = ' + topThreeThreeOverview);
 
