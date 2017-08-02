@@ -166,12 +166,14 @@ var app = app || {};
     $('#top-three-two-title').html(topThreeTwoTitle);
     console.log('appending description 2');
     console.log('description = ' + topThreeTwoOverview);
+    $('#top-three-two-overview').html(topThreeTwoOverview);
 
     //Appending the second movie picks attributes
-    $('#top-three-three-overview').html(topThreeThreeOverview);
+    $('#top-three-three-title').html(topThreeThreeTitle);
     console.log('appending description 3');
     console.log('description = ' + topThreeThreeOverview);
-    $('#top-three-three-title').html(topThreeThreeTitle);
+    $('#top-three-three-overview').html(topThreeThreeOverview);
+
     $('#displayMovie').show();
   }
 
@@ -191,25 +193,29 @@ var app = app || {};
 
   function randomTopThree() {
     $('#top-three-one-title').html('');
-    $('#top-three-one-description').html('')
+    $('#top-three-one-overview').html('')
     $('#top-three-two-title').html('');
-    $('#top-three-two-description').html('')
+    $('#top-three-two-overview').html('')
     $('#top-three-three-title').html('');
-    $('#top-three-three-description').html('')
+    $('#top-three-three-overview').html('')
     console.log('TOPTHREE movies FIRE!!! below listed!')
     console.log(topThreeOneTitle, topThreeTwoTitle, topThreeThreeTitle);
     if (topThreeCounter < 18) {
       //selecting top three one - title - description - image
       topThreeOneTitle = Object.values(Object.values(app.repos.all[0])[3][topThreeCounter])[4];
       topThreeOneOverview = Object.values(Object.values(app.repos.all[0])[3][topThreeCounter])[12];
+      topThreeOneImg = Object.values(Object.values(app.repos.all[0])[3][topThreeCounter])[6];
       topThreeCounter++;
       //selecting top three two - title - description - image
       topThreeTwoTitle = Object.values(Object.values(app.repos.all[0])[3][topThreeCounter])[4]
       topThreeTwoOverview = Object.values(Object.values(app.repos.all[0])[3][topThreeCounter])[12];
+      topThreeTwoImg = Object.values(Object.values(app.repos.all[0])[3][topThreeCounter])[6];
       topThreeCounter++;
       //selecting top three three - title - description - image
       topThreeThreeTitle = Object.values(Object.values(app.repos.all[0])[3][topThreeCounter])[4]
-      topThreeThreeOverview = Object.values(Object.values(app.repos.all[0])[3][topThreeCounter])[4]
+      topThreeThreeOverview = Object.values(Object.values(app.repos.all[0])[3][topThreeCounter])[12]
+      topThreeThreeImg = Object.values(Object.values(app.repos.all[0])[3][topThreeCounter])[6];
+
       appendTopThreeMovies();
     } else {
       topThreeCounter = 0;
