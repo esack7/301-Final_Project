@@ -199,6 +199,24 @@ li a:hover, footer a:hover {
   }
 }
 
+.bio {
+  margin: 7% 0% 7% 0%;
+}
+.aboutPic {
+  max-width: 27%;
+  max-height: 20%;
+  margin-right: 5%;
+  opacity: 100;
+}
+
+#login-form fieldset {
+  float: right;
+  margin-top: -3em;
+}
+
+.concept {
+  margin-top: 5%;
+}
 html {
   /*background-color: red;*/
   background-image: url('images/mainBackground.jpg');
@@ -249,3 +267,14 @@ ol {
 }
 .hidden {
   display: none; }
+
+
+footer {
+  background-color: #000;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  text-align: center;
+}
