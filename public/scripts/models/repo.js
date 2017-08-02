@@ -161,6 +161,7 @@ var app = app || {};
     console.log('appending description 1');
     console.log('description = ' + topThreeOneOverview);
     $('#top-three-one-overview').html(topThreeOneOverview);
+    $('top-three-one-img').html(topThreeOneImg);
 
     //Appending the second movie picks attributes
     $('#top-three-two-title').html(topThreeTwoTitle);
@@ -168,7 +169,7 @@ var app = app || {};
     console.log('description = ' + topThreeTwoOverview);
     $('#top-three-two-overview').html(topThreeTwoOverview);
 
-    //Appending the second movie picks attributes
+    //Appending the third movie picks attributes
     $('#top-three-three-title').html(topThreeThreeTitle);
     console.log('appending description 3');
     console.log('description = ' + topThreeThreeOverview);
