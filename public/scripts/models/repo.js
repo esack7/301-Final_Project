@@ -5,6 +5,9 @@ var app = app || {};
   const repos = {};
 // vote average needs to take in a number with a decimal
   let vote_average;
+
+
+
   // genre takes in movie genre...
   let genre;
   let genreInput;
@@ -14,9 +17,19 @@ var app = app || {};
   let runtime;
   let query;
 
-  let topThreeOne;
-  let topThreeTwo;
-  let topThreeThree;
+//first movie pic attributes
+  let topThreeOneTitle;
+  let topThreeOneOverview;
+  let topThreeOneImg;
+//second movie pic attributes
+  let topThreeTwoTitle;
+  let topThreeTwoOverview;
+  let topThreeTwoImg;
+  //third movie pic attributes
+  let topThreeThreeTitle;
+  let topThreeThreeOverview;
+  let topThreeThreeImg;
+
   let topThreeCounter;
   let randomMovie;
 
@@ -27,6 +40,9 @@ var app = app || {};
     $('#top-three-one-title').html('');
     $('#top-three-two-title').html('');
     $('#top-three-three-title').html('');
+    $('#top-three-one-overview').html('')
+    $('#top-three-two-overview').html('')
+    $('#top-three-three-overview').html('')
     $('#displayMovie').show();
     $('#main').hide();
     console.log('topThree BUTTON FIRED!!!');
@@ -36,9 +52,9 @@ var app = app || {};
     genre = '';
     genreInput = '';
     runtime = '';
-    topThreeOne = '';
-    topThreeTwo = '';
-    topThreeThree = '';
+    topThreeOneTitle = '';
+    topThreeTwoTitle = '';
+    topThreeThreeTitle = '';
     console.log('app.repos.all is CLEARED!');
     event.preventDefault();
     vote_average = $('#voteAverageDropDown').val();
@@ -49,7 +65,7 @@ var app = app || {};
     genre = Object.values(genreObject)[Object.keys(genreObject).indexOf(genreInput)];
     runtime = $('#durationDropDown').val();
     console.log('vote_average = ' + vote_average + '  genre = ' + genre + '  runtime = ' + runtime);
-    query = 'https://api.themoviedb.org/3/discover/movie?api_key=8f303e30bafa7db2b3656c65726f874c&language=en-US&sort_by=vote_average.asc&include_adult=false&include_video=false&page=1&' + 'vote_average.lte=' + vote_average + '&with_genres=' + genreInput + '&with_runtime.gte=' + runtime;
+    query = 'https://api.themoviedb.org/3/discover/movie?api_key=8f303e30bafa7db2b3656c65726f874c&language=en-US&region=US&sort_by=vote_average.asc&include_adult=false&include_video=false&page=1&' + 'vote_average.lte=' + vote_average + '&with_genres=' + genreInput + '&with_runtime.gte=' + runtime;
     repos.requestMovie(randomTopThree);
     console.log(' ');
   });
@@ -69,7 +85,7 @@ var app = app || {};
     console.log('RANDOM Variables below')
     randomizeValues();
     console.log('vote_average = ' + vote_average + '  genre = ' + genre + '  runtime = ' + runtime);
-    query = 'https://api.themoviedb.org/3/discover/movie?api_key=8f303e30bafa7db2b3656c65726f874c&language=en-US&sort_by=vote_average.asc&include_adult=false&include_video=false&page=1&' + 'vote_average.lte=' + vote_average + '&with_genres=' + genreInput + '&with_runtime.gte=' + runtime;
+    query = 'https://api.themoviedb.org/3/discover/movie?api_key=8f303e30bafa7db2b3656c65726f874c&language=en-US&region=US&sort_by=vote_average.asc&include_adult=false&include_video=false&page=1&' + 'vote_average.lte=' + vote_average + '&with_genres=' + genreInput + '&with_runtime.gte=' + runtime;
     repos.requestMovie(appendRandomMovie);
     console.log(' ');
   });
@@ -89,7 +105,7 @@ var app = app || {};
     console.log('RANDOM Variables below')
     randomizeValues();
     console.log('vote_average = ' + vote_average + '  genre = ' + genre + '  runtime = ' + runtime);
-    query = 'https://api.themoviedb.org/3/discover/movie?api_key=8f303e30bafa7db2b3656c65726f874c&language=en-US&sort_by=vote_average.asc&include_adult=false&include_video=false&page=1&' + 'vote_average.lte=' + vote_average + '&with_genres=' + genreInput + '&with_runtime.gte=' + runtime;
+    query = 'https://api.themoviedb.org/3/discover/movie?api_key=8f303e30bafa7db2b3656c65726f874c&language=en-US&region=US&sort_by=vote_average.asc&include_adult=false&include_video=false&page=1&' + 'vote_average.lte=' + vote_average + '&with_genres=' + genreInput + '&with_runtime.gte=' + runtime;
     repos.requestMovie(appendRandomMovie);
     console.log(' ');
   });
@@ -132,16 +148,36 @@ var app = app || {};
     genre = Object.values(genreObject)[Object.keys(genreObject).indexOf(genreInput)];
     runtime = $('#durationDropDown').val();
     console.log('vote_average = ' + vote_average + '  genre = ' + genre + '  runtime = ' + runtime);
-    query = 'https://api.themoviedb.org/3/discover/movie?api_key=8f303e30bafa7db2b3656c65726f874c&language=en-US&sort_by=vote_average.asc&include_adult=false&include_video=false&page=1&' + 'vote_average.lte=' + vote_average + '&with_genres=' + genreInput + '&with_runtime.gte=' + runtime;
+    query = 'https://api.themoviedb.org/3/discover/movie?api_key=8f303e30bafa7db2b3656c65726f874c&language=en-US&region=US&sort_by=vote_average.asc&include_adult=false&include_video=false&page=1&' + 'vote_average.lte=' + vote_average + '&with_genres=' + genreInput + '&with_runtime.gte=' + runtime;
     repos.requestMovie(randomTopThree);
     console.log(' ');
   });
 
   let appendTopThreeMovies = () => {
     console.log('appendTopThreeMovies FIRE FIRE FIRE!!!')
-    $('#top-three-one-title').html(topThreeOne);
-    $('#top-three-two-title').html(topThreeTwo);
-    $('#top-three-three-title').html(topThreeThree);
+
+    //Appending the first movie picks attributes
+    $('#top-three-one-title').html(topThreeOneTitle);
+    console.log('appending description 1');
+    console.log('description = ' + topThreeOneOverview);
+    $('#top-three-one-overview').html(topThreeOneOverview);
+    console.log('image = ' + topThreeOneImg)
+    // https://image.tmdb.org/t/p/w500/+uX6yITcNgq81Z5q9sB1PN6ItcNG.jpg
+    // $('top-three-one-img').img(https://image.tmdb.org/t/p/w500/ + topThreeOneImg);
+    // $('#poster').html('<h2>Here is your poster </h2><img id="thePoster" src=' + json.results[0].posters[0].image.url+ '/> ')
+
+    //Appending the second movie picks attributes
+    $('#top-three-two-title').html(topThreeTwoTitle);
+    console.log('appending description 2');
+    console.log('description = ' + topThreeTwoOverview);
+    $('#top-three-two-overview').html(topThreeTwoOverview);
+
+    //Appending the third movie picks attributes
+    $('#top-three-three-title').html(topThreeThreeTitle);
+    console.log('appending description 3');
+    console.log('description = ' + topThreeThreeOverview);
+    $('#top-three-three-overview').html(topThreeThreeOverview);
+
     $('#displayMovie').show();
   }
 
@@ -161,30 +197,43 @@ var app = app || {};
 
   function randomTopThree() {
     $('#top-three-one-title').html('');
+    $('#top-three-one-overview').html('')
     $('#top-three-two-title').html('');
+    $('#top-three-two-overview').html('')
     $('#top-three-three-title').html('');
+    $('#top-three-three-overview').html('')
     console.log('TOPTHREE movies FIRE!!! below listed!')
-    console.log(topThreeOne, topThreeTwo, topThreeThree);
+    console.log(topThreeOneTitle, topThreeTwoTitle, topThreeThreeTitle);
     if (topThreeCounter < 18) {
-      topThreeOne = Object.values(Object.values(app.repos.all[0])[3][topThreeCounter])[4]
+      //selecting top three one - title - description - image
+      topThreeOneTitle = Object.values(Object.values(app.repos.all[0])[3][topThreeCounter])[4];
+      topThreeOneOverview = Object.values(Object.values(app.repos.all[0])[3][topThreeCounter])[12];
+      topThreeOneImg = Object.values(Object.values(app.repos.all[0])[3][topThreeCounter])[6];
       topThreeCounter++;
-      topThreeTwo = Object.values(Object.values(app.repos.all[0])[3][topThreeCounter])[4]
+      //selecting top three two - title - description - image
+      topThreeTwoTitle = Object.values(Object.values(app.repos.all[0])[3][topThreeCounter])[4]
+      topThreeTwoOverview = Object.values(Object.values(app.repos.all[0])[3][topThreeCounter])[12];
+      topThreeTwoImg = Object.values(Object.values(app.repos.all[0])[3][topThreeCounter])[6];
       topThreeCounter++;
-      topThreeThree = Object.values(Object.values(app.repos.all[0])[3][topThreeCounter])[4]
+      //selecting top three three - title - description - image
+      topThreeThreeTitle = Object.values(Object.values(app.repos.all[0])[3][topThreeCounter])[4]
+      topThreeThreeOverview = Object.values(Object.values(app.repos.all[0])[3][topThreeCounter])[12]
+      topThreeThreeImg = Object.values(Object.values(app.repos.all[0])[3][topThreeCounter])[6];
+
       appendTopThreeMovies();
     } else {
       topThreeCounter = 0;
-      topThreeOne = Object.values(Object.values(app.repos.all[0])[3][topThreeCounter])[4]
+      topThreeOneTitle = Object.values(Object.values(app.repos.all[0])[3][topThreeCounter])[4]
       topThreeCounter++;
-      topThreeTwo = Object.values(Object.values(app.repos.all[0])[3][topThreeCounter])[4]
+      topThreeTwoTitle = Object.values(Object.values(app.repos.all[0])[3][topThreeCounter])[4]
       topThreeCounter++;
-      topThreeThree = Object.values(Object.values(app.repos.all[0])[3][topThreeCounter])[4]
+      topThreeThreeTitle = Object.values(Object.values(app.repos.all[0])[3][topThreeCounter])[4]
       appendTopThreeMovies();
     }
     topThreeCounter++;
   }
 
-  console.log('isaac is here!');
+
   repos.all = [];
   repos.requestMovie = function(callback) {
     var settings = {

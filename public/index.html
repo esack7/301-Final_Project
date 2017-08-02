@@ -7,11 +7,16 @@
   <meta charset="UTF-8">
   <title>Pick-A-Flick</title>
 
+  <!-- Mobile
+      _____________________________________________________ -->
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="HandheldFriendly" content="true">
+
   <!-- CSS
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
   <link href="style/global.css" rel="stylesheet" type="text/css">
-
   <link rel="icon" type="image/png" href="style/images/favicon2.png">
 
 
@@ -20,69 +25,56 @@
   <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet" type="text/css">
   <link href="style/global.css" rel="stylesheet" type="text/css">
 
-  <!-- Mobile Specific Metas
-        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Handlebars Script for movie choice
-        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <script id="movie-template" type="text/x-handlebars-template">
-    <li>
-      <a href="{{html_url}}" target="_blank">
-        <h3>{{original_title}}</h3>
-      </a>
-      <p>Description: {{description}}</p>
-      <p>Votes: {{vote_count}}</p>
-      <p>Created: {{release_date}}</p>
-    </li>
-  </script>
-</head>
 
 
-<!-- Navigation Bar
+
+
+  <!-- Navigation Bar
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
-<body class="subpage">
-  <header>
-    <nav class="main-nav">
-      <ul>
-        <li class="tab" data-content="main"><a href="#">Home</a></li>
-        <li class="tab" data-content="pastChoices"><a href="#">Past Choices</a></li>
-        <li class="tab" data-content="about"><a href="#">About Us</a></li>
-      </ul>
-      <form id="login-form">
-        <fieldset>
-          <label for="username"></label>
-          <!-- put the input inside the label -->
-          <input id="username-input" name="username" type="text" placeholder="Username" />
-          <label id="password" for="password"></label>
-          <input id="password-input" name="password" type="password" placeholder="Password" />
-          <button id="submitButton" type="submit">Login</button>
-        </fieldset>
-      </form>
-      <form id="log-out">
-        <fieldset>
-          <label id="current-user" for="username"></label>
-          <!-- put the input inside the label -->
-          <label id="password" for="password"></label>
-          <button id="submitButton" type="submit">Log Out</button>
-        </fieldset>
-      </form>
-    </nav>
-  </header>
-
-
-
-
-  <!-- *********************Forms For PickaFlick********************* -->
-  <section class="hpsection" id="main" class="tab-content">
-    <div class="welcome-text">
-      <h1>Can't figure out what to watch?</h1>
-
-
-      <section>
-        <form id="pickAFlick">
+  <body class="subpage">
+    <header>
+      <nav class="main-nav">
+        <ul>
+          <li class="tab" data-content="main"><a href="#">Home</a></li>
+          <li class="tab" data-content="pastChoices"><a href="#">Past Choices</a></li>
+          <li class="tab" data-content="about"><a href="#">About Us</a></li>
+        </ul>
+        <!-- <img class="logo" src="style/images/logo.png" alt="logo"> -->
+        <form id="login-form">
           <fieldset>
-            <select class="pickDropDown" id="genreDropDown">
+            <label for="username"></label>
+            <!-- put the input inside the label -->
+            <input id="username-input" name="username" type="text" placeholder="Username" />
+            <label id="password" for="password"></label>
+            <input id="password-input" name="password" type="password" placeholder="Password" />
+            <button id="submitButton" type="submit">Login</button>
+          </fieldset>
+        </form>
+        <form id="log-out">
+          <fieldset>
+            <label id="current-user" for="username"></label>
+            <!-- put the input inside the label -->
+            <label id="password" for="password"></label>
+            <button id="submitButton" type="submit">Log Out</button>
+          </fieldset>
+        </form>
+      </nav>
+    </header>
+
+
+
+
+    <!-- *********************Forms For PickaFlick********************* -->
+    <section class="hpsection" id="main" class="tab-content">
+      <div class="welcome-text">
+        <h1>Can't figure out what to watch?</h1>
+
+
+        <section>
+          <form id="pickAFlick">
+            <fieldset>
+              <select class="pickDropDown" id="genreDropDown">
               <option>Genre</option>
           <option value="28">Action</option>
           <option value="12">Adventure</option>
@@ -107,7 +99,7 @@
 
 
 
-            <select class="pickDropDown" id="durationDropDown">
+              <select class="pickDropDown" id="durationDropDown">
               <option>Runtime</option>
             <option value="30">30 Minutes</option>
             <option value="60">60 Minutes</option>
@@ -116,7 +108,7 @@
           </select>
 
 
-            <select class="pickDropDown" id="voteAverageDropDown">
+              <select class="pickDropDown" id="voteAverageDropDown">
               <option>Average Rating</option>
         <option value="1">1</option>
         <option value="2">2</option>
@@ -129,170 +121,170 @@
         <option value="9">9</option>
         <option value="9.5">9.5</option>
   </select>
-          </fieldset>
-        </form>
-      </section>
-      <button class="button" type="button" id="topThree">Top 3</button>
-      <button class="button" type="button" id="random">Roulette</button>
-  </section>
-  <div class="push"></div>
-  </div>
+            </fieldset>
+          </form>
+        </section>
+        <button class="button" type="button" id="topThree">Top 3</button>
+        <button class="button" type="button" id="random">Roulette</button>
+    </section>
+    <div class="push"></div>
+    </div>
 
-  <!-- Display Page FOR TOP THREE!
+    <!-- Display Page FOR TOP THREE!
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <section class="hpsection" id="displayMovie" class="tab-content">
-    <div class="welcome-text">
-      <section id="movieContainer">
-        <button class="button" type="button" id="next-three">Next 3</button>
-        <button class="button" type="button" id="back-to-filters">Filters</button>
-        <h1 id="top-three-one-title">
+    <section class="hpsection" id="displayMovie" class="tab-content">
+      <div class="welcome-text">
+        <section id="movieContainer">
+          <button class="button" type="button" id="next-three">Next 3</button>
+          <button class="button" type="button" id="back-to-filters">Filters</button>
+          <h1 id="top-three-one-title">
         </h1>
-        <div id="movieIMG">
-          <h4>THIS WILL BE THE MOVIE IMG (CSS NEED APPLY)</h4>
           <div id="movieDescription">
-            <h4>THIS WILL BE THE MOVE DISPLAY PAGE</h4>
+            <p id="top-three-one-overview">
+            </p>
           </div>
-        </div>
-        <h1 id="top-three-two-title">
-        </h1>
-        <div id="movieIMG">
-          <h4>THIS WILL BE THE MOVIE IMG (CSS NEED APPLY)</h4>
-          <div id="movieDescription">
-            <h4>THIS WILL BE THE MOVE DISPLAY PAGE</h4>
-          </div>
-        </div>
-        <h1 id="top-three-three-title">
-        </h1>
-        <div id="movieIMG">
-          <h4>THIS WILL BE THE MOVIE IMG (CSS NEED APPLY)</h4>
-          <div id="movieDescription">
-            <h4>THIS WILL BE THE MOVE DISPLAY PAGE</h4>
-          </div>
-        </div>
-      </section>
+          <img class="movie poster" src="top-three-one-img">
 
-    </div>
-    </div>
-  </section>
+          <h1 id="top-three-two-title">
+      </h1>
+          <div id="movieDescription">
+            <p id="top-three-two-overview">
+            </p>
+          </div>
+          <img class="movie poster" src="top-three-two-img">
 
-  <!-- Display Page FOR TOP THREE!
+
+          <h1 id="top-three-three-title">
+    </h1>
+          <div id="movieDescription">
+            <p id="top-three-three-overview">
+            </p>
+          </div>
+          <img class="movie poster" src="top-three-three-img">
+
+        </section>
+
+      </div>
+      </div>
+    </section>
+
+    <!-- Display Page FOR TOP THREE!
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <section class="hpsection" id="displayRandomMovie" class="tab-content">
-    <div class="welcome-text">
-      <section id="movieContainer">
-        <button class="button" type="button" id="reroll">Reroll</button>
-        <button class="button" type="button" id="back-to-filters-two">Filters</button>
-        <h1 id="random-movie-title">
+    <section class="hpsection" id="displayRandomMovie" class="tab-content">
+      <div class="welcome-text">
+        <section id="movieContainer">
+          <button class="button" type="button" id="reroll">Reroll</button>
+          <button class="button" type="button" id="back-to-filters-two">Filters</button>
+          <h1 id="random-movie-title">
         </h1>
-        <div id="movieIMG">
-          <h4>THIS WILL BE THE MOVIE IMG (CSS NEED APPLY)</h4>
-          <div id="movieDescription">
-            <h4>THIS WILL BE THE MOVE DISPLAY PAGE</h4>
+          <div id="movieIMG">
+            <h4>THIS WILL BE THE MOVIE IMG (CSS NEED APPLY)</h4>
+            <div id="movieDescription">
+              <h4>THIS WILL BE THE MOVE DISPLAY PAGE</h4>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-    </div>
-    </div>
-  </section>
+      </div>
+      </div>
+    </section>
 
 
-  <!-- Past Movies Page
+    <!-- Past Movies Page
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
-  <section class="hpsection" id="pastChoices" class="tab-content">
-    <div class="welcome-text">
-      <section id="movieContainer">
-        <div id="movieIMG">
-          <h4>THIS WILL BE THE PAST MOVIE CHOICES</h4>
-          <div id="movieDescription">
+    <section class="hpsection" id="pastChoices" class="tab-content">
+      <div class="welcome-text">
+        <section id="movieContainer">
+          <div id="movieIMG">
             <h4>THIS WILL BE THE PAST MOVIE CHOICES</h4>
+            <div id="movieDescription">
+              <h4>THIS WILL BE THE PAST MOVIE CHOICES</h4>
+            </div>
           </div>
-        </div>
-      </section>
-    </div>
-  </section>
+        </section>
+      </div>
+    </section>
 
-  <!-- About us page
+    <!-- About us page
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <section class="hpsection" id="about" class="tab-content">
-    <div class="welcome-text">
-      <div class="bio">
-        <img class="aboutPic" src="style/images/Shaun.jpg" alt="Shaun Wahle">
-        <div class="bioInfoBoxShaun">
-          <h2>Shaun Wahle</h2>
+    <section class="hpsection" id="about" class="tab-content">
+      <div class="welcome-text">
+        <div class="bio">
+          <img class="aboutPic" src="style/images/Shaun.jpg" alt="Shaun Wahle">
+          <div class="bioInfoBoxShaun">
+            <h2>Shaun Wahle</h2>
 
-          <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+            <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
             irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h4>
 
+          </div>
         </div>
-      </div>
 
-      <div class="bio">
-        <img class="aboutPic" src="style/images/Gavin.jpg" id="gavin">
-        <div class="bioInfoBoxGavin">
-          <h2 class="nameHeader">Gavin Thomas</h2>
+        <div class="bio">
+          <img class="aboutPic" src="style/images/Gavin.jpg" id="gavin">
+          <div class="bioInfoBoxGavin">
+            <h2 class="nameHeader">Gavin Thomas</h2>
 
           <h4>Born and raised locally on sustainable Washington ground. I have a passion for coding and never thought I'd fall in love again. Everytime my fingers start typing I can't stop. Nothing beats the feeling you get when finally define that undefined. I will graduate from Code Fellows 401 Javascript and take my knowledge to my next job where I will create a better community for all.</h4>
 
+          </div>
         </div>
-      </div>
 
-      <div class="bio">
-        <img class="aboutPic" src="style/images/Kimmer.jpg" alt="Kimmer">
-        <div class="bioInfoBoxGavin">
-          <h2>Kimmer Imabadaz</h2>
+        <div class="bio">
+          <img class="aboutPic" src="style/images/Kimmer.jpg" alt="Kimmer">
+          <div class="bioInfoBoxGavin">
+            <h2>Kimmer Imabadaz</h2>
 
-          <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+            <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
           irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </h4>
 
+          </div>
         </div>
-      </div>
 
-      <div class="bio">
-        <img class="aboutPic" src="style/images/Isaac.jpg" alt="Isaac">
-        <div class="bioInfoBoxGavin">
-          <h2>Isaac Heist</h2>
+        <div class="bio">
+          <img class="aboutPic" src="style/images/Isaac.jpg" alt="Isaac">
+          <div class="bioInfoBoxGavin">
+            <h2>Isaac Heist</h2>
 
-          <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+            <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
           irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h4>
 
+          </div>
+        </div>
+
+        <div class="concept">
+          <h3>About the App</h3>
+          <p><strong>Project Concept</strong>: A site that helps everyday users choose an exercise that meets their needs!
+          </p>
+        </div>
+
+        <div class="domain-model">
+          <p><strong>Project Domain Model</strong>: This app allows the user to create objects for each exercise and ask user to indicate which criteria are important to them. Behind the scenes, we score each exercise. At the end, sort on score and display
+            exercise results. Allow user to navigate to a page about the exercise that they choose or a exercise based on our function. On each exercise page show youtube video and data about the exercise.
+          </p>
         </div>
       </div>
-
-      <div class="concept">
-        <h3>About the App</h3>
-        <p><strong>Project Concept</strong>: A site that helps everyday users choose an exercise that meets their needs!
-        </p>
-      </div>
-
-      <div class="domain-model">
-        <p><strong>Project Domain Model</strong>: This app allows the user to create objects for each exercise and ask user to indicate which criteria are important to them. Behind the scenes, we score each exercise. At the end, sort on score and display
-          exercise results. Allow user to navigate to a page about the exercise that they choose or a exercise based on our function. On each exercise page show youtube video and data about the exercise.
-        </p>
-      </div>
-    </div>
-  </section>
+    </section>
 
 
 
-  <footer>Copyright &copy; 2017 <a href="about.html">Pick-A-Flick</a></footer>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <footer>Copyright &copy; 2017 <a href="about.html">Pick-A-Flick</a></footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
-  <script src="vendor/scripts/handlebars.js"></script>
-  <script src="vendor/scripts/marked.js"></script>
-  <script src="vendor/scripts/page.js"></script>
-  <script src="scripts/controllers/pickscontroller.js"></script>
-  <script src="scripts/controllers/resultscontroller.js"></script>
-  <script src="scripts/controllers/aboutController.js"></script>
-  <script src="scripts/controllers/routes.js"></script>
-  <script src="scripts/controllers/login.js"></script>
-  <script src="scripts/controllers/picks.js"></script>
-  <script src="scripts/models/repo.js"></script>
-  <script src="scripts/models/results.js"></script>
-  <script src="scripts/views/resultsview.js"></script>
-  <!-- Our request call  -->
-</body>
+    <script src="vendor/scripts/handlebars.js"></script>
+    <script src="vendor/scripts/marked.js"></script>
+    <script src="vendor/scripts/page.js"></script>
+    <script src="scripts/controllers/pickscontroller.js"></script>
+    <script src="scripts/controllers/resultscontroller.js"></script>
+    <script src="scripts/controllers/aboutController.js"></script>
+    <script src="scripts/controllers/routes.js"></script>
+    <script src="scripts/controllers/login.js"></script>
+    <script src="scripts/controllers/picks.js"></script>
+    <script src="scripts/models/repo.js"></script>
+    <script src="scripts/views/resultsview.js"></script>
+    <!-- Our request call  -->
+  </body>
 
 </html>
