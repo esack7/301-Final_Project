@@ -18,9 +18,7 @@
   },
   "homepage": "https://github.com/esack7/301-Final_Project#readme",
   "dependencies": {
-    "body-parser": "^1.17.2",
     "express": "^4.15.3",
-    "express-request-proxy": "^2.0.0",
-    "pg": "^7.0.2"
+    "superagent": "^3.5.2"
   }
 }
