@@ -161,7 +161,10 @@ var app = app || {};
     console.log('appending description 1');
     console.log('description = ' + topThreeOneOverview);
     $('#top-three-one-overview').html(topThreeOneOverview);
-    $('top-three-one-img').html(topThreeOneImg);
+    console.log('image = ' + topThreeOneImg)
+    // https://image.tmdb.org/t/p/w500/+uX6yITcNgq81Z5q9sB1PN6ItcNG.jpg
+    // $('top-three-one-img').img(https://image.tmdb.org/t/p/w500/ + topThreeOneImg);
+    // $('#poster').html('<h2>Here is your poster </h2><img id="thePoster" src=' + json.results[0].posters[0].image.url+ '/> ')
 
     //Appending the second movie picks attributes
     $('#top-three-two-title').html(topThreeTwoTitle);
