@@ -17,6 +17,8 @@ var app = app || {};
 
 
   $('#topThree').click(function (event) {
+    $('#tab-content').hide();
+    $('#displayMovie').show();
     console.log('topThree BUTTON FIRED!!!');
     repos.all = [];
     console.log('app.repos.all is CLEARED!');
@@ -25,6 +27,7 @@ var app = app || {};
     genreInput = $('#genreDropDown').val();
     console.log(genreObject);
     console.log('genreInput = ' + genreInput);
+    //this is way too complicated ..genre = $('genreDropDown').val gives you a number already to the right genre
     genre = Object.values(genreObject)[Object.keys(genreObject).indexOf(genreInput)];
     runtime = $('#durationDropDown').val();
     console.log('vote_average = ' + vote_average + '  genre = ' + genre + '  runtime = ' + runtime);
@@ -32,7 +35,36 @@ var app = app || {};
     repos.requestMovie();
     console.log(' ');
     console.log(repos.all);
+    //];*************Gavin's attempt at dom rendering];*************
+
+
+    function NewMovie(rawDataObj) {
+
+      Object.keys(rawDataObj).forEach(key => this[key] = rawDataObj[key]);
+    }
+
+    NewMovie.toHtml = function() {
+
+      var source = $('#movie-template').html();
+      var comp = Handlebars.compile(source);
+      return comp(this);
+
+    };
+
+
+    app.repos.all[0].results.map(ele => new NewMovie(ele)).map(function(pro) {
+      $('#movieContainer').append(pro.toHtml());
+    })
+
+    $('#movieContainer').append(app.repos.all[0].results[1].title.text)
+
+
+
+
+    // app.repos.all[0].results[0]
   });
+
+  // *************app.repos.all[0].results[0];*************This also gives you the first movie without all the object nonsense.
 
   // function randomTopThree() {
   //   console.log(Object.values(Object.values(app.repos.all[0])[3][0])[4])
