@@ -205,7 +205,10 @@ li a:hover, footer a:hover {
   margin-right: 5%;
 }
 
-
+#login-form fieldset {
+  float: right;
+  margin-top: -3em;
+}
 
 .concept {
   margin-top: 5%;
