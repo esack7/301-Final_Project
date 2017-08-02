@@ -3,6 +3,7 @@ var app = app || {};
 
 (function(module) {
   const repos = {};
+  repos.all = [];
 // vote average needs to take in a number with a decimal
   let vote_average;
 
@@ -15,7 +16,6 @@ var app = app || {};
   let randomNumberForGenre;
   // runtime
   let runtime;
-  let query;
 
 //first movie pic attributes
   let topThreeOneTitle;
@@ -65,7 +65,6 @@ var app = app || {};
     genre = Object.values(genreObject)[Object.keys(genreObject).indexOf(genreInput)];
     runtime = $('#durationDropDown').val();
     console.log('vote_average = ' + vote_average + '  genre = ' + genre + '  runtime = ' + runtime);
-    query = 'https://api.themoviedb.org/3/discover/movie?api_key=8f303e30bafa7db2b3656c65726f874c&language=en-US&region=US&sort_by=vote_average.asc&include_adult=false&include_video=false&page=1&' + 'vote_average.lte=' + vote_average + '&with_genres=' + genreInput + '&with_runtime.gte=' + runtime;
     repos.requestMovie(randomTopThree);
     console.log(' ');
   });
@@ -85,7 +84,7 @@ var app = app || {};
     console.log('RANDOM Variables below')
     randomizeValues();
     console.log('vote_average = ' + vote_average + '  genre = ' + genre + '  runtime = ' + runtime);
-    query = 'https://api.themoviedb.org/3/discover/movie?api_key=8f303e30bafa7db2b3656c65726f874c&language=en-US&region=US&sort_by=vote_average.asc&include_adult=false&include_video=false&page=1&' + 'vote_average.lte=' + vote_average + '&with_genres=' + genreInput + '&with_runtime.gte=' + runtime;
+
     repos.requestMovie(appendRandomMovie);
     console.log(' ');
   });
@@ -105,7 +104,6 @@ var app = app || {};
     console.log('RANDOM Variables below')
     randomizeValues();
     console.log('vote_average = ' + vote_average + '  genre = ' + genre + '  runtime = ' + runtime);
-    query = 'https://api.themoviedb.org/3/discover/movie?api_key=8f303e30bafa7db2b3656c65726f874c&language=en-US&region=US&sort_by=vote_average.asc&include_adult=false&include_video=false&page=1&' + 'vote_average.lte=' + vote_average + '&with_genres=' + genreInput + '&with_runtime.gte=' + runtime;
     repos.requestMovie(appendRandomMovie);
     console.log(' ');
   });
@@ -123,7 +121,7 @@ var app = app || {};
     randomGenreObject = {1 : {'28': 'Action'}, 2 :  {'12': 'Adventure'}, 3 : {'16': 'Animation'}, 4 : {'35': 'Comedy'}, 5 : { '80': 'Crime'}, 6 : {'99': 'Documentary'}, 7 : {'18': 'Drama'}, 8 : {'10751': 'Family'}, 9 : {'14': 'Fantasy'}, 10 : {'36': 'History'}, 11 : {'27': 'Horror'}, 12 : {10402: 'Music'}, 13 : {9648: 'Mystery'}, 14 : {10749: 'Romance'}, 15 : {878: 'Science Fiction'}, 16 : {10770: 'TV Movie'}, 17 : {53: 'Thriller'}, 18 : {10752: 'War'}, 19 : {37: 'Western'}};
 
     randomNumberForGenre = Math.ceil(Math.random() * 19)
-    // console.log('random genre = ' + Object.keys(Object.values(randomizableGenreObject)[randomNumberForGenre])[0]);
+
     genreInput = Object.keys(Object.values(randomGenreObject)[randomNumberForGenre])[0]
 
     // Our random rating
@@ -148,7 +146,7 @@ var app = app || {};
     genre = Object.values(genreObject)[Object.keys(genreObject).indexOf(genreInput)];
     runtime = $('#durationDropDown').val();
     console.log('vote_average = ' + vote_average + '  genre = ' + genre + '  runtime = ' + runtime);
-    query = 'https://api.themoviedb.org/3/discover/movie?api_key=8f303e30bafa7db2b3656c65726f874c&language=en-US&region=US&sort_by=vote_average.asc&include_adult=false&include_video=false&page=1&' + 'vote_average.lte=' + vote_average + '&with_genres=' + genreInput + '&with_runtime.gte=' + runtime;
+
     repos.requestMovie(randomTopThree);
     console.log(' ');
   });
@@ -234,7 +232,6 @@ var app = app || {};
   }
 
 
-  repos.all = [];
   repos.requestMovie = function(callback) {
 
     let data = {}
@@ -248,19 +245,6 @@ var app = app || {};
     })
     .then(callback);
   }
-
-  // data.with_genres = $('#genreDropDown').val()
-  // data.with_runtime = $('#durationDropDown').val()
-  // data.vote_average = $('#voteAverageDropDown').val()
-  //
-  // let success = () => {}
-  // let error = () => {}
-  //
-  // console.log(data);
-  //
-  // $.get('/discover', data)
-  // .then(success => console.log('success', success), error => console.log('error', error))
-  // };
 
   module.repos = repos;
 })(app);
