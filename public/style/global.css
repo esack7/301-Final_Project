@@ -274,3 +274,13 @@ footer {
   padding: 1rem;
   text-align: center;
 }
+
+.logo {
+  width: 150px;
+  height: 100px;
+  max-width: 27%;
+  max-height: 20%;
+  margin-right: 5%;
+  position: relative;
+
+}
