@@ -207,7 +207,7 @@ var app = app || {};
     $('#top-three-two-overview').html(topThreeTwoOverview);
 
 
-    let path2 = "https:image.tmdb.org/t/p/w500" + topThreeTwoImg;
+    let path2 = "https://image.tmdb.org/t/p/w500" + topThreeTwoImg;
 
 
     $('#top-three-two-img').attr("src", path2)
@@ -222,7 +222,7 @@ var app = app || {};
     $('#top-three-three-overview').html(topThreeThreeOverview);
     // $("<p><a href='https://www.netflix.com/search'><button>Take Me To Netflix</button></a></p>").appendTo('#takeMe2');
 
-    let path3 = "https:image.tmdb.org/t/p/w500" + topThreeThreeImg;
+    let path3 = "https://image.tmdb.org/t/p/w500" + topThreeThreeImg;
 
 
     $('#top-three-three-img').attr("src", path3)
