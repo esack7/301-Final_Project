@@ -313,6 +313,7 @@ $('#qTwoAnswer-three').click(function (event) {
   console.log('answer2 = ' + answer2);
 
   $('#second-question').hide();
+  timer = setTimeout(mathTimedOut, 10000);
   appendQuestionThreeELEMENTS();
 });
 
@@ -327,6 +328,7 @@ $('#qTwoAnswer-four').click(function (event) {
   console.log('answer2 = ' + answer2);
 
   $('#second-question').hide();
+  timer = setTimeout(mathTimedOut, 10000);
   appendQuestionThreeELEMENTS();
 });
 
@@ -339,7 +341,6 @@ function appendQuestionThreeELEMENTS() {
   } else {
     $('#math-question').show();
     console.log('were inside the else part === show MATH');
-    setTimeout(mathTimedOut, 10000);
   }
   return;
 }
@@ -347,7 +348,6 @@ function appendQuestionThreeELEMENTS() {
 // THIS IS THE FUNCTIONALITY FOR THE MATH TIMER!!! CALLED IN THE IF STATEMENT ABOVE
 function mathTimedOut() {
   // This has to do with canceling out the math TIMER
-  // timer = setTimeout(mathTimedOut, 10000);
   console.log('times UP!');
   console.log('TIMED OUT FUNCTION CALLED FIRE!!! FIRE!!! FIRE!!! FIRE!!! FIRE!!! FIRE!!! FIRE!!! FIRE!!! FIRE!!! FIRE!!! FIRE!!! FIRE!!! FIRE!!! FIRE!!! FIRE!!! FIRE!!! FIRE!!! FIRE!!! FIRE!!! FIRE!!! FIRE!!! FIRE!!! FIRE!!!')
   if (mathAnswered === false) {
@@ -357,6 +357,7 @@ function mathTimedOut() {
   }
   $('#math-question').hide();
   $('#four-letter-word-question').show();
+  clearTimeout(timer);
 }
 
 
@@ -365,7 +366,7 @@ $('#math-answer-button').click(function (event) {
   event.preventDefault();
   mathAnswered = $('#math-question-answer').val();
   console.log(mathAnswered + ' = math-question-answer')
-  // clearTimeout(timer);
+  clearTimeout(timer);
 
   $('#math-question').hide();
   console.log('MATH BUTTON CLICKED');
