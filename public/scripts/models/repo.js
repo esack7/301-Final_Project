@@ -15,7 +15,7 @@ var app = app || {};
   let randomNumberForGenre;
   // runtime
   let runtime;
-  let query;
+
 
 //first movie pic attributes
   let topThreeOneTitle;
@@ -58,31 +58,32 @@ var app = app || {};
     console.log('app.repos.all is CLEARED!');
     event.preventDefault();
 
-    if (!$('#voteAverageDropDown').val()) {
-      vote_average = $('#voteAverageDropDown').val();
-    } else {
-      console.log('ELSEELSE')
+    if ($('#voteAverageDropDown').val() === "Average Rating") {
       vote_average = Math.floor(Math.random() * 9) + 1
+      console.log('empty');
+    } else {
+      vote_average = $('#voteAverageDropDown').val();
+      console.log('populated')
       console.log(vote_average);
     }
 
-    if (!$('#genreDropDown').val()){
-      genreInput = $('#genreDropDown').val();
+    if ($('#genreDropDown').val() === "Genre"){
+      genreInput = "18";
     } else {
-      genreInput = 18;
+      genreInput = $('#genreDropDown').val();
     }
     console.log(genreObject);
     console.log('genreInput = ' + genreInput);
     //this is way too complicated ..genre = $('genreDropDown').val gives you a number already to the right genre
     genre = Object.values(genreObject)[Object.keys(genreObject).indexOf(genreInput)];
 
-    if (!$('#durationDropDown').val()){
-      runtime = $('#durationDropDown').val();
-    } else {
+    if ($('#durationDropDown').val()){
       runtime = Math.floor(Math.random() * 120) + 30
+    } else {
+      runtime = $('#durationDropDown').val();
     }
-    console.log('vote_average = ' + vote_average + '  genre = ' + genre + '  runtime = ' + runtime);
-    query = 'https://api.themoviedb.org/3/discover/movie?api_key=8f303e30bafa7db2b3656c65726f874c&language=en-US&region=US&sort_by=vote_average.asc&include_adult=false&include_video=false&page=1&' + 'vote_average.lte=' + vote_average + '&with_genres=' + genreInput + '&with_runtime.gte=' + runtime;
+    console.log("tis is the one" + 'vote_average = ' + vote_average + '  genre = ' + genre + '  runtime = ' + runtime);
+
     repos.requestMovie(randomTopThree);
     console.log(' ');
   });
@@ -102,7 +103,6 @@ var app = app || {};
     console.log('RANDOM Variables below')
     randomizeValues();
     console.log('vote_average = ' + vote_average + '  genre = ' + genre + '  runtime = ' + runtime);
-    query = 'https://api.themoviedb.org/3/discover/movie?api_key=8f303e30bafa7db2b3656c65726f874c&language=en-US&region=US&sort_by=vote_average.asc&include_adult=false&include_video=false&page=1&' + 'vote_average.lte=' + vote_average + '&with_genres=' + genreInput + '&with_runtime.gte=' + runtime;
     repos.requestMovie(appendRandomMovie);
     console.log(' ');
   });
@@ -122,7 +122,6 @@ var app = app || {};
     console.log('RANDOM Variables below')
     randomizeValues();
     console.log('vote_average = ' + vote_average + '  genre = ' + genre + '  runtime = ' + runtime);
-    query = 'https://api.themoviedb.org/3/discover/movie?api_key=8f303e30bafa7db2b3656c65726f874c&language=en-US&region=US&sort_by=vote_average.asc&include_adult=false&include_video=false&page=1&' + 'vote_average.lte=' + vote_average + '&with_genres=' + genreInput + '&with_runtime.gte=' + runtime;
     repos.requestMovie(appendRandomMovie);
     console.log(' ');
   });
@@ -134,6 +133,8 @@ var app = app || {};
     //THIS NEEDS TO BE FIXED TO BE THE APPROPRIATE MOVIE DESCRIPTION
     let randomOverview = Object.values(Object.values(app.repos.all[0].results[0].overview));
     $('#random-movie-overview').html(randomOverview);
+
+    $('<img src="https:image.tmdb.org/t/p/w500/ + app.repos.all[0].results[0].poster_path"'>)
 
     $("<p><a href='https://www.netflix.com/search'><button>Take Me To Netflix</button></a></p>").appendTo('#random-movie-overview');
 
@@ -159,19 +160,45 @@ var app = app || {};
   }
 
   $('#next-three').click(function (event) {
-    console.log('NEXT THREE BUTTON FIRED!!!');
-    console.log('app.repos.all is CLEARED!');
+    // console.log('NEXT THREE BUTTON FIRED!!!');
+    // console.log('app.repos.all is CLEARED!');
     event.preventDefault();
-    vote_average = $('#voteAverageDropDown').val();
-    genreInput = $('#genreDropDown').val();
-    console.log(genreObject);
-    console.log('genreInput = ' + genreInput);
-    genre = Object.values(genreObject)[Object.keys(genreObject).indexOf(genreInput)];
-    runtime = $('#durationDropDown').val();
-    console.log('vote_average = ' + vote_average + '  genre = ' + genre + '  runtime = ' + runtime);
+    // vote_average = $('#voteAverageDropDown').val();
+    // genreInput = $('#genreDropDown').val();
+    // console.log(genreObject);
+    // console.log('genreInput = ' + genreInput);
+    // genre = Object.values(genreObject)[Object.keys(genreObject).indexOf(genreInput)];
+    // runtime = $('#durationDropDown').val();
+
+    if ($('#voteAverageDropDown').val() === "Average Rating") {
+      vote_average = Math.floor(Math.random() * 9) + 1
+      console.log('empty');
+    } else {
+      vote_average = $('#voteAverageDropDown').val();
+      console.log('populated')
+      console.log(vote_average);
+    }
+
+    if ($('#genreDropDown').val() === "Genre"){
+      genreInput = "18";
+    } else {
+      genreInput = $('#genreDropDown').val();
+    }
+    // console.log(genreObject);
+    // console.log('genreInput = ' + genreInput);
+    //this is way too complicated ..genre = $('genreDropDown').val gives you a number already to the right genre
+    // genre = Object.values(genreObject)[Object.keys(genreObject).indexOf(genreInput)];
+
+    if ($('#durationDropDown').val()){
+      runtime = Math.floor(Math.random() * 120) + 30
+    } else {
+      runtime = $('#durationDropDown').val();
+    }
+
+    // console.log('vote_average = ' + vote_average + '  genre = ' + genre + '  runtime = ' + runtime);
     query = 'https://api.themoviedb.org/3/discover/movie?api_key=8f303e30bafa7db2b3656c65726f874c&language=en-US&region=US&sort_by=vote_average.asc&include_adult=false&include_video=false&page=1&' + 'vote_average.lte=' + vote_average + '&with_genres=' + genreInput + '&with_runtime.gte=' + runtime;
     repos.requestMovie(randomTopThree);
-    console.log(' ');
+    // console.log(' ');
   });
 
   let appendTopThreeMovies = () => {
@@ -283,9 +310,9 @@ var app = app || {};
   repos.requestMovie = function(callback) {
 
     let data = {}
-    data.with_genres = $('#genreDropDown').val()
-    data.with_runtime = $('#durationDropDown').val()
-    data.vote_average = $('#voteAverageDropDown').val()
+    data.with_genres = genreInput
+    data.with_runtime = runtime
+    data.vote_average = vote_average
 
     $.get('/discover', data)
     .then(function (response) {
