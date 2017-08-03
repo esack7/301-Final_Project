@@ -215,7 +215,7 @@ var app = app || {};
 
     $('#top-three-one-img').attr("src", path1)
 
-    $("<p><a href='https://www.netflix.com/search'><button>Take Me To Netflix</button></a></p>").appendTo('.takeMe');
+    // $("<p><a href='https://www.netflix.com/search'><button>Take Me To Netflix</button></a></p>").appendTo('#takeMe');
     //KIMMER USE THIS TO MESS WITH THE LOCAL STORAGE OBJECT
     $('p:button').on('click', function(){
       //AFTER UPDATING THE LOCAL STORAGE OBJECT WITH THE MOVIE CHOICE
@@ -234,7 +234,7 @@ var app = app || {};
     //Appending the second movie picks attributes
     $('#top-three-two-title').html(topThreeTwoTitle);
     $('#top-three-two-overview').html(topThreeTwoOverview);
-    $("<p><a href='https://www.netflix.com/search'><button>Take Me To Netflix</button></a></p>").appendTo('.takeMe');
+
 
     let path2 = "https:image.tmdb.org/t/p/w500" + topThreeTwoImg;
 
@@ -253,7 +253,7 @@ var app = app || {};
     //Appending the third movie picks attributes
     $('#top-three-three-title').html(topThreeThreeTitle);
     $('#top-three-three-overview').html(topThreeThreeOverview);
-    $("<p><a href='https://www.netflix.com/search'><button>Take Me To Netflix</button></a></p>").appendTo('.takeMe');
+    // $("<p><a href='https://www.netflix.com/search'><button>Take Me To Netflix</button></a></p>").appendTo('#takeMe2');
 
     let path3 = "https:image.tmdb.org/t/p/w500" + topThreeThreeImg;
 
