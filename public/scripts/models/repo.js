@@ -134,7 +134,10 @@ var app = app || {};
     let randomOverview = Object.values(Object.values(app.repos.all[0].results[0].overview));
     $('#random-movie-overview').html(randomOverview);
 
-    $('<img src="https:image.tmdb.org/t/p/w500/ + app.repos.all[0].results[0].poster_path"'>)
+    let path = "https:image.tmdb.org/t/p/w500" + Object.values(Object.values(app.repos.all[0])[3][0])[6];
+    console.log(path);
+
+    $('#randomImg').attr("src", path)
 
     $("<p><a href='https://www.netflix.com/search'><button>Take Me To Netflix</button></a></p>").appendTo('#random-movie-overview');
 
@@ -197,7 +200,6 @@ var app = app || {};
     }
 
     // console.log('vote_average = ' + vote_average + '  genre = ' + genre + '  runtime = ' + runtime);
-    query = 'https://api.themoviedb.org/3/discover/movie?api_key=8f303e30bafa7db2b3656c65726f874c&language=en-US&region=US&sort_by=vote_average.asc&include_adult=false&include_video=false&page=1&' + 'vote_average.lte=' + vote_average + '&with_genres=' + genreInput + '&with_runtime.gte=' + runtime;
     repos.requestMovie(randomTopThree);
     // console.log(' ');
   });
@@ -208,8 +210,13 @@ var app = app || {};
     //Appending the first movie picks attributes
     $('#top-three-one-title').html(topThreeOneTitle);
     $('#top-three-one-overview').html(topThreeOneOverview);
-    $("<p><a href='https://www.netflix.com/search'><button>Take Me To Netflix</button></a></p>").appendTo('#top-three-one-overview');
 
+    let path1 = "https:image.tmdb.org/t/p/w500" + topThreeOneImg;
+
+
+    $('#top-three-one-img').attr("src", path1)
+
+    $("<p><a href='https://www.netflix.com/search'><button>Take Me To Netflix</button></a></p>").appendTo('.takeMe');
     //KIMMER USE THIS TO MESS WITH THE LOCAL STORAGE OBJECT
     $('p:button').on('click', function(){
       //AFTER UPDATING THE LOCAL STORAGE OBJECT WITH THE MOVIE CHOICE
@@ -228,7 +235,12 @@ var app = app || {};
     //Appending the second movie picks attributes
     $('#top-three-two-title').html(topThreeTwoTitle);
     $('#top-three-two-overview').html(topThreeTwoOverview);
-    $("<p><a href='https://www.netflix.com/search'><button>Take Me To Netflix</button></a></p>").appendTo('#top-three-two-overview');
+    $("<p><a href='https://www.netflix.com/search'><button>Take Me To Netflix</button></a></p>").appendTo('.takeMe');
+
+    let path2 = "https:image.tmdb.org/t/p/w500" + topThreeTwoImg;
+
+
+    $('#top-three-two-img').attr("src", path2)
 
     //KIMMER USE THIS TO MESS WITH THE LOCAL STORAGE OBJECT
     $('p:button').on('click', function(){
@@ -242,7 +254,12 @@ var app = app || {};
     //Appending the third movie picks attributes
     $('#top-three-three-title').html(topThreeThreeTitle);
     $('#top-three-three-overview').html(topThreeThreeOverview);
-    $("<p><a href='https://www.netflix.com/search'><button>Take Me To Netflix</button></a></p>").appendTo('#top-three-three-overview');
+    $("<p><a href='https://www.netflix.com/search'><button>Take Me To Netflix</button></a></p>").appendTo('.takeMe');
+
+    let path3 = "https:image.tmdb.org/t/p/w500" + topThreeThreeImg;
+
+
+    $('#top-three-three-img').attr("src", path3)
 
     //KIMMER USE THIS TO MESS WITH THE LOCAL STORAGE OBJECT
     $('p:button').on('click', function(){
