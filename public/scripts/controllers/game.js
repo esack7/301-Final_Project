@@ -1,5 +1,9 @@
 'use strict';
 
+// (function(module) {
+
+let originalGenreObject = {'28': 'Action', '12': 'Adventure', '16': 'Animation', '35': 'Comedy', '80': 'Crime', '99': 'Documentary', '18': 'Drama', '10751': 'Family', '14': 'Fantasy', '36': 'History', '27': 'Horror', 10402: 'Music', 9648: 'Mystery', 10749: 'Romance', 878: 'Science Fiction', 10770: 'TV Movie', 53: 'Thriller', 10752: 'War', 37: 'Western'};
+
 // This is our genre object with values set to 0
 let genreObject = {'Action' : 0, 'Adventure' : 0, 'Animation' : 0, 'Comedy' : 0, 'Crime' : 0, 'Documentary' : 0, 'Drama' : 0, 'Family' : 0, 'Fantasy': 0, 'History': 0, 'Horror' : 0, 'Music' : 0, 'Mystery' : 0, 'Romance'  : 0, 'Science Fiction'  : 0, 'TV Movie' : 0, 'Thriller' : 0, 'War' : 0, 'Western' : 0};
 
@@ -27,6 +31,17 @@ let mathAnswered = false;
 
 // // This has to do with canceling out the math TIMER
 let timer;
+
+// THIS IS WHAT ORGANIZES THE GENRE OJBECTS LATER IN THE FINAL ASSIGNMENT
+let genreObjectKeys;
+let genreObjectValues;
+let genreObectDescValues;
+
+//This is the variables for our ajax call!
+let genre;
+let genreInput;
+let runtime = 90;
+let vote_average = 9.8;
 
 // WHEN MADAM FLICKS BUTTON CLICK === hide everything but game... Start Game!
 // IT PULLS UP THE GAME FILE...
@@ -317,6 +332,7 @@ $('#qTwoAnswer-four').click(function (event) {
 
 // THIS FUNCTION APPENDS THE RIGHT TEXT TO QUESTION 3 -- This function is called in the answers for question 2! buttons.
 function appendQuestionThreeELEMENTS() {
+  console.log('appendQuestionThreeELEMENTS is FIRING ===============')
   if ( (answer2 === 'Not at all') || (answer2 === 'Maybe a little') ) {
     console.log('were inside the if part === show FOUR LETTERS');
     $('#four-letter-word-question').show();
@@ -325,12 +341,13 @@ function appendQuestionThreeELEMENTS() {
     console.log('were inside the else part === show MATH');
     setTimeout(mathTimedOut, 10000);
   }
+  return;
 }
 
 // THIS IS THE FUNCTIONALITY FOR THE MATH TIMER!!! CALLED IN THE IF STATEMENT ABOVE
 function mathTimedOut() {
   // This has to do with canceling out the math TIMER
-  timer = setTimeout(mathTimedOut, 10000);
+  // timer = setTimeout(mathTimedOut, 10000);
   console.log('times UP!');
   console.log('TIMED OUT FUNCTION CALLED FIRE!!! FIRE!!! FIRE!!! FIRE!!! FIRE!!! FIRE!!! FIRE!!! FIRE!!! FIRE!!! FIRE!!! FIRE!!! FIRE!!! FIRE!!! FIRE!!! FIRE!!! FIRE!!! FIRE!!! FIRE!!! FIRE!!! FIRE!!! FIRE!!! FIRE!!! FIRE!!!')
   if (mathAnswered === false) {
@@ -348,12 +365,14 @@ $('#math-answer-button').click(function (event) {
   event.preventDefault();
   mathAnswered = $('#math-question-answer').val();
   console.log(mathAnswered + ' = math-question-answer')
-  clearTimeout(timer);
+  // clearTimeout(timer);
 
   $('#math-question').hide();
   console.log('MATH BUTTON CLICKED');
   if (mathAnswered === '176') {
     console.log('they got it right!')
+    // THIS MAY CAUSE FUCKING PROBLEMS
+    mathAnswered = true;
     $('#times-up').html('GOOD GUESS!!!');
     $('#four-letter-word-question').show();
   } else {
@@ -406,28 +425,177 @@ $('#four-letter-word-button').click(function (event) {
 
 
 // THIS IS THE LAST QUESTION FUNCTIONALITY BUTTON CLICKS
+// ALONE
 $('#last-question-button-one').click(function (event) {
   event.preventDefault();
+  console.log('FINAL BUTTON CLICKED!!!');
+  console.log(Object.keys(genreObject).length + ' = Object.keys(genreObject).length');
+  genreObject['Action'] = genreObject['Action'] + 1;
+  genreObject['History'] = genreObject['History'] + 1;
+  genreObject['Music'] = genreObject['Music'] + 1;
+  genreObject['Romance'] = genreObject['Romance'] + 1;
+  genreObject['War'] = genreObject['War'] + 1;
+  genreObject['Western'] = genreObject['Western'] + 1;
+  genreObject['Adventure'] = genreObject['Adventure'] + 1;
+  genreObject['Animation'] = genreObject['Animation'] + 1;
+  genreObject['Comedy'] = genreObject['Comedy'] + 1;
+  genreObject['Crime'] = genreObject['Crime'] + 1;
+  genreObject['Documentary'] = genreObject['Documentary'] + 1;
+  genreObject['Drama'] = genreObject['Drama'] + 1;
+  genreObject['Fantasy'] = genreObject['Fantasy'] + 1;
+  genreObject['Mystery'] = genreObject['Mystery'] + 1;
+  genreObject['Science Fiction'] = genreObject['Science Fiction'] + 1;
+  finalizeCounters()
+  organizeAndPickAscGenreObject();
   $('#last-question').hide();
-
 });
 
 // last answer 2
+// SOMEONE SPECIAL
 $('#last-question-button-two').click(function (event) {
   event.preventDefault();
+  console.log('FINAL BUTTON CLICKED!!!');
+  genreObject['Romance'] = genreObject['Romance'] + 1;
+  genreObject['Horror'] = genreObject['Horror'] + 1;
+  finalizeCounters()
+  organizeAndPickAscGenreObject();
   $('#last-question').hide();
-
 });
 
 // last answer 3
+// THE FAMILY
 $('#last-question-button-three').click(function (event) {
   event.preventDefault();
+  console.log('FINAL BUTTON CLICKED!!!');
+  genreObject['Animation'] = genreObject['Animation'] + 1;
+  genreObject['Family'] = genreObject['Family'] + 1;
+  genreObject['TV Movie'] = genreObject['TV Movie'] + 1;
+  finalizeCounters();
+  organizeAndPickAscGenreObject();
   $('#last-question').hide();
-
 });
 
 // last answer 4
+// FRIENDS
 $('#last-question-button-four').click(function (event) {
   event.preventDefault();
+  console.log('FINAL BUTTON CLICKED!!!');
+  genreObject['Action'] = genreObject['Action'] + 1;
+  genreObject['Adventure'] = genreObject['Adventure'] + 1;
+  genreObject['Animation'] = genreObject['Animation'] + 1;
+  genreObject['Comedy'] = genreObject['Comedy'] + 1;
+  genreObject['Crime'] = genreObject['Crime'] + 1;
+  genreObject['Documentary'] = genreObject['Documentary'] + 1;
+  genreObject['Drama'] = genreObject['Drama'] + 1;
+  genreObject['Fantasy'] = genreObject['Fantasy'] + 1;
+  genreObject['Horror'] = genreObject['Horror'] + 1;
+  genreObject['Mystery'] = genreObject['Mystery'] + 1;
+  genreObject['Science Fiction'] = genreObject['Science Fiction'] + 1;
+  genreObject['Thriller'] = genreObject['Thriller'] + 1;
+  finalizeCounters();
+  organizeAndPickAscGenreObject();
   $('#last-question').hide();
 });
+
+//THIS FUNCTION FINALIZES THE GENRES!
+function finalizeCounters() {
+  console.log('finalizeCounters FIRE FIRE FIRE FIRE FIRE');
+  console.log(genreObject);
+  console.log(evilCounter + ' = evilCounter & goodCounter = ' + goodCounter);
+  if (evilCounter > goodCounter) {
+    genreObject['Crime'] = genreObject['Crime'] + 1;
+    genreObject['Comedy'] = genreObject['Comedy'] + 1;
+    genreObject['Horror'] = genreObject['Horror'] + 1;
+    genreObject['Thriller'] = genreObject['Thriller'] + 1;
+    genreObject['War'] = genreObject['War'] + 1;
+  } else if (evilCounter < goodCounter) {
+    genreObject['Action'] = genreObject['Action'] + 1;
+    genreObject['Adventure'] = genreObject['Adventure'] + 1;
+    genreObject['Animation'] = genreObject['Animation'] + 1;
+    genreObject['Family'] = genreObject['Family'] + 1;
+    genreObject['Fantasy'] = genreObject['Fantasy'] + 1;
+    genreObject['History'] = genreObject['History'] + 1;
+    genreObject['Music'] = genreObject['Music'] + 1;
+    genreObject['Mystery'] = genreObject['Mystery'] + 1;
+    genreObject['Science Fiction'] = genreObject['Science Fiction'] + 1;
+    genreObject['TV Movie'] = genreObject['TV Movie'] + 1;
+    genreObject['Western'] = genreObject['Western'] + 1;
+  } else if (evilCounter === goodCounter) {
+    console.log('evilCounter === goodCounter');
+  }
+  console.log(genreObject);
+}
+
+let highestGenre;
+let finalizedGenresArray = [];
+
+// THIS ORGANIZES THE genreOBJECT by which values are highest!
+function organizeAndPickAscGenreObject() {
+  finalizedGenresArray = [];
+  console.log('organizeAndPickAscGenreObject FIRE FIRE FIRE FIRE FIRE');
+  genreObjectKeys = Object.keys(genreObject);
+  genreObjectValues = Object.values(genreObject);
+  genreObectDescValues = genreObjectValues.sort(function (a, b) {return b - a});
+  console.log(genreObjectKeys + ' = genreObjectKeys & genreObectDescValues = ' + genreObectDescValues + ' & genreObjectValues = ' + genreObjectValues);
+  console.log('');
+  console.log('');
+  console.log('genreObectDescValues = ' + genreObectDescValues);
+  console.log(genreObectDescValues[0]);
+  highestGenre = genreObectDescValues[0];
+
+  for (var i = 0; i < 19; i++) {
+    if (Object.values(genreObject)[i] === highestGenre) {
+      finalizedGenresArray.push(Object.keys(genreObject)[i])
+    } else {
+      console.log('genre value not the highest');
+    }
+  }
+  console.log('highest genre value = ' + finalizedGenresArray);
+  randomCounterGenrePick()
+  requestMadamFlixMovie(appendMadamFlixMovie)
+}
+
+let randomGenreCounter;
+
+let randomCounterGenrePick = function(){
+  randomGenreCounter = Math.ceil(Math.random() * (finalizedGenresArray.length - 1))
+  genre = finalizedGenresArray[randomGenreCounter];
+  genreInput = Object.keys(originalGenreObject)[Object.values(originalGenreObject).indexOf(genre)];
+}
+
+let all = [];
+let requestMadamFlixMovie = function(callback) {
+
+  let data = {}
+  data.with_genres = genreInput
+  data.with_runtime = runtime
+  data.vote_average = vote_average
+
+  $.get('/discover', data)
+  .then(function (response) {
+    all.push(response);
+  })
+  .then(callback);
+}
+
+function appendMadamFlixMovie(){
+  console.log('Appending MADAM FLIX MOVIE!!!');
+  $('#displayMadamFlixMovie').show();
+  let madamFlixMovie = Object.values(Object.values(all[0])[3][0])[4];
+  $('#madam-flix-movie-title').html(madamFlixMovie);
+  //THIS NEEDS TO BE FIXED TO BE THE APPROPRIATE MOVIE DESCRIPTION
+  let randomOverview = Object.values(Object.values(all[0].results[0].overview));
+  $('#madam-flix-movie-overview').html(randomOverview);
+
+  let paths = "https:image.tmdb.org/t/p/w500" + Object.values(Object.values(all[0])[3][0])[6];
+  console.log(paths);
+
+  $('#madam-flix-img').attr("src", paths)
+
+  $("<p><a href='https://www.netflix.com/search'><button>Take Me To Netflix</button></a></p>").appendTo('#madam-flix-movie-overview');
+}
+
+// module.game = game;
+// })(app);
+// - / - //
+//
