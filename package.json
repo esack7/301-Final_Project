@@ -1,7 +1,7 @@
 {
   "name": "301-final_project",
   "version": "1.0.0",
-  "description": "Code Fellows 301 final project",
+  "description": "We know that in todays world it can be hard to choose what to spend your time watching. With all of the different platforms and channels vying for your attention it can get confusing. Here at Pick-A-Flick we've introduced a novel app with a few helpful functions to make sure you can spend less time deciding and more time watching.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/esack7/301-Final_Project.git"
   },
-  "author": "Isaac Heist, Kimmer O'Reilly, Gavin Thomas, Shaun Wahle",
+  "author": "",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/esack7/301-Final_Project/issues"
