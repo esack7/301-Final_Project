@@ -139,7 +139,7 @@ var app = app || {};
 
     $('#randomImg').attr("src", path)
 
-    $("<p><a href='https://www.netflix.com/search'><button>Take Me To Netflix</button></a></p>").appendTo('#random-movie-overview');
+    $('#netflixButton4').attr("href", 'https://dvd.netflix.com/Search?oq=&ac_posn=&v1=' + randomMovie)
 
   }
 
@@ -214,6 +214,7 @@ var app = app || {};
 
 
     $('#top-three-one-img').attr("src", path1)
+    $('#netflixButton1').attr("href", 'https://dvd.netflix.com/Search?oq=&ac_posn=&v1=' + topThreeOneTitle)
 
     // $("<p><a href='https://www.netflix.com/search'><button>Take Me To Netflix</button></a></p>").appendTo('#takeMe');
     //KIMMER USE THIS TO MESS WITH THE LOCAL STORAGE OBJECT
@@ -240,6 +241,7 @@ var app = app || {};
 
 
     $('#top-three-two-img').attr("src", path2)
+    $('#netflixButton2').attr("href", 'https://dvd.netflix.com/Search?oq=&ac_posn=&v1=' + topThreeTwoTitle)
 
     //KIMMER USE THIS TO MESS WITH THE LOCAL STORAGE OBJECT
     $('p:button').on('click', function(){
@@ -259,6 +261,7 @@ var app = app || {};
 
 
     $('#top-three-three-img').attr("src", path3)
+    $('#netflixButton3').attr("href", 'https://dvd.netflix.com/Search?oq=&ac_posn=&v1=' + topThreeThreeTitle)
 
     //KIMMER USE THIS TO MESS WITH THE LOCAL STORAGE OBJECT
     $('p:button').on('click', function(){

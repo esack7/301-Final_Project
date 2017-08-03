@@ -144,7 +144,7 @@
             <p id="top-three-one-overview">
             </p>
             <img id='top-three-one-img' src="#">
-            <p><a href='https://www.netflix.com/search'><button>Take Me To Netflix</button></a></p>
+            <p><a id='netflixButton1' href='#'><button>Take Me To Netflix</button></a></p>
           </div>
           <img class="movie poster" src="top-three-one-img">
 
@@ -156,7 +156,7 @@
             <img id='top-three-two-img' src="#">
           </div>
           <img class="movie poster" src="top-three-two-img">
-          <p><a href='https://www.netflix.com/search'><button>Take Me To Netflix</button></a></p>
+          <p><a id='netflixButton2' href='#'><button>Take Me To Netflix</button></a></p>
 
 
           <h1 id="top-three-three-title">
@@ -165,7 +165,7 @@
             <img id='top-three-three-img' src="#">
           </div>
           <img class="movie poster" src="top-three-three-img">
-          <p><a href='https://www.netflix.com/search'><button>Take Me To Netflix</button></a></p>
+          <p><a id='netflixButton3' href='#'><button>Take Me To Netflix</button></a></p>
 
         </section>
 
@@ -183,6 +183,7 @@
           <h1 id="random-movie-title"></h1>
           <p id="random-movie-overview"></p>
           <img id='randomImg' src="#">
+          <p><a id="netflixButton4" href='#'><button>Take Me To Netflix</button></a></p>
       </div>
       </section>
 
@@ -210,121 +211,121 @@
     <!-- GAME SECTIONS!!!!
  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
-   <section class="hpsection" id="game-start" class="tab-content">
-     <div class="welcome-text">
-       <section id="movieContainer">
-         <div id="movieIMG">
-           <h4>Welcome!</h4>
-           <p>My name is Madam Flix, please enter your first name!</p>
+    <section class="hpsection" id="game-start" class="tab-content">
+      <div class="welcome-text">
+        <section id="movieContainer">
+          <div id="movieIMG">
+            <h4>Welcome!</h4>
+            <p>My name is Madam Flix, please enter your first name!</p>
 
-           <form id="players-name">
-             <fieldset>
-               <label for="playerName"></label>
-               <!-- put the input inside the label -->
-               <input id="player-name-input" name="player" type="text" placeholder="Player Name" />
-               <button id="enter-name" type="submit">Enter</button>
-             </fieldset>
-           </form>
+            <form id="players-name">
+              <fieldset>
+                <label for="playerName"></label>
+                <!-- put the input inside the label -->
+                <input id="player-name-input" name="player" type="text" placeholder="Player Name" />
+                <button id="enter-name" type="submit">Enter</button>
+              </fieldset>
+            </form>
 
-           <div id="movieDescription">
-             <h4></h4>
-           </div>
-         </div>
-       </section>
-     </div>
-   </section>
+            <div id="movieDescription">
+              <h4></h4>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
 
-   <section class="hpsection" id="first-question" class="tab-content">
-     <div class="welcome-text">
-       <section id="movieContainer">
-         <div id="movieIMG">
-           <h4>Question 1</h4>
-           <p id="first-question-text"></p>
-           <button class="question-one-answer-button" id="emotion-one" type="submit"></button>
-           <button class="question-one-answer-button" id="emotion-two" type="submit"></button>
-           <button class="question-one-answer-button" id="emotion-three" type="submit"></button>
-           <button class="question-one-answer-button" id="emotion-four" type="submit"></button>
-           <button id="next-four-emotions" type="submit">Next Four</button>
-           <div id="movieDescription">
-             <h4></h4>
-           </div>
-         </div>
-       </section>
-     </div>
-   </section>
+    <section class="hpsection" id="first-question" class="tab-content">
+      <div class="welcome-text">
+        <section id="movieContainer">
+          <div id="movieIMG">
+            <h4>Question 1</h4>
+            <p id="first-question-text"></p>
+            <button class="question-one-answer-button" id="emotion-one" type="submit"></button>
+            <button class="question-one-answer-button" id="emotion-two" type="submit"></button>
+            <button class="question-one-answer-button" id="emotion-three" type="submit"></button>
+            <button class="question-one-answer-button" id="emotion-four" type="submit"></button>
+            <button id="next-four-emotions" type="submit">Next Four</button>
+            <div id="movieDescription">
+              <h4></h4>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
 
-   <section class="hpsection" id="second-question" class="tab-content">
-     <div class="welcome-text">
-       <section id="movieContainer">
-         <div id="movieIMG">
-           <h4>Question 2</h4>
-           <p id="second-question-text"></p>
-           <button class="question-two-answer-button" id="qTwoAnswer-one" type="submit" value="Not at all">Not at all</button>
-           <button class="question-two-answer-button" id="qTwoAnswer-two" type="submit" value="Maybe a little">Maybe a little</button>
-           <button class="question-two-answer-button" id="qTwoAnswer-three" type="submit" value="Already am...">Already am...</button>
-           <button class="question-two-answer-button" id="qTwoAnswer-four" type="submit" value="Let's get wasted!">Let's get wasted!</button>
-           <div id="movieDescription">
-             <h4></h4>
-           </div>
-         </div>
-       </section>
-     </div>
-   </section>
+    <section class="hpsection" id="second-question" class="tab-content">
+      <div class="welcome-text">
+        <section id="movieContainer">
+          <div id="movieIMG">
+            <h4>Question 2</h4>
+            <p id="second-question-text"></p>
+            <button class="question-two-answer-button" id="qTwoAnswer-one" type="submit" value="Not at all">Not at all</button>
+            <button class="question-two-answer-button" id="qTwoAnswer-two" type="submit" value="Maybe a little">Maybe a little</button>
+            <button class="question-two-answer-button" id="qTwoAnswer-three" type="submit" value="Already am...">Already am...</button>
+            <button class="question-two-answer-button" id="qTwoAnswer-four" type="submit" value="Let's get wasted!">Let's get wasted!</button>
+            <div id="movieDescription">
+              <h4></h4>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
 
-   <section class="hpsection" id="math-question" class="tab-content">
-     <div class="welcome-text">
-       <section id="movieContainer">
-         <div id="movieIMG">
-           <h4>PRESSURE!!!</h4>
-           <h1>Solve this before it dissapears!!!</h1>
-           <h2>11 x 16 =</h2>
-           <form id="math-question-form">
-             <fieldset>
-               <label for="mathAnswer"></label>
-               <!-- put the input inside the label -->
-               <input id="math-question-answer" name="player" type="number" placeholder="Numbers Go HERE silly!" />
-               <button id="math-answer-button" type="submit">Answer!</button>
-             </fieldset>
-           </form>
-         </div>
-       </section>
-     </div>
-   </section>
+    <section class="hpsection" id="math-question" class="tab-content">
+      <div class="welcome-text">
+        <section id="movieContainer">
+          <div id="movieIMG">
+            <h4>PRESSURE!!!</h4>
+            <h1>Solve this before it dissapears!!!</h1>
+            <h2>11 x 16 =</h2>
+            <form id="math-question-form">
+              <fieldset>
+                <label for="mathAnswer"></label>
+                <!-- put the input inside the label -->
+                <input id="math-question-answer" name="player" type="number" placeholder="Numbers Go HERE silly!" />
+                <button id="math-answer-button" type="submit">Answer!</button>
+              </fieldset>
+            </form>
+          </div>
+        </section>
+      </div>
+    </section>
 
-   <section class="hpsection" id="four-letter-word-question" class="tab-content">
-     <div class="welcome-text">
-       <section id="movieContainer">
-         <div id="movieIMG">
-           <h2 id="times-up"></h2>
-           <h1>#@%$</h1>
-           <p id="four-letter-word-text"></p>
-           <p>Type in a "four-letter-word" below!  Any and I mean ANY four letter word.  You're secret's safe with Madam Flicks!</p>
-           <fieldset>
-             <label for="four-letter-word"></label>
-             <!-- put the input inside the label -->
-             <input id="four-letter-word-input" name="player" type="password" placeholder="we won't tell" />
-             <button id="four-letter-word-button" type="submit">#@%$</button>
-           </fieldset>
-         </div>
-       </section>
-     </div>
-   </section>
+    <section class="hpsection" id="four-letter-word-question" class="tab-content">
+      <div class="welcome-text">
+        <section id="movieContainer">
+          <div id="movieIMG">
+            <h2 id="times-up"></h2>
+            <h1>#@%$</h1>
+            <p id="four-letter-word-text"></p>
+            <p>Type in a "four-letter-word" below! Any and I mean ANY four letter word. You're secret's safe with Madam Flicks!</p>
+            <fieldset>
+              <label for="four-letter-word"></label>
+              <!-- put the input inside the label -->
+              <input id="four-letter-word-input" name="player" type="password" placeholder="we won't tell" />
+              <button id="four-letter-word-button" type="submit">#@%$</button>
+            </fieldset>
+          </div>
+        </section>
+      </div>
+    </section>
 
-   <section class="hpsection" id="last-question" class="tab-content">
-     <div class="welcome-text">
-       <section id="movieContainer">
-         <div id="movieIMG">
-           <h2 id="times-up"></h2>
-           <h1>Last Question!</h1>
-           <p>Who are you watching this movie with?</p>
-           <button id="last-question-button-one" type="submit">Alone</button>
-           <button id="last-question-button-two" type="submit">Someone special</button>
-           <button id="last-question-button-three" type="submit">The Family</button>
-           <button id="last-question-button-four" type="submit">Friends</button>
-         </div>
-       </section>
-     </div>
-   </section>
+    <section class="hpsection" id="last-question" class="tab-content">
+      <div class="welcome-text">
+        <section id="movieContainer">
+          <div id="movieIMG">
+            <h2 id="times-up"></h2>
+            <h1>Last Question!</h1>
+            <p>Who are you watching this movie with?</p>
+            <button id="last-question-button-one" type="submit">Alone</button>
+            <button id="last-question-button-two" type="submit">Someone special</button>
+            <button id="last-question-button-three" type="submit">The Family</button>
+            <button id="last-question-button-four" type="submit">Friends</button>
+          </div>
+        </section>
+      </div>
+    </section>
 
     <!-- About us page
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
