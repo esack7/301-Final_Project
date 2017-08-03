@@ -2,7 +2,7 @@
 
 var app = app || {};
 
-var inception = new Audio('scripts/controllers/audio/inceptionTheme.mp3');
+// var inception = new Audio('scripts/controllers/audio/inceptionTheme.mp3');
 let $userName;
 let $password;
 User.all = [];
@@ -109,5 +109,5 @@ function retrieveAllStorage () {
   User.all = JSON.parse(allStorage);
 }
 
-inception.play();
+// inception.play();
 retrieveStorageOnPageLoad();

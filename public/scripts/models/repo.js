@@ -5,9 +5,6 @@ var app = app || {};
   const repos = {};
 // vote average needs to take in a number with a decimal
   let vote_average;
-
-
-
   // genre takes in movie genre...
   let genre;
   let genreInput;
@@ -15,8 +12,6 @@ var app = app || {};
   let randomNumberForGenre;
   // runtime
   let runtime;
-
-
 //first movie pic attributes
   let topThreeOneTitle;
   let topThreeOneOverview;
@@ -134,7 +129,7 @@ var app = app || {};
     let randomOverview = Object.values(Object.values(app.repos.all[0].results[0].overview));
     $('#random-movie-overview').html(randomOverview);
 
-    let path = "https:image.tmdb.org/t/p/w500" + Object.values(Object.values(app.repos.all[0])[3][0])[6];
+    let path = "https://image.tmdb.org/t/p/w500" + Object.values(Object.values(app.repos.all[0])[3][0])[6];
     console.log(path);
 
     $('#randomImg').attr("src", path)
@@ -148,7 +143,7 @@ var app = app || {};
     randomGenreObject = {1 : {'28': 'Action'}, 2 :  {'12': 'Adventure'}, 3 : {'16': 'Animation'}, 4 : {'35': 'Comedy'}, 5 : { '80': 'Crime'}, 6 : {'99': 'Documentary'}, 7 : {'18': 'Drama'}, 8 : {'10751': 'Family'}, 9 : {'14': 'Fantasy'}, 10 : {'36': 'History'}, 11 : {'27': 'Horror'}, 12 : {10402: 'Music'}, 13 : {9648: 'Mystery'}, 14 : {10749: 'Romance'}, 15 : {878: 'Science Fiction'}, 16 : {10770: 'TV Movie'}, 17 : {53: 'Thriller'}, 18 : {10752: 'War'}, 19 : {37: 'Western'}};
 
     randomNumberForGenre = Math.ceil(Math.random() * 19)
-    // console.log('random genre = ' + Object.keys(Object.values(randomizableGenreObject)[randomNumberForGenre])[0]);
+
     genreInput = Object.keys(Object.values(randomGenreObject)[randomNumberForGenre])[0]
 
     // Our random rating
@@ -163,15 +158,8 @@ var app = app || {};
   }
 
   $('#next-three').click(function (event) {
-    // console.log('NEXT THREE BUTTON FIRED!!!');
-    // console.log('app.repos.all is CLEARED!');
+
     event.preventDefault();
-    // vote_average = $('#voteAverageDropDown').val();
-    // genreInput = $('#genreDropDown').val();
-    // console.log(genreObject);
-    // console.log('genreInput = ' + genreInput);
-    // genre = Object.values(genreObject)[Object.keys(genreObject).indexOf(genreInput)];
-    // runtime = $('#durationDropDown').val();
 
     if ($('#voteAverageDropDown').val() === "Average Rating") {
       vote_average = Math.floor(Math.random() * 9) + 1
@@ -187,10 +175,6 @@ var app = app || {};
     } else {
       genreInput = $('#genreDropDown').val();
     }
-    // console.log(genreObject);
-    // console.log('genreInput = ' + genreInput);
-    //this is way too complicated ..genre = $('genreDropDown').val gives you a number already to the right genre
-    // genre = Object.values(genreObject)[Object.keys(genreObject).indexOf(genreInput)];
 
     if ($('#durationDropDown').val()){
       runtime = Math.floor(Math.random() * 120) + 30
@@ -198,7 +182,6 @@ var app = app || {};
       runtime = $('#durationDropDown').val();
     }
 
-    // console.log('vote_average = ' + vote_average + '  genre = ' + genre + '  runtime = ' + runtime);
     repos.requestMovie(randomTopThree);
     // console.log(' ');
   });
@@ -210,21 +193,14 @@ var app = app || {};
     $('#top-three-one-title').html(topThreeOneTitle);
     $('#top-three-one-overview').html(topThreeOneOverview);
 
-    let path1 = "https:image.tmdb.org/t/p/w500" + topThreeOneImg;
-
+    let path1 = "://image.tmdb.org/t/p/w500" + topThreeOneImg;
 
     $('#top-three-one-img').attr("src", path1)
+
     $('#netflixButton1').attr("href", 'https://dvd.netflix.com/Search?oq=&ac_posn=&v1=' + topThreeOneTitle)
 
 
 
-
-    // console.log('appending description 1');
-    // console.log('description = ' + topThreeOneOverview);
-    // console.log('image = ' + topThreeOneImg)
-    // https://image.tmdb.org/t/p/w500/+uX6yITcNgq81Z5q9sB1PN6ItcNG.jpg
-    // $('top-three-one-img').img(https://image.tmdb.org/t/p/w500/ + topThreeOneImg);
-    // $('#poster').html('<h2>Here is your poster </h2><img id="thePoster" src=' + json.results[0].posters[0].image.url+ '/> ')
 
     //Appending the second movie picks attributes
     $('#top-three-two-title').html(topThreeTwoTitle);
@@ -235,6 +211,7 @@ var app = app || {};
 
 
     $('#top-three-two-img').attr("src", path2)
+    $('#netflixButton2').attr("href", '://dvd.netflix.com/Search?oq=&ac_posn=&v1=' + topThreeTwoTitle)
 
     $('#netflixButton2').attr("href", 'https://dvd.netflix.com/Search?oq=&ac_posn=&v1=' + topThreeTwoTitle)
 
@@ -250,7 +227,9 @@ var app = app || {};
 
 
     $('#top-three-three-img').attr("src", path3)
+
     $('#netflixButton3').attr("href", 'https://dvd.netflix.com/Search?oq=&ac_posn=&v1=' + topThreeThreeTitle)
+
 
 
 
@@ -328,19 +307,6 @@ var app = app || {};
     })
     .then(callback);
   }
-
-  // data.with_genres = $('#genreDropDown').val()
-  // data.with_runtime = $('#durationDropDown').val()
-  // data.vote_average = $('#voteAverageDropDown').val()
-  //
-  // let success = () => {}
-  // let error = () => {}
-  //
-  // console.log(data);
-  //
-  // $.get('/discover', data)
-  // .then(success => console.log('success', success), error => console.log('error', error))
-  // };
 
   module.repos = repos;
 })(app);
