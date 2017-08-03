@@ -57,13 +57,30 @@ var app = app || {};
     topThreeThreeTitle = '';
     console.log('app.repos.all is CLEARED!');
     event.preventDefault();
-    vote_average = $('#voteAverageDropDown').val();
-    genreInput = $('#genreDropDown').val();
+
+    if (!$('#voteAverageDropDown').val()) {
+      vote_average = $('#voteAverageDropDown').val();
+    } else {
+      console.log('ELSEELSE')
+      vote_average = Math.floor(Math.random() * 9) + 1
+      console.log(vote_average);
+    }
+
+    if (!$('#genreDropDown').val()){
+      genreInput = $('#genreDropDown').val();
+    } else {
+      genreInput = 18;
+    }
     console.log(genreObject);
     console.log('genreInput = ' + genreInput);
     //this is way too complicated ..genre = $('genreDropDown').val gives you a number already to the right genre
     genre = Object.values(genreObject)[Object.keys(genreObject).indexOf(genreInput)];
-    runtime = $('#durationDropDown').val();
+
+    if (!$('#durationDropDown').val()){
+      runtime = $('#durationDropDown').val();
+    } else {
+      runtime = Math.floor(Math.random() * 120) + 30
+    }
     console.log('vote_average = ' + vote_average + '  genre = ' + genre + '  runtime = ' + runtime);
     query = 'https://api.themoviedb.org/3/discover/movie?api_key=8f303e30bafa7db2b3656c65726f874c&language=en-US&region=US&sort_by=vote_average.asc&include_adult=false&include_video=false&page=1&' + 'vote_average.lte=' + vote_average + '&with_genres=' + genreInput + '&with_runtime.gte=' + runtime;
     repos.requestMovie(randomTopThree);
@@ -114,6 +131,11 @@ var app = app || {};
     console.log('Choosing and APPENDING randome MOVIE');
     randomMovie = Object.values(Object.values(app.repos.all[0])[3][0])[4];
     $('#random-movie-title').html(randomMovie);
+    //THIS NEEDS TO BE FIXED TO BE THE APPROPRIATE MOVIE DESCRIPTION
+    let randomOverview = Object.values(Object.values(app.repos.all[0].results[0].overview));
+    $('#random-movie-overview').html(randomOverview);
+
+    $("<p><a href='https://www.netflix.com/search'><button>Take Me To Netflix</button></a></p>").appendTo('#random-movie-overview');
 
   }
 
@@ -157,25 +179,50 @@ var app = app || {};
 
     //Appending the first movie picks attributes
     $('#top-three-one-title').html(topThreeOneTitle);
-    console.log('appending description 1');
-    console.log('description = ' + topThreeOneOverview);
     $('#top-three-one-overview').html(topThreeOneOverview);
-    console.log('image = ' + topThreeOneImg)
+    $("<p><a href='https://www.netflix.com/search'><button>Take Me To Netflix</button></a></p>").appendTo('#top-three-one-overview');
+
+    //KIMMER USE THIS TO MESS WITH THE LOCAL STORAGE OBJECT
+    $('p:button').on('click', function(){
+      //AFTER UPDATING THE LOCAL STORAGE OBJECT WITH THE MOVIE CHOICE
+      //THEN RENDER TO "PAST MOVIE CHOICES" THE UPDATED LOCAL STORAGE OBJECT.
+    });
+
+
+
+    // console.log('appending description 1');
+    // console.log('description = ' + topThreeOneOverview);
+    // console.log('image = ' + topThreeOneImg)
     // https://image.tmdb.org/t/p/w500/+uX6yITcNgq81Z5q9sB1PN6ItcNG.jpg
     // $('top-three-one-img').img(https://image.tmdb.org/t/p/w500/ + topThreeOneImg);
     // $('#poster').html('<h2>Here is your poster </h2><img id="thePoster" src=' + json.results[0].posters[0].image.url+ '/> ')
 
     //Appending the second movie picks attributes
     $('#top-three-two-title').html(topThreeTwoTitle);
-    console.log('appending description 2');
-    console.log('description = ' + topThreeTwoOverview);
     $('#top-three-two-overview').html(topThreeTwoOverview);
+    $("<p><a href='https://www.netflix.com/search'><button>Take Me To Netflix</button></a></p>").appendTo('#top-three-two-overview');
+
+    //KIMMER USE THIS TO MESS WITH THE LOCAL STORAGE OBJECT
+    $('p:button').on('click', function(){
+      //AFTER UPDATING THE LOCAL STORAGE OBJECT WITH THE MOVIE CHOICE
+      //THEN RENDER TO "PAST MOVIE CHOICES" THE UPDATED LOCAL STORAGE OBJECT.
+    });
+
+    // console.log('appending description 2');
+    // console.log('description = ' + topThreeTwoOverview);
 
     //Appending the third movie picks attributes
     $('#top-three-three-title').html(topThreeThreeTitle);
-    console.log('appending description 3');
-    console.log('description = ' + topThreeThreeOverview);
     $('#top-three-three-overview').html(topThreeThreeOverview);
+    $("<p><a href='https://www.netflix.com/search'><button>Take Me To Netflix</button></a></p>").appendTo('#top-three-three-overview');
+
+    //KIMMER USE THIS TO MESS WITH THE LOCAL STORAGE OBJECT
+    $('p:button').on('click', function(){
+      //AFTER UPDATING THE LOCAL STORAGE OBJECT WITH THE MOVIE CHOICE
+      //THEN RENDER TO "PAST MOVIE CHOICES" THE UPDATED LOCAL STORAGE OBJECT.
+    });
+    // console.log('appending description 3');
+    // console.log('description = ' + topThreeThreeOverview);
 
     $('#displayMovie').show();
   }
