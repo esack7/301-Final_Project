@@ -134,7 +134,7 @@ var app = app || {};
     let randomOverview = Object.values(Object.values(app.repos.all[0].results[0].overview));
     $('#random-movie-overview').html(randomOverview);
 
-    let path = "https:image.tmdb.org/t/p/w500" + Object.values(Object.values(app.repos.all[0])[3][0])[6];
+    let path = "https://image.tmdb.org/t/p/w500" + Object.values(Object.values(app.repos.all[0])[3][0])[6];
     console.log(path);
 
     $('#randomImg').attr("src", path)
@@ -210,7 +210,7 @@ var app = app || {};
     $('#top-three-one-title').html(topThreeOneTitle);
     $('#top-three-one-overview').html(topThreeOneOverview);
 
-    let path1 = "https:image.tmdb.org/t/p/w500" + topThreeOneImg;
+    let path1 = "https://image.tmdb.org/t/p/w500" + topThreeOneImg;
 
 
     $('#top-three-one-img').attr("src", path1)
