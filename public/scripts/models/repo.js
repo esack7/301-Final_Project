@@ -237,7 +237,7 @@ var app = app || {};
     $('#top-three-two-overview').html(topThreeTwoOverview);
 
 
-    let path2 = "://image.tmdb.org/t/p/w500" + topThreeTwoImg;
+    let path2 = "https://image.tmdb.org/t/p/w500" + topThreeTwoImg;
 
 
     $('#top-three-two-img').attr("src", path2)
