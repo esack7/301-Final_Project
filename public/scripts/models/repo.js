@@ -326,10 +326,14 @@ var app = app || {};
     topThreeCounter++;
   }
 
+  let page = (Math.floor(Math.random() * 10) + 1);
+  console.log(page);
+
   repos.all = [];
   repos.requestMovie = function(callback) {
 
     let data = {}
+    data.page = page
     data.with_genres = genreInput
     data.with_runtime = runtime
     data.vote_average = vote_average
