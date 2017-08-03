@@ -52,7 +52,7 @@ app.get('/discover', (req, res) => {
     'sort_by': 'popularity.desc',
     'include_adult': 'false',
     'include_video': 'false',
-    'page': '1',
+    'page':`${q.page}`,
     'vote_average.gte': `${q.vote_average}`,
     'with_genres': `${q.with_genres}`,
     'with_runtime.gte': `${q.with_runtime}`,

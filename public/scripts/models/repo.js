@@ -139,7 +139,7 @@ var app = app || {};
 
     $('#randomImg').attr("src", path)
 
-    $("<p><a href='https://www.netflix.com/search'><button>Take Me To Netflix</button></a></p>").appendTo('#random-movie-overview');
+    $('#netflixButton4').attr("href", 'https://dvd.netflix.com/Search?oq=&ac_posn=&v1=' + randomMovie)
 
   }
 
@@ -214,13 +214,8 @@ var app = app || {};
 
 
     $('#top-three-one-img').attr("src", path1)
+    $('#netflixButton1').attr("href", 'https://dvd.netflix.com/Search?oq=&ac_posn=&v1=' + topThreeOneTitle)
 
-    // $("<p><a href='https://www.netflix.com/search'><button>Take Me To Netflix</button></a></p>").appendTo('#takeMe');
-    //KIMMER USE THIS TO MESS WITH THE LOCAL STORAGE OBJECT
-    $('p:button').on('click', function(){
-      //AFTER UPDATING THE LOCAL STORAGE OBJECT WITH THE MOVIE CHOICE
-      //THEN RENDER TO "PAST MOVIE CHOICES" THE UPDATED LOCAL STORAGE OBJECT.
-    });
 
 
 
@@ -241,11 +236,7 @@ var app = app || {};
 
     $('#top-three-two-img').attr("src", path2)
 
-    //KIMMER USE THIS TO MESS WITH THE LOCAL STORAGE OBJECT
-    $('p:button').on('click', function(){
-      //AFTER UPDATING THE LOCAL STORAGE OBJECT WITH THE MOVIE CHOICE
-      //THEN RENDER TO "PAST MOVIE CHOICES" THE UPDATED LOCAL STORAGE OBJECT.
-    });
+    $('#netflixButton2').attr("href", 'https://dvd.netflix.com/Search?oq=&ac_posn=&v1=' + topThreeTwoTitle)
 
     // console.log('appending description 2');
     // console.log('description = ' + topThreeTwoOverview);
@@ -259,14 +250,9 @@ var app = app || {};
 
 
     $('#top-three-three-img').attr("src", path3)
+    $('#netflixButton3').attr("href", 'https://dvd.netflix.com/Search?oq=&ac_posn=&v1=' + topThreeThreeTitle)
 
-    //KIMMER USE THIS TO MESS WITH THE LOCAL STORAGE OBJECT
-    $('p:button').on('click', function(){
-      //AFTER UPDATING THE LOCAL STORAGE OBJECT WITH THE MOVIE CHOICE
-      //THEN RENDER TO "PAST MOVIE CHOICES" THE UPDATED LOCAL STORAGE OBJECT.
-    });
-    // console.log('appending description 3');
-    // console.log('description = ' + topThreeThreeOverview);
+
 
     $('#displayMovie').show();
   }
@@ -322,14 +308,19 @@ var app = app || {};
     }
     topThreeCounter++;
   }
+  let page = (Math.floor(Math.random() * 10) + 1);
+  console.log(page);
+
 
   repos.all = [];
   repos.requestMovie = function(callback) {
 
     let data = {}
+    data.page = page
     data.with_genres = genreInput
     data.with_runtime = runtime
     data.vote_average = vote_average
+
 
     $.get('/discover', data)
     .then(function (response) {
