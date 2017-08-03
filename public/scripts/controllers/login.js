@@ -109,5 +109,5 @@ function retrieveAllStorage () {
   User.all = JSON.parse(allStorage);
 }
 
-inception.play();
+// inception.play();
 retrieveStorageOnPageLoad();
