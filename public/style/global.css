@@ -22,7 +22,7 @@ header {
   min-height: 43.75rem;
   height: 100%;
   /*background-image: url(../assets/Inspiration/inspiration5.jpg);*/
-  max-width: 1980px;
+  max-width: 100%;
   background-attachment: fixed;
   display: relative;
   background-position: center;
@@ -78,7 +78,7 @@ nav a {
   max-width: 100%;
 }
 .main {
-  max-width:60rem;
+  max-width: 100%;
   margin: 0 auto;
   background-color: black;
   opacity: 0.90;
@@ -92,7 +92,7 @@ nav a {
 .homepage {
 background-image: url(../images/header_img1.jpg);
 height: 100%
-max-width: 1980px;
+max-width: 100%;
 background-attachment: fixed;
 /*display: relative;*/
 background-position: center;
@@ -220,6 +220,7 @@ li a:hover, footer a:hover {
 
 #login-form fieldset {
   float: left;
+  width: 100%;
 }
 
 fieldset select {
@@ -262,7 +263,7 @@ html {
 
 ol {
   text-align: center;
-  width:200px;
+  width: 100%;
   margin:0 auto;
 }
 .button {
@@ -315,4 +316,9 @@ footer {
   left: 0;
   padding: 1rem;
   text-align: center;
+}
+.logo {
+  height: 125px;
+  width: 275px;
+  /*width: 100%;*/
 }
