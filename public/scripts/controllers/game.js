@@ -349,6 +349,7 @@ $('#math-answer-button').click(function (event) {
   mathAnswered = $('#math-question-answer').val();
   console.log(mathAnswered + ' = math-question-answer')
   clearTimeout(timer);
+
   $('#math-question').hide();
   console.log('MATH BUTTON CLICKED');
   if (mathAnswered === '176') {
