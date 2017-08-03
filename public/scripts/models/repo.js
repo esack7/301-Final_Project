@@ -232,11 +232,6 @@ var app = app || {};
     topThreeCounter++;
   }
 
-<<<<<<< HEAD
-  console.log('isaac is here!');
-=======
-
->>>>>>> 2ed8add411b55f5d2dc1aafd95acb2476c3b70f1
   repos.all = [];
   repos.requestMovie = function(callback) {
 
