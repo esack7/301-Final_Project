@@ -193,7 +193,7 @@ var app = app || {};
     $('#top-three-one-title').html(topThreeOneTitle);
     $('#top-three-one-overview').html(topThreeOneOverview);
 
-    let path1 = "://image.tmdb.org/t/p/w500" + topThreeOneImg;
+    let path1 = "https://image.tmdb.org/t/p/w500" + topThreeOneImg;
 
     $('#top-three-one-img').attr("src", path1)
 
@@ -211,7 +211,6 @@ var app = app || {};
 
 
     $('#top-three-two-img').attr("src", path2)
-    $('#netflixButton2').attr("href", '://dvd.netflix.com/Search?oq=&ac_posn=&v1=' + topThreeTwoTitle)
 
     $('#netflixButton2').attr("href", 'https://dvd.netflix.com/Search?oq=&ac_posn=&v1=' + topThreeTwoTitle)
 
