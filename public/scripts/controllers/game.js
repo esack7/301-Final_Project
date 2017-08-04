@@ -63,11 +63,28 @@ $('#game').click(function (event) {
   goodCounter = 0;
   evilCounter = 0;
   all = [];
-  vote_average;
+  vote_average = '';
   genre = '';
   genreInput = '';
   runtime = '';
   console.log('current values: vote_average = ' + vote_average + ', genre = ' + genre + ', runtime = ' + runtime);
+});
+
+// function gameSTART() {
+//
+// }
+
+// THIS BUTTON TAKES THE NAME, puts it into playerName variable and fires the first question!
+// SO it has to hide the initial Welcome form and bring up the first question with possible button answers! -- It calls the append first question function!
+$('#enter-name').click(function (event) {
+  event.preventDefault();
+  console.log('Name Entered ENTER BUTTON \"click!\"');
+  playerName = $('#player-name-input').val();
+  $('#game-start').hide();
+  $('#first-question').show();
+  console.log('the player entered = ' + playerName + ' = as their playerName!');
+  randomizeMoodOptionsFunction()
+  appendQuestionOne();
 });
 
 // THIS BUTTON TAKES THE NAME, puts it into playerName variable and fires the first question!
