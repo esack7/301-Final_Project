@@ -12,6 +12,7 @@ html, body {
   font-size: 16px;
   font-family: 'Fira Sans', sans-serif;
   height: 100%;
+  max-width: 100%;
 }
 header {
   display: block;
@@ -91,7 +92,7 @@ nav a {
 }
 .homepage {
 background-image: url(../images/header_img1.jpg);
-height: 100%
+height: 100%;
 max-width: 1980px;
 background-attachment: fixed;
 /*display: relative;*/
@@ -162,7 +163,7 @@ footer {
   opacity: 0.90;
 }
 
-.bio{
+/*.bio{
   display: flex;
   flex-direction: row;
   font-size: 18px;
@@ -178,7 +179,7 @@ footer {
 }
 .bioInfoBox h2{
   text-align: center;
-}
+}*/
 
 li a, footer a {
   color: white;
@@ -253,32 +254,37 @@ ul.img-list {
 
 ul.img-list li {
   display: inline-block;
-  height: 250px;
+  height: 275px;
   margin: 0 3em 2em 3em;
   position: relative;
-  width: 250px;
+  width: 275px;
 }
 
-span.text-content {
+/*ul.img-list li img{
+  /*border: 4px solid white;*/
+  /*z-index: 10;
+}*/
+
+/*span.text-content {
   background: rgba(0,0,0,0.5);
   color: white;
   cursor: pointer;
   display: table;
-  height: 250px;
+  height: 275px;
   left: 0;
   position: absolute;
   top: 0;
-  width: 250px;
-}
+  width: 275px;
+}*/
 
 span.text-content span {
   display: table-cell;
-  text-align: justify;
+  text-align: center;
   vertical-align: middle;
   padding: 5px;
 }
 
-span.text-content {
+/*span.text-content {
   background: rgba(0,0,0,0.5);
   color: white;
   cursor: pointer;
@@ -289,7 +295,7 @@ span.text-content {
   top: 2px;
   width: 250px;
   opacity: 0;
-}
+}*/
 ul.img-list li:hover span.text-content {
   opacity: 1;
 }
@@ -300,11 +306,11 @@ span.text-content {
   color: white;
   cursor: pointer;
   display: table;
-  height: 250px;
+  height: 275px;
   left: 2px;
   position: absolute;
   top: 2px;
-  width: 250px;
+  width: 275px;
   opacity: 0;
   -webkit-transition: opacity 500ms;
   -moz-transition: opacity 500ms;
