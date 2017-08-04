@@ -230,10 +230,18 @@ p button {
   background-color: white;
 }
 /****************For Desktop****************/
+/****************For Desktop****************/
+/****************For Desktop****************/
+/****************For Desktop****************/
+/****************For Desktop****************/
 @media screen and (min-width: 768px) {
   .welcome-text {
     width: 50rem;
     padding: 2rem 5rem;
+  }
+  #login-form fieldset {
+    float: right;
+    margin-top: -3em;
   }
 }
 ul.img-list {
@@ -317,10 +325,6 @@ span.text-content {
   opacity: 100;
 }
 
-#login-form fieldset {
-  float: right;
-  margin-top: -3em;
-}
 
 .concept {
   margin-top: 5%;
