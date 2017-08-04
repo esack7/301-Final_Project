@@ -31,7 +31,8 @@ var app = app || {};
   let genreObject = {'28': 'Action', '12': 'Adventure', '16': 'Animation', '35': 'Comedy', '80': 'Crime', '99': 'Documentary', '18': 'Drama', '10751': 'Family', '14': 'Fantasy', '36': 'History', '27': 'Horror', 10402: 'Music', 9648: 'Mystery', 10749: 'Romance', 878: 'Science Fiction', 10770: 'TV Movie', 53: 'Thriller', 10752: 'War', 37: 'Western'};
 
   $('#topThree').click(function (event) {
-
+    //what is all this even doing?
+    //If this is to wipe data on the reroll? You can just innterhtml = '' on the entire div
     $('#top-three-one-title').html('');
     $('#top-three-two-title').html('');
     $('#top-three-three-title').html('');
@@ -40,7 +41,7 @@ var app = app || {};
     $('#top-three-three-overview').html('')
     $('#displayMovie').show();
     $('#main').hide();
-    console.log('topThree BUTTON FIRED!!!');
+    // console.log('topThree BUTTON FIRED!!!');
     topThreeCounter = 0;
     repos.all = [];
     vote_average;
@@ -50,16 +51,13 @@ var app = app || {};
     topThreeOneTitle = '';
     topThreeTwoTitle = '';
     topThreeThreeTitle = '';
-    console.log('app.repos.all is CLEARED!');
+    // console.log('app.repos.all is CLEARED!');
     event.preventDefault();
 
     if ($('#voteAverageDropDown').val() === "Average Rating") {
       vote_average = Math.floor(Math.random() * 9) + 1
-      console.log('empty');
     } else {
       vote_average = $('#voteAverageDropDown').val();
-      console.log('populated')
-      console.log(vote_average);
     }
 
     if ($('#genreDropDown').val() === "Genre"){
@@ -67,9 +65,7 @@ var app = app || {};
     } else {
       genreInput = $('#genreDropDown').val();
     }
-    console.log(genreObject);
-    console.log('genreInput = ' + genreInput);
-    //this is way too complicated ..genre = $('genreDropDown').val gives you a number already to the right genre
+
     genre = Object.values(genreObject)[Object.keys(genreObject).indexOf(genreInput)];
 
     if ($('#durationDropDown').val()){
@@ -77,10 +73,10 @@ var app = app || {};
     } else {
       runtime = $('#durationDropDown').val();
     }
-    console.log("tis is the one" + 'vote_average = ' + vote_average + '  genre = ' + genre + '  runtime = ' + runtime);
+    // console.log("tis is the one" + 'vote_average = ' + vote_average + '  genre = ' + genre + '  runtime = ' + runtime);
 
     repos.requestMovie(randomTopThree);
-    console.log(' ');
+
   });
 
   $('#random').click(function (event) {
@@ -88,18 +84,18 @@ var app = app || {};
     randomMovie = '';
     $('#main').hide();
     $('#displayRandomMovie').show();
-    console.log('random BUTTON FIRED!!!');
     repos.all = [];
     vote_average;
     genre = '';
     genreInput = '';
     runtime = '';
-    console.log('app.repos.all is CLEARED!');
-    console.log('RANDOM Variables below')
     randomizeValues();
-    console.log('vote_average = ' + vote_average + '  genre = ' + genre + '  runtime = ' + runtime);
     repos.requestMovie(appendRandomMovie);
-    console.log(' ');
+    // console.log('random BUTTON FIRED!!!');
+    // console.log('app.repos.all is CLEARED!');
+    // console.log('RANDOM Variables below')
+    // console.log('vote_average = ' + vote_average + '  genre = ' + genre + '  runtime = ' + runtime);
+
   });
 
   $('#reroll').click(function (event) {
@@ -113,27 +109,23 @@ var app = app || {};
     genre = '';
     genreInput = '';
     runtime = '';
-    console.log('app.repos.all is CLEARED!');
-    console.log('RANDOM Variables below')
     randomizeValues();
-    console.log('vote_average = ' + vote_average + '  genre = ' + genre + '  runtime = ' + runtime);
     repos.requestMovie(appendRandomMovie);
-    console.log(' ');
+    // console.log('app.repos.all is CLEARED!');
+    // console.log('vote_average = ' + vote_average + '  genre = ' + genre + '  runtime = ' + runtime);
+    // console.log('RANDOM Variables below')
   });
 
   function appendRandomMovie(){
-    console.log('Choosing and APPENDING randome MOVIE');
+    // console.log('Choosing and APPENDING randome MOVIE');
     randomMovie = Object.values(Object.values(app.repos.all[0])[3][0])[4];
     $('#random-movie-title').html(randomMovie);
-    //THIS NEEDS TO BE FIXED TO BE THE APPROPRIATE MOVIE DESCRIPTION
     let randomOverview = Object.values(Object.values(app.repos.all[0].results[0].overview));
+
+    //This appends the movie with its contents from above.
     $('#random-movie-overview').html(randomOverview);
-
     let path = "https://image.tmdb.org/t/p/w500" + Object.values(Object.values(app.repos.all[0])[3][0])[6];
-    console.log(path);
-
     $('#randomImg').attr("src", path)
-
     $('#netflixButton4').attr("href", 'https://dvd.netflix.com/Search?oq=&ac_posn=&v1=' + randomMovie)
 
   }
@@ -160,14 +152,11 @@ var app = app || {};
   $('#next-three').click(function (event) {
 
     event.preventDefault();
-
+    //These if statements ensure the app will run if a user doesn't input anything.
     if ($('#voteAverageDropDown').val() === "Average Rating") {
       vote_average = Math.floor(Math.random() * 9) + 1
-      console.log('empty');
     } else {
       vote_average = $('#voteAverageDropDown').val();
-      console.log('populated')
-      console.log(vote_average);
     }
 
     if ($('#genreDropDown').val() === "Genre"){
@@ -183,20 +172,18 @@ var app = app || {};
     }
 
     repos.requestMovie(randomTopThree);
-    // console.log(' ');
   });
 
   let appendTopThreeMovies = () => {
-    console.log('appendTopThreeMovies FIRE FIRE FIRE!!!')
+    // console.log('appendTopThreeMovies FIRE FIRE FIRE!!!')
 
     //Appending the first movie picks attributes
     $('#top-three-one-title').html(topThreeOneTitle);
     $('#top-three-one-overview').html(topThreeOneOverview);
-
+    //SRC PATH FOR THE IMAGE POSTER
     let path1 = "https://image.tmdb.org/t/p/w500" + topThreeOneImg;
-
     $('#top-three-one-img').attr("src", path1)
-
+    //CHANGING HREF OF BUTTON TO SELECTED MOVIE
     $('#netflixButton1').attr("href", 'https://dvd.netflix.com/Search?oq=&ac_posn=&v1=' + topThreeOneTitle)
 
 
@@ -205,59 +192,49 @@ var app = app || {};
     //Appending the second movie picks attributes
     $('#top-three-two-title').html(topThreeTwoTitle);
     $('#top-three-two-overview').html(topThreeTwoOverview);
-
-
+    //SRC PATH FOR THE IMAGE POSTER
     let path2 = "https://image.tmdb.org/t/p/w500" + topThreeTwoImg;
-
-
     $('#top-three-two-img').attr("src", path2)
-
+    //CHANGING HREF OF BUTTON TO SELECTED MOVIE
     $('#netflixButton2').attr("href", 'https://dvd.netflix.com/Search?oq=&ac_posn=&v1=' + topThreeTwoTitle)
 
-    // console.log('appending description 2');
-    // console.log('description = ' + topThreeTwoOverview);
 
     //Appending the third movie picks attributes
     $('#top-three-three-title').html(topThreeThreeTitle);
     $('#top-three-three-overview').html(topThreeThreeOverview);
-    // $("<p><a href='https://www.netflix.com/search'><button>Take Me To Netflix</button></a></p>").appendTo('#takeMe2');
-
+    //SRC PATH FOR THE IMAGE POSTER
     let path3 = "https://image.tmdb.org/t/p/w500" + topThreeThreeImg;
-
-
     $('#top-three-three-img').attr("src", path3)
-
+    //CHANGING HREF OF BUTTON TO SELECTED MOVIE
     $('#netflixButton3').attr("href", 'https://dvd.netflix.com/Search?oq=&ac_posn=&v1=' + topThreeThreeTitle)
-
-
-
-
+    //SHOW DIV CONTAINING MOVIE PICS
     $('#displayMovie').show();
   }
 
   $('#back-to-filters').click(function (event) {
+    //IF USER WANTS TO CHANGE FILTERS AFTER ROLLING ALREADY
     event.preventDefault();
-    console.log('NEXT THREE BUTTON FIRED!!!');
     $('#displayMovie').hide();
     $('#main').show();
   });
 
   $('#back-to-filters-two').click(function (event) {
+    //IF USER WANTS TO CHANGE FILTERS AFTER ROLLING ALREADY
     event.preventDefault();
-    console.log('NEXT THREE BUTTON FIRED!!!');
     $('#displayRandomMovie').hide();
     $('#main').show();
   });
 
   function randomTopThree() {
+    //THIS CAN BE DRY WITH INNTERHTML = '' ON THE DIV
     $('#top-three-one-title').html('');
     $('#top-three-one-overview').html('')
     $('#top-three-two-title').html('');
     $('#top-three-two-overview').html('')
     $('#top-three-three-title').html('');
     $('#top-three-three-overview').html('')
-    console.log('TOPTHREE movies FIRE!!! below listed!')
-    console.log(topThreeOneTitle, topThreeTwoTitle, topThreeThreeTitle);
+    // console.log('TOPTHREE movies FIRE!!! below listed!')
+    // console.log(topThreeOneTitle, topThreeTwoTitle, topThreeThreeTitle);
     if (topThreeCounter < 18) {
       //selecting top three one - title - description - image
       topThreeOneTitle = Object.values(Object.values(app.repos.all[0])[3][topThreeCounter])[4];
@@ -286,7 +263,7 @@ var app = app || {};
     }
     topThreeCounter++;
   }
-  let page = (Math.floor(Math.random() * 10) + 1);
+  let page = (Math.floor(Math.random() * 100) + 1);
   console.log(page);
 
 
