@@ -402,7 +402,7 @@ function mathResults() {
 
 // This is the functionality for appending QUESTION four-letter-word-question in the event you get timed out on the math question!!!
 function appendFourLetterWord (){
-  $('#times-up').html('TIMES UP!!!');
+  $('#times-up').html('NOPE!!!');
   $('#four-letter-word-text').html('Did you have enough time?  Tell us how you really feel!');
 }
 
