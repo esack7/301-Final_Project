@@ -55,7 +55,7 @@ var app = app || {};
     event.preventDefault();
 
     if ($('#voteAverageDropDown').val() === "Average Rating") {
-      vote_average = Math.floor(Math.random() * 9) + 1
+      vote_average =  1
     } else {
       vote_average = $('#voteAverageDropDown').val();
     }
@@ -64,6 +64,7 @@ var app = app || {};
       randomGenreObject = {1 : {'28': 'Action'}, 2 :  {'12': 'Adventure'}, 3 : {'16': 'Animation'}, 4 : {'35': 'Comedy'}, 5 : { '80': 'Crime'}, 6 : {'99': 'Documentary'}, 7 : {'18': 'Drama'}, 8 : {'10751': 'Family'}, 9 : {'14': 'Fantasy'}, 10 : {'36': 'History'}, 11 : {'27': 'Horror'}, 12 : {10402: 'Music'}, 13 : {9648: 'Mystery'}, 14 : {10749: 'Romance'}, 15 : {878: 'Science Fiction'}, 16 : {10770: 'TV Movie'}, 17 : {53: 'Thriller'}, 18 : {10752: 'War'}, 19 : {37: 'Western'}};
       randomNumberForGenre = Math.ceil(Math.random() * 19)
       genreInput = Object.keys(Object.values(randomGenreObject)[randomNumberForGenre])[0]
+
     } else {
       genreInput = $('#genreDropDown').val();
     }
@@ -71,7 +72,7 @@ var app = app || {};
     genre = Object.values(genreObject)[Object.keys(genreObject).indexOf(genreInput)];
 
     if ($('#durationDropDown').val()){
-      runtime = Math.floor(Math.random() * 120) + 30
+      runtime = 30
     } else {
       runtime = $('#durationDropDown').val();
     }
@@ -156,21 +157,22 @@ var app = app || {};
     event.preventDefault();
     //These if statements ensure the app will run if a user doesn't input anything.
     if ($('#voteAverageDropDown').val() === "Average Rating") {
-      vote_average = Math.floor(Math.random() * 9) + 1
+      vote_average = 1
     } else {
       vote_average = $('#voteAverageDropDown').val();
     }
 
     if ($('#genreDropDown').val() === "Genre"){
-      randomGenreObject = {1 : {'28': 'Action'}, 2 :  {'12': 'Adventure'}, 3 : {'16': 'Animation'}, 4 : {'35': 'Comedy'}, 5 : { '80': 'Crime'}, 6 : {'99': 'Documentary'}, 7 : {'18': 'Drama'}, 8 : {'10751': 'Family'}, 9 : {'14': 'Fantasy'}, 10 : {'36': 'History'}, 11 : {'27': 'Horror'}, 12 : {10402: 'Music'}, 13 : {9648: 'Mystery'}, 14 : {10749: 'Romance'}, 15 : {878: 'Science Fiction'}, 16 : {10770: 'TV Movie'}, 17 : {53: 'Thriller'}, 18 : {10752: 'War'}, 19 : {37: 'Western'}};
-      randomNumberForGenre = Math.ceil(Math.random() * 19)
-      genreInput = Object.keys(Object.values(randomGenreObject)[randomNumberForGenre])[0]
+      // randomGenreObject = {1 : {'28': 'Action'}, 2 :  {'12': 'Adventure'}, 3 : {'16': 'Animation'}, 4 : {'35': 'Comedy'}, 5 : { '80': 'Crime'}, 6 : {'99': 'Documentary'}, 7 : {'18': 'Drama'}, 8 : {'10751': 'Family'}, 9 : {'14': 'Fantasy'}, 10 : {'36': 'History'}, 11 : {'27': 'Horror'}, 12 : {10402: 'Music'}, 13 : {9648: 'Mystery'}, 14 : {10749: 'Romance'}, 15 : {878: 'Science Fiction'}, 16 : {10770: 'TV Movie'}, 17 : {53: 'Thriller'}, 18 : {10752: 'War'}, 19 : {37: 'Western'}};
+      // randomNumberForGenre = Math.ceil(Math.random() * 19)
+      genreInput = randomGenreObject[randomNumberForGenre][0]
+
     } else {
       genreInput = $('#genreDropDown').val();
     }
 
     if ($('#durationDropDown').val()){
-      runtime = Math.floor(Math.random() * 120) + 30
+      runtime = 30
     } else {
       runtime = $('#durationDropDown').val();
     }
@@ -267,7 +269,7 @@ var app = app || {};
     }
     topThreeCounter++;
   }
-  let page = (Math.floor(Math.random() * 100) + 1);
+  let page = (Math.floor(Math.random() * 5) + 1);
   console.log(page);
 
 
