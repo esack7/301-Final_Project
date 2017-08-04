@@ -111,7 +111,7 @@ margin: 0 auto;
   text-align: center;
   background-color: #000;
   color: #fff;
-  opacity: 0.90;
+  opacity: 1;
 }
 .welcome-text h1 {
   font-size: 3rem;
@@ -414,7 +414,7 @@ footer {
 }
 
 .logo {
-  position: absolute;
+  /*position: relative;*/
   width: 15rem;
   height: 5rem;
   max-width: 100%;
@@ -424,7 +424,7 @@ footer {
 }
 
 #logoDiv {
-  position: fixed;
+  /*position: fixed;*/
   right: 0;
   top: 0;
   left: 0;
