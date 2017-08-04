@@ -406,3 +406,12 @@ footer {
   padding: 1rem;
   text-align: center;
 }
+
+.logo {
+  position: absolute;
+  width: 15rem;
+  height: 5rem;
+  max-width: 100%;
+  left: 42rem;
+  top: 1rem;
+}
