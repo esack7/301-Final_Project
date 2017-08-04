@@ -43,6 +43,9 @@ let genreInput;
 let runtime = 90;
 let vote_average = 9.8;
 
+// for the reroll function
+let rerollCounter = 0;
+
 // WHEN MADAM FLICKS BUTTON CLICK === hide everything but game... Start Game!
 // IT PULLS UP THE GAME FILE...
 $('#game').click(function (event) {
@@ -59,7 +62,7 @@ $('#game').click(function (event) {
   emotion4 = '';
   goodCounter = 0;
   evilCounter = 0;
-  repos.all = [];
+  all = [];
   vote_average;
   genre = '';
   genreInput = '';
@@ -377,7 +380,10 @@ $('#math-answer-button').click(function (event) {
     $('#times-up').html('GOOD GUESS!!!');
     $('#four-letter-word-question').show();
   } else {
+    console.log('THEY GOT THE ANSWER WRONG!!!')
+    mathAnswered = true;
     appendFourLetterWord();
+    $('#four-letter-word-question').show();
   }
 });
 
@@ -589,6 +595,41 @@ function appendMadamFlixMovie(){
   $('#madam-flix-movie-overview').html(randomOverview);
 
   let paths = "https:image.tmdb.org/t/p/w500" + Object.values(Object.values(all[0])[3][0])[6];
+  console.log(paths);
+
+  $('#madam-flix-img').attr("src", paths)
+
+  $("<p><a href='https://www.netflix.com/search'><button>Take Me To Netflix</button></a></p>").appendTo('#madam-flix-movie-overview');
+}
+
+// takes you back to the home page...
+$('#back-out-of-game').click(function (event) {
+  event.preventDefault();
+  $('#displayMadamFlixMovie').hide();
+  $('#main').show();
+});
+
+// takes you back to the home page...
+$('#reroll-madam-flix').click(function (event) {
+  console.log('REROLLING MADAM FLIX MOVIE!!!');
+  event.preventDefault();
+  appendMadamFlixMovieReroll()
+});
+
+function appendMadamFlixMovieReroll(){
+  console.log('Append function being called')
+  rerollCounter++
+  // This makes it so it loops ten movies
+  while (rerollCounter > 9) {
+    rerollCounter = 0;
+  }
+  let madamFlixMovie = Object.values(Object.values(all[0])[3][rerollCounter])[4];
+  $('#madam-flix-movie-title').html(madamFlixMovie);
+  //THIS NEEDS TO BE FIXED TO BE THE APPROPRIATE MOVIE DESCRIPTION
+  let randomOverview = Object.values(Object.values(all[0].results[rerollCounter].overview));
+  $('#madam-flix-movie-overview').html(randomOverview);
+
+  let paths = "https:image.tmdb.org/t/p/w500" + Object.values(Object.values(all[0])[3][rerollCounter])[6];
   console.log(paths);
 
   $('#madam-flix-img').attr("src", paths)
