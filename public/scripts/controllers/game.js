@@ -611,12 +611,12 @@ function appendMadamFlixMovie(){
   let randomOverview = Object.values(Object.values(all[0].results[0].overview));
   $('#madam-flix-movie-overview').html(randomOverview);
 
-  let paths = "https:image.tmdb.org/t/p/w500" + Object.values(Object.values(all[0])[3][0])[6];
+  let paths = "https://image.tmdb.org/t/p/w500" + Object.values(Object.values(all[0])[3][0])[6];
   console.log(paths);
 
   $('#madam-flix-img').attr("src", paths)
 
-  $("<p><a href='https://www.netflix.com/search'><button>Take Me To Netflix</button></a></p>").appendTo('#madam-flix-movie-overview');
+  $('#netflixButton5').attr("href", 'https://dvd.netflix.com/Search?oq=&ac_posn=&v1=' + madamFlixMovie)
 }
 
 // takes you back to the home page...
@@ -646,12 +646,11 @@ function appendMadamFlixMovieReroll(){
   let randomOverview = Object.values(Object.values(all[0].results[rerollCounter].overview));
   $('#madam-flix-movie-overview').html(randomOverview);
 
-  let paths = "https:image.tmdb.org/t/p/w500" + Object.values(Object.values(all[0])[3][rerollCounter])[6];
-  console.log(paths);
+  let paths = "https://image.tmdb.org/t/p/w500" + Object.values(Object.values(all[0])[3][rerollCounter])[6];
 
   $('#madam-flix-img').attr("src", paths)
 
-  $("<p><a href='https://www.netflix.com/search'><button>Take Me To Netflix</button></a></p>").appendTo('#madam-flix-movie-overview');
+  $('#netflixButton5').attr("href", 'https://dvd.netflix.com/Search?oq=&ac_posn=&v1=' + madamFlixMovie)
 }
 
 // module.game = game;
