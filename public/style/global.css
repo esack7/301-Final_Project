@@ -236,6 +236,76 @@ p button {
     padding: 2rem 5rem;
   }
 }
+ul.img-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+ul.img-list li {
+  display: inline-block;
+  height: 250px;
+  margin: 0 3em 2em 3em;
+  position: relative;
+  width: 250px;
+}
+
+span.text-content {
+  background: rgba(0,0,0,0.5);
+  color: white;
+  cursor: pointer;
+  display: table;
+  height: 250px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 250px;
+}
+
+span.text-content span {
+  display: table-cell;
+  text-align: justify;
+  vertical-align: middle;
+  padding: 5px;
+}
+
+span.text-content {
+  background: rgba(0,0,0,0.5);
+  color: white;
+  cursor: pointer;
+  display: table;
+  height: 250px;
+  left: 2px;
+  position: absolute;
+  top: 2px;
+  width: 250px;
+  opacity: 0;
+}
+ul.img-list li:hover span.text-content {
+  opacity: 1;
+}
+
+span.text-content {
+   font: 600 16px/20px "Helvetica", Sans-Serif;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  cursor: pointer;
+  display: table;
+  height: 250px;
+  left: 2px;
+  position: absolute;
+  top: 2px;
+  width: 250px;
+  opacity: 0;
+  -webkit-transition: opacity 500ms;
+  -moz-transition: opacity 500ms;
+  -o-transition: opacity 500ms;
+  transition: opacity 500ms;
+}
+ img {
+   border: 2px solid black;
+ }
 
 .bio {
   margin: 7% 0% 7% 0%;
