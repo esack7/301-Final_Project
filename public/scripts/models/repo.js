@@ -61,7 +61,9 @@ var app = app || {};
     }
 
     if ($('#genreDropDown').val() === "Genre"){
-      genreInput = "18";
+      randomGenreObject = {1 : {'28': 'Action'}, 2 :  {'12': 'Adventure'}, 3 : {'16': 'Animation'}, 4 : {'35': 'Comedy'}, 5 : { '80': 'Crime'}, 6 : {'99': 'Documentary'}, 7 : {'18': 'Drama'}, 8 : {'10751': 'Family'}, 9 : {'14': 'Fantasy'}, 10 : {'36': 'History'}, 11 : {'27': 'Horror'}, 12 : {10402: 'Music'}, 13 : {9648: 'Mystery'}, 14 : {10749: 'Romance'}, 15 : {878: 'Science Fiction'}, 16 : {10770: 'TV Movie'}, 17 : {53: 'Thriller'}, 18 : {10752: 'War'}, 19 : {37: 'Western'}};
+      randomNumberForGenre = Math.ceil(Math.random() * 19)
+      genreInput = Object.keys(Object.values(randomGenreObject)[randomNumberForGenre])[0]
     } else {
       genreInput = $('#genreDropDown').val();
     }
