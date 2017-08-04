@@ -375,7 +375,23 @@ ol {
 }
 .hidden {
   display: none; }
-
+/*FOR KIMMERS GAME*/
+#movieIMG p{
+  font-size: 32px;
+}
+/*FOR KIMMERS GAME*/
+#movieIMG button {
+  padding: 10px 15px 10px 15px;
+  font-size: 18px;
+}
+/*FOR KIMMERS GAME*/
+#movieIMG input{
+  padding: 14px 15px 10px 15px;
+}
+/*FOR KIMMERS GAME*/
+#movieIMG input::placeholder{
+  font-size: 14px;
+}
 
 footer {
   background-color: #000;
