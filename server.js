@@ -3,6 +3,28 @@ const express = require('express')
 const request = require('superagent')
 const app = express()
 const PORT = process.env.PORT || 3000;
+const mongo = require('mongodb')
+const assert = require('assert')
+
+// this points to the mongo data base === the mongo database is tells you the default is at 27017 on our local machine when we start the server in our terminal.
+// what follows the 27017 is the name of the db.
+const url = 'mongodb://localhost:27017/flix';
+
+router.get('/get-data', function(req, res, next) {
+
+});
+
+router.post('/insert', function(req, res, next) {
+  var newUser = new User()
+});
+
+router.post('/update', function(req, res, next) {
+
+});
+
+router.post('/delete', function(req, res, next) {
+
+});
 
 app.use(express.static('./public'))
 
