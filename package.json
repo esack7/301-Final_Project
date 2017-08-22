@@ -19,6 +19,7 @@
   "homepage": "https://github.com/esack7/301-Final_Project#readme",
   "dependencies": {
     "express": "^4.15.3",
+    "mongodb": "^2.2.30",
     "superagent": "^3.5.2"
   }
 }
